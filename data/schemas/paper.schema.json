@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Paper",
+  "description": "Schéma pour une publication scientifique référencée dans SciBase",
+  "type": "object",
+  "required": ["title", "authors", "year", "url"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Titre du paper"
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Liste des auteurs"
+    },
+    "year": {
+      "type": "integer",
+      "description": "Année de publication"
+    },
+    "abstract": {
+      "type": "string",
+      "description": "Résumé du paper"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Lien vers la page du paper (arxiv, etc.)"
+    },
+    "pdf_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Lien direct vers le PDF en ligne"
+    },
+    "local_pdf": {
+      "type": "string",
+      "description": "Chemin relatif vers le PDF local (ex: pdfs/nom-du-fichier.pdf)"
+    },
+    "source": {
+      "type": "string",
+      "enum": ["arxiv", "semantic_scholar", "pubmed", "papers_with_code", "hal", "core", "dblp", "manual"],
+      "description": "Source d'où provient le paper"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Tags/mots-clés pour la classification"
+    },
+    "doi": {
+      "type": "string",
+      "description": "Digital Object Identifier"
+    }
+  },
+  "additionalProperties": false
+}
