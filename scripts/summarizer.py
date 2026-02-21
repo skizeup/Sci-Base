@@ -28,12 +28,14 @@ def slugify(text: str) -> str:
 def find_topic_dir(topic_name: str) -> Path:
     """Trouve le dossier d'un topic par son nom."""
     slug = slugify(topic_name)
+    if not slug:
+        raise ValueError(f"Nom de topic invalide : '{topic_name}' (slug vide)")
     topic_dir = TOPICS_DIR / slug
     if topic_dir.is_dir():
         return topic_dir
-    # Recherche par nom partiel
+    # Recherche par correspondance exacte uniquement
     for d in TOPICS_DIR.iterdir():
-        if d.is_dir() and slug in d.name:
+        if d.is_dir() and d.name == slug:
             return d
     raise FileNotFoundError(f"Topic introuvable : '{topic_name}' (cherché dans {TOPICS_DIR})")
 

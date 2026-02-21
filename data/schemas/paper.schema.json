@@ -7,19 +7,24 @@
   "properties": {
     "title": {
       "type": "string",
+      "maxLength": 500,
       "description": "Titre du paper"
     },
     "authors": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": { "type": "string", "maxLength": 200 },
+      "maxItems": 100,
       "description": "Liste des auteurs"
     },
     "year": {
       "type": "integer",
+      "minimum": 1900,
+      "maximum": 2100,
       "description": "Année de publication"
     },
     "abstract": {
       "type": "string",
+      "maxLength": 10000,
       "description": "Résumé du paper"
     },
     "url": {
@@ -43,7 +48,8 @@
     },
     "tags": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": { "type": "string", "maxLength": 100 },
+      "maxItems": 50,
       "description": "Tags/mots-clés pour la classification"
     },
     "doi": {

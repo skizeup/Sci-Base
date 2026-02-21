@@ -147,6 +147,10 @@ def main():
     topic = args.topic
     slug = slugify(topic)
 
+    if not slug:
+        print("Erreur : le nom de topic ne produit aucun slug valide.", file=sys.stderr)
+        sys.exit(1)
+
     print(f"=== arXiv Fetcher — topic: {topic} (slug: {slug}) ===")
 
     # 1. Ensure topic folder exists
