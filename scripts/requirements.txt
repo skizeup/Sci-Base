@@ -3,3 +3,5 @@ arxiv>=2.1.0
 semanticscholar>=0.8.0
 biopython>=1.83
 jsonschema>=4.21.0
+anthropic>=0.40.0
+openai>=1.50.0

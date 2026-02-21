@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LearningPath",
+  "description": "Schéma pour les parcours d'apprentissage SciBase",
+  "type": "object",
+  "required": ["version", "title", "paths"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Version du format de parcours"
+    },
+    "title": {
+      "type": "string",
+      "description": "Titre global du parcours"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description du parcours"
+    },
+    "paths": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/path"
+      },
+      "description": "Liste des parcours disponibles"
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "path": {
+      "type": "object",
+      "required": ["id", "title", "topics"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifiant unique du parcours"
+        },
+        "title": {
+          "type": "string",
+          "description": "Titre du parcours"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description du parcours"
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/topic_entry"
+          },
+          "description": "Topics ordonnés du parcours"
+        }
+      },
+      "additionalProperties": false
+    },
+    "topic_entry": {
+      "type": "object",
+      "required": ["topic_id", "level", "order"],
+      "properties": {
+        "topic_id": {
+          "type": "string",
+          "description": "Identifiant du topic (nom du dossier dans data/topics/)"
+        },
+        "level": {
+          "type": "string",
+          "enum": ["debutant", "intermediaire", "avance"],
+          "description": "Niveau de difficulté"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Position dans le parcours"
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Liste des topic_id prérequis"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
