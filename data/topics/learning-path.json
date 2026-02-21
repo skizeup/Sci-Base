@@ -37,6 +37,36 @@
           "level": "intermediaire",
           "order": 5,
           "prerequisites": ["machine-learning"]
+        },
+        {
+          "topic_id": "transfer-learning",
+          "level": "intermediaire",
+          "order": 6,
+          "prerequisites": ["deep-learning", "machine-learning"]
+        },
+        {
+          "topic_id": "generative-models",
+          "level": "intermediaire",
+          "order": 7,
+          "prerequisites": ["deep-learning"]
+        },
+        {
+          "topic_id": "graph-neural-networks",
+          "level": "avance",
+          "order": 8,
+          "prerequisites": ["deep-learning"]
+        },
+        {
+          "topic_id": "large-language-models",
+          "level": "avance",
+          "order": 9,
+          "prerequisites": ["deep-learning", "natural-language-processing"]
+        },
+        {
+          "topic_id": "vision-language-models",
+          "level": "avance",
+          "order": 10,
+          "prerequisites": ["deep-learning", "computer-vision", "natural-language-processing"]
         }
       ]
     }

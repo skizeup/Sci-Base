@@ -1,0 +1,369 @@
+[
+  {
+    "title": "Federated and Transfer Learning: A Survey on Adversaries and Defense Mechanisms",
+    "authors": [
+      "Ehsan Hallaji",
+      "Roozbeh Razavi-Far",
+      "Mehrdad Saif"
+    ],
+    "year": 2022,
+    "url": "http://arxiv.org/abs/2207.02337v1",
+    "abstract": "The advent of federated learning has facilitated large-scale data exchange amongst machine learning models while maintaining privacy. Despite its brief history, federated learning is rapidly evolving to make wider use more practical. One of the most significant advancements in this domain is the incorporation of transfer learning into federated learning, which overcomes fundamental constraints of primary federated learning, particularly in terms of security. This chapter performs a comprehensive survey on the intersection of federated and transfer learning from a security point of view. The main goal of this study is to uncover potential vulnerabilities and defense mechanisms that might compromise the privacy and performance of systems that use federated and transfer learning.",
+    "pdf_url": "https://arxiv.org/pdf/2207.02337v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CR",
+      "cs.CV",
+      "cs.DC"
+    ],
+    "doi": "10.1007/978-3-031-11748-0_3"
+  },
+  {
+    "title": "Transfer Learning Toolkit: Primers and Benchmarks",
+    "authors": [
+      "Fuzhen Zhuang",
+      "Keyu Duan",
+      "Tongjia Guo",
+      "Yongchun Zhu",
+      "Dongbo Xi",
+      "Zhiyuan Qi",
+      "Qing He"
+    ],
+    "year": 2019,
+    "url": "http://arxiv.org/abs/1911.08967v1",
+    "abstract": "The transfer learning toolkit wraps the codes of 17 transfer learning models and provides integrated interfaces, allowing users to use those models by calling a simple function. It is easy for primary researchers to use this toolkit and to choose proper models for real-world applications. The toolkit is written in Python and distributed under MIT open source license. In this paper, the current state of this toolkit is described and the necessary environment setting and usage are introduced.",
+    "pdf_url": "https://arxiv.org/pdf/1911.08967v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "stat.ML"
+    ]
+  },
+  {
+    "title": "Predicting concentration levels of air pollutants by transfer learning and recurrent neural network",
+    "authors": [
+      "Iat Hang Fong",
+      "Tengyue Li",
+      "Simon Fong",
+      "Raymond K. Wong",
+      "Antonio J. Tallón-Ballesteros"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2502.01654v1",
+    "abstract": "Air pollution (AP) poses a great threat to human health, and people are paying more attention than ever to its prediction. Accurate prediction of AP helps people to plan for their outdoor activities and aids protecting human health. In this paper, long-short term memory (LSTM) recurrent neural networks (RNNs) have been used to predict the future concentration of air pollutants (APS) in Macau. Additionally, meteorological data and data on the concentration of APS have been utilized. Moreover, in Macau, some air quality monitoring stations (AQMSs) have less observed data in quantity, and, at the same time, some AQMSs recorded less observed data of certain types of APS. Therefore, the transfer learning and pre-trained neural networks have been employed to assist AQMSs with less observed data to build a neural network with high prediction accuracy. The experimental sample covers a period longer than 12-year and includes daily measurements from several APS as well as other more classical meteorological values. Records from five stations, four out of them are AQMSs and the remaining one is an automatic weather station, have been prepared from the aforesaid period and eventually underwent to computational intelligence techniques to build and extract a prediction knowledge-based system. As shown by experimentation, LSTM RNNs initialized with transfer learning methods have higher prediction accuracy; it incurred shorter training time than randomly initialized recurrent neural networks.",
+    "pdf_url": "https://arxiv.org/pdf/2502.01654v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "cs.NE",
+      "physics.ao-ph"
+    ]
+  },
+  {
+    "title": "Transfer Learning and Organic Computing for Autonomous Vehicles",
+    "authors": [
+      "Christofer Fellicious"
+    ],
+    "year": 2018,
+    "url": "http://arxiv.org/abs/1808.05443v1",
+    "abstract": "Autonomous Vehicles(AV) are one of the brightest promises of the future which would help cut down fatalities and improve travel time while working in harmony. Autonomous vehicles will face with challenging situations and experiences not seen before. These experiences should be converted to knowledge and help the vehicle prepare better in the future. Online Transfer Learning will help transferring prior knowledge to a new task and also keep the knowledge updated as the task evolves. This paper presents the different methods of transfer learning, online transfer learning and organic computing that could be adapted to the domain of autonomous vehicles.",
+    "pdf_url": "https://arxiv.org/pdf/1808.05443v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "cs.RO",
+      "stat.ML"
+    ]
+  },
+  {
+    "title": "Transfer Learning with Pre-trained Conditional Generative Models",
+    "authors": [
+      "Shin'ya Yamaguchi",
+      "Sekitoshi Kanai",
+      "Atsutoshi Kumagai",
+      "Daiki Chijiwa",
+      "Hisashi Kashima"
+    ],
+    "year": 2022,
+    "url": "http://arxiv.org/abs/2204.12833v3",
+    "abstract": "Transfer learning is crucial in training deep neural networks on new target tasks. Current transfer learning methods always assume at least one of (i) source and target task label spaces overlap, (ii) source datasets are available, and (iii) target network architectures are consistent with source ones. However, holding these assumptions is difficult in practical settings because the target task rarely has the same labels as the source task, the source dataset access is restricted due to storage costs and privacy, and the target architecture is often specialized to each task. To transfer source knowledge without these assumptions, we propose a transfer learning method that uses deep generative models and is composed of the following two stages: pseudo pre-training (PP) and pseudo semi-supervised learning (P-SSL). PP trains a target architecture with an artificial dataset synthesized by using conditional source generative models. P-SSL applies SSL algorithms to labeled target data and unlabeled pseudo samples, which are generated by cascading the source classifier and generative models to condition them with target samples. Our experimental results indicate that our method can outperform the baselines of scratch training and knowledge distillation.",
+    "pdf_url": "https://arxiv.org/pdf/2204.12833v3",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "cs.AI",
+      "stat.ML"
+    ],
+    "doi": "10.1007/s10994-025-06748-7"
+  },
+  {
+    "title": "Transferability in Deep Learning: A Survey",
+    "authors": [
+      "Junguang Jiang",
+      "Yang Shu",
+      "Jianmin Wang",
+      "Mingsheng Long"
+    ],
+    "year": 2022,
+    "url": "http://arxiv.org/abs/2201.05867v1",
+    "abstract": "The success of deep learning algorithms generally depends on large-scale data, while humans appear to have inherent ability of knowledge transfer, by recognizing and applying relevant knowledge from previous learning experiences when encountering and solving unseen tasks. Such an ability to acquire and reuse knowledge is known as transferability in deep learning. It has formed the long-term quest towards making deep learning as data-efficient as human learning, and has been motivating fruitful design of more powerful deep learning algorithms. We present this survey to connect different isolated areas in deep learning with their relation to transferability, and to provide a unified and complete view to investigating transferability through the whole lifecycle of deep learning. The survey elaborates the fundamental goals and challenges in parallel with the core principles and methods, covering recent cornerstones in deep architectures, pre-training, task adaptation and domain adaptation. This highlights unanswered questions on the appropriate objectives for learning transferable knowledge and for adapting the knowledge to new tasks and domains, avoiding catastrophic forgetting and negative transfer. Finally, we implement a benchmark and an open-source library, enabling a fair evaluation of deep learning methods in terms of transferability.",
+    "pdf_url": "https://arxiv.org/pdf/2201.05867v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "How good are variational autoencoders at transfer learning?",
+    "authors": [
+      "Lisa Bonheme",
+      "Marek Grzes"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2304.10767v1",
+    "abstract": "Variational autoencoders (VAEs) are used for transfer learning across various research domains such as music generation or medical image analysis. However, there is no principled way to assess before transfer which components to retrain or whether transfer learning is likely to help on a target task. We propose to explore this question through the lens of representational similarity. Specifically, using Centred Kernel Alignment (CKA) to evaluate the similarity of VAEs trained on different datasets, we show that encoders' representations are generic but decoders' specific. Based on these insights, we discuss the implications for selecting which components of a VAE to retrain and propose a method to visually assess whether transfer learning is likely to help on classification tasks.",
+    "pdf_url": "https://arxiv.org/pdf/2304.10767v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Transfer Learning for Kernel-based Regression",
+    "authors": [
+      "Chao Wang",
+      "Caixing Wang",
+      "Xin He",
+      "Xingdong Feng"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2310.13966v3",
+    "abstract": "In recent years, transfer learning has garnered significant attention. Its ability to leverage knowledge from related studies to improve generalization performance in a target study has made it highly appealing. This paper focuses on investigating the transfer learning problem within the context of nonparametric regression over a reproducing kernel Hilbert space. The aim is to bridge the gap between practical effectiveness and theoretical guarantees. We specifically consider two scenarios: one where the transferable sources are known and another where they are unknown. For the known transferable source case, we propose a two-step kernel-based estimator by solely using kernel ridge regression. For the unknown case, we develop a novel method based on an efficient aggregation algorithm, which can automatically detect and alleviate the effects of negative sources. This paper provides the statistical properties of the desired estimators and establishes the minimax rate. Through extensive numerical experiments on synthetic data and real examples, we validate our theoretical findings and demonstrate the effectiveness of our proposed method.",
+    "pdf_url": "https://arxiv.org/pdf/2310.13966v3",
+    "source": "arxiv",
+    "tags": [
+      "stat.ML",
+      "cs.LG",
+      "stat.ME"
+    ]
+  },
+  {
+    "title": "G5: A Universal GRAPH-BERT for Graph-to-Graph Transfer and Apocalypse Learning",
+    "authors": [
+      "Jiawei Zhang"
+    ],
+    "year": 2020,
+    "url": "http://arxiv.org/abs/2006.06183v1",
+    "abstract": "The recent GRAPH-BERT model introduces a new approach to learning graph representations merely based on the attention mechanism. GRAPH-BERT provides an opportunity for transferring pre-trained models and learned graph representations across different tasks within the same graph dataset. In this paper, we will further investigate the graph-to-graph transfer of a universal GRAPH-BERT for graph representation learning across different graph datasets, and our proposed model is also referred to as the G5 for simplicity. Many challenges exist in learning G5 to adapt the distinct input and output configurations for each graph data source, as well as the information distributions differences. G5 introduces a pluggable model architecture: (a) each data source will be pre-processed with a unique input representation learning component; (b) each output application task will also have a specific functional component; and (c) all such diverse input and output components will all be conjuncted with a universal GRAPH-BERT core component via an input size unification layer and an output representation fusion layer, respectively. The G5 model removes the last obstacle for cross-graph representation learning and transfer. For the graph sources with very sparse training data, the G5 model pre-trained on other graphs can still be utilized for representation learning with necessary fine-tuning. What's more, the architecture of G5 also allows us to learn a supervised functional classifier for data sources without any training data at all. Such a problem is also named as the Apocalypse Learning task in this paper. Two different label reasoning strategies, i.e., Cross-Source Classification Consistency Maximization (CCCM) and Cross-Source Dynamic Routing (CDR), are introduced in this paper to address the problem.",
+    "pdf_url": "https://arxiv.org/pdf/2006.06183v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "cs.NE",
+      "cs.SI",
+      "stat.ML"
+    ]
+  },
+  {
+    "title": "Transfer Learning between Motor Imagery Datasets using Deep Learning -- Validation of Framework and Comparison of Datasets",
+    "authors": [
+      "Pierre Guetschel",
+      "Michael Tangermann"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2311.16109v1",
+    "abstract": "We present a simple deep learning-based framework commonly used in computer vision and demonstrate its effectiveness for cross-dataset transfer learning in mental imagery decoding tasks that are common in the field of Brain-Computer Interfaces (BCI). We investigate, on a large selection of 12 motor-imagery datasets, which ones are well suited for transfer, both as donors and as receivers. Challenges. Deep learning models typically require long training times and are data-hungry, which impedes their use for BCI systems that have to minimize the recording time for (training) examples and are subject to constraints induced by experiments involving human subjects. A solution to both issues is transfer learning, but it comes with its own challenge, i.e., substantial data distribution shifts between datasets, subjects and even between subsequent sessions of the same subject. Approach. For every pair of pre-training (donor) and test (receiver) dataset, we first train a model on the donor before training merely an additional new linear classification layer based on a few receiver trials. Performance of this transfer approach is then tested on other trials of the receiver dataset. Significance. First, we lower the threshold to use transfer learning between motor imagery datasets: the overall framework is extremely simple and nevertheless obtains decent classification scores. Second, we demonstrate that deep learning models are a good option for motor imagery cross-dataset transfer both for the reasons outlined in the first point and because the framework presented is viable in online scenarios. Finally, analysing which datasets are best suited for transfer learning can be used as a reference for future researchers to determine which to use for pre-training or benchmarking.",
+    "pdf_url": "https://arxiv.org/pdf/2311.16109v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI",
+      "cs.HC",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Transfer learning in hybrid classical-quantum neural networks",
+    "authors": [
+      "Andrea Mari",
+      "Thomas R. Bromley",
+      "Josh Izaac",
+      "Maria Schuld",
+      "Nathan Killoran"
+    ],
+    "year": 2019,
+    "url": "http://arxiv.org/abs/1912.08278v2",
+    "abstract": "We extend the concept of transfer learning, widely applied in modern machine learning algorithms, to the emerging context of hybrid neural networks composed of classical and quantum elements. We propose different implementations of hybrid transfer learning, but we focus mainly on the paradigm in which a pre-trained classical network is modified and augmented by a final variational quantum circuit. This approach is particularly attractive in the current era of intermediate-scale quantum technology since it allows to optimally pre-process high dimensional data (e.g., images) with any state-of-the-art classical network and to embed a select set of highly informative features into a quantum processor. We present several proof-of-concept examples of the convenient application of quantum transfer learning for image recognition and quantum state classification. We use the cross-platform software library PennyLane to experimentally test a high-resolution image classifier with two different quantum computers, respectively provided by IBM and Rigetti.",
+    "pdf_url": "https://arxiv.org/pdf/1912.08278v2",
+    "source": "arxiv",
+    "tags": [
+      "quant-ph",
+      "cs.LG",
+      "stat.ML"
+    ],
+    "doi": "10.22331/q-2020-10-09-340"
+  },
+  {
+    "title": "Transfer Learning for Causal Effect Estimation",
+    "authors": [
+      "Song Wei",
+      "Hanyu Zhang",
+      "Ronald Moore",
+      "Rishikesan Kamaleswaran",
+      "Yao Xie"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2305.09126v3",
+    "abstract": "We present a Transfer Causal Learning (TCL) framework when target and source domains share the same covariate/feature spaces, aiming to improve causal effect estimation accuracy in limited data. Limited data is very common in medical applications, where some rare medical conditions, such as sepsis, are of interest. Our proposed method, named \\texttt{$\\ell_1$-TCL}, incorporates $\\ell_1$ regularized TL for nuisance models (e.g., propensity score model); the TL estimator of the nuisance parameters is plugged into downstream average causal/treatment effect estimators (e.g., inverse probability weighted estimator). We establish non-asymptotic recovery guarantees for the \\texttt{$\\ell_1$-TCL} with generalized linear model (GLM) under the sparsity assumption in the high-dimensional setting, and demonstrate the empirical benefits of \\texttt{$\\ell_1$-TCL} through extensive numerical simulation for GLM and recent neural network nuisance models. Our method is subsequently extended to real data and generates meaningful insights consistent with medical literature, a case where all baseline methods fail.",
+    "pdf_url": "https://arxiv.org/pdf/2305.09126v3",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "math.ST",
+      "stat.ME",
+      "stat.ML"
+    ]
+  },
+  {
+    "title": "Communication-Efficient and Privacy-Preserving Feature-based Federated Transfer Learning",
+    "authors": [
+      "Feng Wang",
+      "M. Cenk Gursoy",
+      "Senem Velipasalar"
+    ],
+    "year": 2022,
+    "url": "http://arxiv.org/abs/2209.05395v1",
+    "abstract": "Federated learning has attracted growing interest as it preserves the clients' privacy. As a variant of federated learning, federated transfer learning utilizes the knowledge from similar tasks and thus has also been intensively studied. However, due to the limited radio spectrum, the communication efficiency of federated learning via wireless links is critical since some tasks may require thousands of Terabytes of uplink payload. In order to improve the communication efficiency, we in this paper propose the feature-based federated transfer learning as an innovative approach to reduce the uplink payload by more than five orders of magnitude compared to that of existing approaches. We first introduce the system design in which the extracted features and outputs are uploaded instead of parameter updates, and then determine the required payload with this approach and provide comparisons with the existing approaches. Subsequently, we analyze the random shuffling scheme that preserves the clients' privacy. Finally, we evaluate the performance of the proposed learning scheme via experiments on an image classification task to show its effectiveness.",
+    "pdf_url": "https://arxiv.org/pdf/2209.05395v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Efficient Transfer Learning via Joint Adaptation of Network Architecture and Weight",
+    "authors": [
+      "Ming Sun",
+      "Haoxuan Dou",
+      "Junjie Yan"
+    ],
+    "year": 2021,
+    "url": "http://arxiv.org/abs/2105.08994v1",
+    "abstract": "Transfer learning can boost the performance on the targettask by leveraging the knowledge of the source domain. Recent worksin neural architecture search (NAS), especially one-shot NAS, can aidtransfer learning by establishing sufficient network search space. How-ever, existing NAS methods tend to approximate huge search spaces byexplicitly building giant super-networks with multiple sub-paths, anddiscard super-network weights after a child structure is found. Both thecharacteristics of existing approaches causes repetitive network trainingon source tasks in transfer learning. To remedy the above issues, we re-duce the super-network size by randomly dropping connection betweennetwork blocks while embedding a larger search space. Moreover, wereuse super-network weights to avoid redundant training by proposinga novel framework consisting of two modules, the neural architecturesearch module for architecture transfer and the neural weight searchmodule for weight transfer. These two modules conduct search on thetarget task based on a reduced super-networks, so we only need to trainonce on the source task. We experiment our framework on both MS-COCO and CUB-200 for the object detection and fine-grained imageclassification tasks, and show promising improvements with onlyO(CN)super-network complexity.",
+    "pdf_url": "https://arxiv.org/pdf/2105.08994v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "Transfer Representation Learning with TSK Fuzzy System",
+    "authors": [
+      "Peng Xu",
+      "Zhaohong Deng",
+      "Jun Wang",
+      "Qun Zhang",
+      "Shitong Wang"
+    ],
+    "year": 2019,
+    "url": "http://arxiv.org/abs/1901.02703v1",
+    "abstract": "Transfer learning can address the learning tasks of unlabeled data in the target domain by leveraging plenty of labeled data from a different but related source domain. A core issue in transfer learning is to learn a shared feature space in where the distributions of the data from two domains are matched. This learning process can be named as transfer representation learning (TRL). The feature transformation methods are crucial to ensure the success of TRL. The most commonly used feature transformation method in TRL is kernel-based nonlinear mapping to the high-dimensional space followed by linear dimensionality reduction. But the kernel functions are lack of interpretability and are difficult to be selected. To this end, the TSK fuzzy system (TSK-FS) is combined with transfer learning and a more intuitive and interpretable modeling method, called transfer representation learning with TSK-FS (TRL-TSK-FS) is proposed in this paper. Specifically, TRL-TSK-FS realizes TRL from two aspects. On one hand, the data in the source and target domains are transformed into the fuzzy feature space in which the distribution distance of the data between two domains is min-imized. On the other hand, discriminant information and geo-metric properties of the data are preserved by linear discriminant analysis and principal component analysis. In addition, another advantage arises with the proposed method, that is, the nonlinear transformation is realized by constructing fuzzy mapping with the antecedent part of the TSK-FS instead of kernel functions which are difficult to be selected. Extensive experiments are conducted on the text and image datasets. The results obviously show the superiority of the proposed method.",
+    "pdf_url": "https://arxiv.org/pdf/1901.02703v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "Active learning for data streams: a survey",
+    "authors": [
+      "Davide Cacciarelli",
+      "Murat Kulahci"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2302.08893v4",
+    "abstract": "Online active learning is a paradigm in machine learning that aims to select the most informative data points to label from a data stream. The problem of minimizing the cost associated with collecting labeled observations has gained a lot of attention in recent years, particularly in real-world applications where data is only available in an unlabeled form. Annotating each observation can be time-consuming and costly, making it difficult to obtain large amounts of labeled data. To overcome this issue, many active learning strategies have been proposed in the last decades, aiming to select the most informative observations for labeling in order to improve the performance of machine learning models. These approaches can be broadly divided into two categories: static pool-based and stream-based active learning. Pool-based active learning involves selecting a subset of observations from a closed pool of unlabeled data, and it has been the focus of many surveys and literature reviews. However, the growing availability of data streams has led to an increase in the number of approaches that focus on online active learning, which involves continuously selecting and labeling observations as they arrive in a stream. This work aims to provide an overview of the most recently proposed approaches for selecting the most informative observations from data streams in real time. We review the various techniques that have been proposed and discuss their strengths and limitations, as well as the challenges and opportunities that exist in this area of research.",
+    "pdf_url": "https://arxiv.org/pdf/2302.08893v4",
+    "source": "arxiv",
+    "tags": [
+      "stat.ML",
+      "cs.LG",
+      "stat.ME"
+    ],
+    "doi": "10.1007/s10994-023-06454-2"
+  },
+  {
+    "title": "'Getting out of the closet': Scientific authorship of literary fiction and knowledge transfer",
+    "authors": [
+      "Joaquín M. Azagra-Caro",
+      "Anabel Fernández-Mesa",
+      "Nicolás Robinson-García"
+    ],
+    "year": 2018,
+    "url": "http://arxiv.org/abs/1802.05012v2",
+    "abstract": "Some scientists write literary fiction books in their spare time. If these books contain scientific knowledge, literary fiction becomes a mechanism of knowledge transfer. In this case, we could conceptualize literary fiction as non-formal knowledge transfer. We model knowledge transfer via literary fiction as a function of the type of scientist (academic or non-academic) and his/her scientific field. Academic scientists are those employed in academia and public research organizations whereas non-academic scientists are those with a scientific background employed in other sectors. We also distinguish between direct knowledge transfer (the book includes the scientist's research topics), indirect knowledge transfer (scientific authors talk about their research with cultural agents) and reverse knowledge transfer (cultural agents give scientists ideas for future research). Through mixed-methods research and a sample from Spain, we find that scientific authorship accounts for a considerable percentage of all literary fiction authorship. Academic scientists do not transfer knowledge directly so often as non-academic scientists, but the former engage into indirect and reverse transfer knowledge more often than the latter. Scientists from History stand out in direct knowledge transfer. We draw propositions about the role of the academic logic and scientific field on knowledge transfer via literary fiction. We advance some tentative conclusions regarding the consideration of scientific authorship of literary fiction as a valuable knowledge transfer mechanism.",
+    "pdf_url": "https://arxiv.org/pdf/1802.05012v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.DL",
+      "physics.soc-ph"
+    ],
+    "doi": "10.1007/s10961-018-9672-6"
+  },
+  {
+    "title": "Transfer Learning for Related Reinforcement Learning Tasks via Image-to-Image Translation",
+    "authors": [
+      "Shani Gamrian",
+      "Yoav Goldberg"
+    ],
+    "year": 2018,
+    "url": "http://arxiv.org/abs/1806.07377v6",
+    "abstract": "Despite the remarkable success of Deep RL in learning control policies from raw pixels, the resulting models do not generalize. We demonstrate that a trained agent fails completely when facing small visual changes, and that fine-tuning---the common transfer learning paradigm---fails to adapt to these changes, to the extent that it is faster to re-train the model from scratch. We show that by separating the visual transfer task from the control policy we achieve substantially better sample efficiency and transfer behavior, allowing an agent trained on the source task to transfer well to the target tasks. The visual mapping from the target to the source domain is performed using unaligned GANs, resulting in a control policy that can be further improved using imitation learning from imperfect demonstrations. We demonstrate the approach on synthetic visual variants of the Breakout game, as well as on transfer between subsequent levels of Road Fighter, a Nintendo car-driving game. A visualization of our approach can be seen in https://youtu.be/4mnkzYyXMn4 and https://youtu.be/KCGTrQi6Ogo .",
+    "pdf_url": "https://arxiv.org/pdf/1806.07377v6",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "On the Similarities of Embeddings in Contrastive Learning",
+    "authors": [
+      "Chungpa Lee",
+      "Sehee Lim",
+      "Kibok Lee",
+      "Jy-yong Sohn"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2506.09781v2",
+    "abstract": "Contrastive learning operates on a simple yet effective principle: Embeddings of positive pairs are pulled together, while those of negative pairs are pushed apart. In this paper, we propose a unified framework for understanding contrastive learning through the lens of cosine similarity, and present two key theoretical insights derived from this framework. First, in full-batch settings, we show that perfect alignment of positive pairs is unattainable when negative-pair similarities fall below a threshold, and this misalignment can be mitigated by incorporating within-view negative pairs into the objective. Second, in mini-batch settings, smaller batch sizes induce stronger separation among negative pairs in the embedding space, i.e., higher variance in their similarities, which in turn degrades the quality of learned representations compared to full-batch settings. To address this, we propose an auxiliary loss that reduces the variance of negative-pair similarities in mini-batch settings. Empirical results show that incorporating the proposed loss improves performance in small-batch settings.",
+    "pdf_url": "https://arxiv.org/pdf/2506.09781v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "stat.ML"
+    ]
+  },
+  {
+    "title": "Alpha MAML: Adaptive Model-Agnostic Meta-Learning",
+    "authors": [
+      "Harkirat Singh Behl",
+      "Atılım Güneş Baydin",
+      "Philip H. S. Torr"
+    ],
+    "year": 2019,
+    "url": "http://arxiv.org/abs/1905.07435v1",
+    "abstract": "Model-agnostic meta-learning (MAML) is a meta-learning technique to train a model on a multitude of learning tasks in a way that primes the model for few-shot learning of new tasks. The MAML algorithm performs well on few-shot learning problems in classification, regression, and fine-tuning of policy gradients in reinforcement learning, but comes with the need for costly hyperparameter tuning for training stability. We address this shortcoming by introducing an extension to MAML, called Alpha MAML, to incorporate an online hyperparameter adaptation scheme that eliminates the need to tune meta-learning and learning rates. Our results with the Omniglot database demonstrate a substantial reduction in the need to tune MAML training hyperparameters and improvement to training stability with less sensitivity to hyperparameter choice.",
+    "pdf_url": "https://arxiv.org/pdf/1905.07435v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "cs.AI",
+      "stat.ML"
+    ]
+  }
+]

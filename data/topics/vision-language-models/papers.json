@@ -1,0 +1,403 @@
+[
+  {
+    "title": "Object Detection with Multimodal Large Vision-Language Models: An In-depth Review",
+    "authors": [
+      "Ranjan Sapkota",
+      "Manoj Karkee"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2508.19294v2",
+    "abstract": "The fusion of language and vision in large vision-language models (LVLMs) has revolutionized deep learning-based object detection by enhancing adaptability, contextual reasoning, and generalization beyond traditional architectures. This in-depth review presents a structured exploration of the state-of-the-art in LVLMs, systematically organized through a three-step research review process. First, we discuss the functioning of vision language models (VLMs) for object detection, describing how these models harness natural language processing (NLP) and computer vision (CV) techniques to revolutionize object detection and localization. We then explain the architectural innovations, training paradigms, and output flexibility of recent LVLMs for object detection, highlighting how they achieve advanced contextual understanding for object detection. The review thoroughly examines the approaches used in integration of visual and textual information, demonstrating the progress made in object detection using VLMs that facilitate more sophisticated object detection and localization strategies. This review presents comprehensive visualizations demonstrating LVLMs' effectiveness in diverse scenarios including localization and segmentation, and then compares their real-time performance, adaptability, and complexity to traditional deep learning systems. Based on the review, its is expected that LVLMs will soon meet or surpass the performance of conventional methods in object detection. The review also identifies a few major limitations of the current LVLM modes, proposes solutions to address those challenges, and presents a clear roadmap for the future advancement in this field. We conclude, based on this study, that the recent advancement in LVLMs have made and will continue to make a transformative impact on object detection and robotic applications in the future.",
+    "pdf_url": "https://arxiv.org/pdf/2508.19294v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "doi": "10.1016/j.inffus.2025.103575"
+  },
+  {
+    "title": "VLP: A Survey on Vision-Language Pre-training",
+    "authors": [
+      "Feilong Chen",
+      "Duzhen Zhang",
+      "Minglun Han",
+      "Xiuyi Chen",
+      "Jing Shi",
+      "Shuang Xu",
+      "Bo Xu"
+    ],
+    "year": 2022,
+    "url": "http://arxiv.org/abs/2202.09061v4",
+    "abstract": "In the past few years, the emergence of pre-training models has brought uni-modal fields such as computer vision (CV) and natural language processing (NLP) to a new era. Substantial works have shown they are beneficial for downstream uni-modal tasks and avoid training a new model from scratch. So can such pre-trained models be applied to multi-modal tasks? Researchers have explored this problem and made significant progress. This paper surveys recent advances and new frontiers in vision-language pre-training (VLP), including image-text and video-text pre-training. To give readers a better overall grasp of VLP, we first review its recent advances from five aspects: feature extraction, model architecture, pre-training objectives, pre-training datasets, and downstream tasks. Then, we summarize the specific VLP models in detail. Finally, we discuss the new frontiers in VLP. To the best of our knowledge, this is the first survey focused on VLP. We hope that this survey can shed light on future research in the VLP field.",
+    "pdf_url": "https://arxiv.org/pdf/2202.09061v4",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.CL"
+    ],
+    "doi": "10.1007/s11633-022-1369-5"
+  },
+  {
+    "title": "Vision-Language-Vision Auto-Encoder: Scalable Knowledge Distillation from Diffusion Models",
+    "authors": [
+      "Tiezheng Zhang",
+      "Yitong Li",
+      "Yu-cheng Chou",
+      "Jieneng Chen",
+      "Alan Yuille",
+      "Chen Wei",
+      "Junfei Xiao"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2507.07104v2",
+    "abstract": "Building state-of-the-art Vision-Language Models (VLMs) with strong captioning capabilities typically necessitates training on billions of high-quality image-text pairs, requiring millions of GPU hours. This paper introduces the Vision-Language-Vision (VLV) auto-encoder framework, which strategically leverages key pretrained components: a vision encoder, the decoder of a Text-to-Image (T2I) diffusion model, and subsequently, a Large Language Model (LLM). Specifically, we establish an information bottleneck by regularizing the language representation space, achieved through freezing the pretrained T2I diffusion decoder. Our VLV pipeline effectively distills knowledge from the text-conditioned diffusion model using continuous embeddings, demonstrating comprehensive semantic understanding via high-quality reconstructions. Furthermore, by fine-tuning a pretrained LLM to decode the intermediate language representations into detailed descriptions, we construct a state-of-the-art (SoTA) captioner comparable to leading models like GPT-4o and Gemini 2.0 Flash. Our method demonstrates exceptional cost-efficiency and significantly reduces data requirements; by primarily utilizing single-modal images for training and maximizing the utility of existing pretrained models (image encoder, T2I diffusion model, and LLM), it circumvents the need for massive paired image-text datasets, keeping the total training expenditure under $1,000 USD.",
+    "pdf_url": "https://arxiv.org/pdf/2507.07104v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "Exploring the Frontier of Vision-Language Models: A Survey of Current Methodologies and Future Directions",
+    "authors": [
+      "Akash Ghosh",
+      "Arkadeep Acharya",
+      "Sriparna Saha",
+      "Vinija Jain",
+      "Aman Chadha"
+    ],
+    "year": 2024,
+    "url": "http://arxiv.org/abs/2404.07214v4",
+    "abstract": "The advent of Large Language Models (LLMs) has significantly reshaped the trajectory of the AI revolution. Nevertheless, these LLMs exhibit a notable limitation, as they are primarily adept at processing textual information. To address this constraint, researchers have endeavored to integrate visual capabilities with LLMs, resulting in the emergence of Vision-Language Models (VLMs). These advanced models are instrumental in tackling more intricate tasks such as image captioning and visual question answering. In our comprehensive survey paper, we delve into the key advancements within the realm of VLMs. Our classification organizes VLMs into three distinct categories: models dedicated to vision-language understanding, models that process multimodal inputs to generate unimodal (textual) outputs and models that both accept and produce multimodal inputs and outputs.This classification is based on their respective capabilities and functionalities in processing and generating various modalities of data.We meticulously dissect each model, offering an extensive analysis of its foundational architecture, training data sources, as well as its strengths and limitations wherever possible, providing readers with a comprehensive understanding of its essential components. We also analyzed the performance of VLMs in various benchmark datasets. By doing so, we aim to offer a nuanced understanding of the diverse landscape of VLMs. Additionally, we underscore potential avenues for future research in this dynamic domain, anticipating further breakthroughs and advancements.",
+    "pdf_url": "https://arxiv.org/pdf/2404.07214v4",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ]
+  },
+  {
+    "title": "Benchmarking Vision Language Models on German Factual Data",
+    "authors": [
+      "René Peinl",
+      "Vincent Tischler"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2504.11108v2",
+    "abstract": "Similar to LLMs, the development of vision language models is mainly driven by English datasets and models trained in English and Chinese language, whereas support for other languages, even those considered high-resource languages such as German, remains significantly weaker. In this work we present an analysis of open-weight VLMs on factual knowledge in the German and English language. We disentangle the image-related aspects from the textual ones by analyzing accu-racy with jury-as-a-judge in both prompt languages and images from German and international contexts. We found that for celebrities and sights, VLMs struggle because they are lacking visual cognition of German image contents. For animals and plants, the tested models can often correctly identify the image contents ac-cording to the scientific name or English common name but fail in German lan-guage. Cars and supermarket products were identified equally well in English and German images across both prompt languages.",
+    "pdf_url": "https://arxiv.org/pdf/2504.11108v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.CL"
+    ]
+  },
+  {
+    "title": "Vision-Language Pre-training: Basics, Recent Advances, and Future Trends",
+    "authors": [
+      "Zhe Gan",
+      "Linjie Li",
+      "Chunyuan Li",
+      "Lijuan Wang",
+      "Zicheng Liu",
+      "Jianfeng Gao"
+    ],
+    "year": 2022,
+    "url": "http://arxiv.org/abs/2210.09263v1",
+    "abstract": "This paper surveys vision-language pre-training (VLP) methods for multimodal intelligence that have been developed in the last few years. We group these approaches into three categories: ($i$) VLP for image-text tasks, such as image captioning, image-text retrieval, visual question answering, and visual grounding; ($ii$) VLP for core computer vision tasks, such as (open-set) image classification, object detection, and segmentation; and ($iii$) VLP for video-text tasks, such as video captioning, video-text retrieval, and video question answering. For each category, we present a comprehensive review of state-of-the-art methods, and discuss the progress that has been made and challenges still being faced, using specific systems and models as case studies. In addition, for each category, we discuss advanced topics being actively explored in the research community, such as big foundation models, unified modeling, in-context few-shot learning, knowledge, robustness, and computer vision in the wild, to name a few.",
+    "pdf_url": "https://arxiv.org/pdf/2210.09263v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.CL"
+    ]
+  },
+  {
+    "title": "Behavioral Bias of Vision-Language Models: A Behavioral Finance View",
+    "authors": [
+      "Yuhang Xiao",
+      "Yudi Lin",
+      "Ming-Chang Chiu"
+    ],
+    "year": 2024,
+    "url": "http://arxiv.org/abs/2409.15256v1",
+    "abstract": "Large Vision-Language Models (LVLMs) evolve rapidly as Large Language Models (LLMs) was equipped with vision modules to create more human-like models. However, we should carefully evaluate their applications in different domains, as they may possess undesired biases. Our work studies the potential behavioral biases of LVLMs from a behavioral finance perspective, an interdisciplinary subject that jointly considers finance and psychology. We propose an end-to-end framework, from data collection to new evaluation metrics, to assess LVLMs' reasoning capabilities and the dynamic behaviors manifested in two established human financial behavioral biases: recency bias and authority bias. Our evaluations find that recent open-source LVLMs such as LLaVA-NeXT, MobileVLM-V2, Mini-Gemini, MiniCPM-Llama3-V 2.5 and Phi-3-vision-128k suffer significantly from these two biases, while the proprietary model GPT-4o is negligibly impacted. Our observations highlight directions in which open-source models can improve. The code is available at https://github.com/mydcxiao/vlm_behavioral_fin.",
+    "pdf_url": "https://arxiv.org/pdf/2409.15256v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "Evaluation and Enhancement of Semantic Grounding in Large Vision-Language Models",
+    "authors": [
+      "Jiaying Lu",
+      "Jinmeng Rao",
+      "Kezhen Chen",
+      "Xiaoyuan Guo",
+      "Yawen Zhang",
+      "Baochen Sun",
+      "Carl Yang",
+      "Jie Yang"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2309.04041v2",
+    "abstract": "Large Vision-Language Models (LVLMs) offer remarkable benefits for a variety of vision-language tasks. However, a challenge hindering their application in real-world scenarios, particularly regarding safety, robustness, and reliability, is their constrained semantic grounding ability, which pertains to connecting language to the physical-world entities or concepts referenced in images. Therefore, a crucial need arises for a comprehensive study to assess the semantic grounding ability of widely used LVLMs. Despite the significance, sufficient investigation in this direction is currently lacking. Our work bridges this gap by designing a pipeline for generating large-scale evaluation datasets covering fine-grained semantic information, such as color, number, material, etc., along with a thorough assessment of seven popular LVLMs' semantic grounding ability. Results highlight prevalent misgrounding across various aspects and degrees. To address this issue, we propose a data-centric enhancement method that aims to improve LVLMs' semantic grounding ability through multimodal instruction tuning on fine-grained conversations. Experiments on enhanced LVLMs demonstrate notable improvements in addressing misgrounding issues.",
+    "pdf_url": "https://arxiv.org/pdf/2309.04041v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.CL"
+    ]
+  },
+  {
+    "title": "LVLM-eHub: A Comprehensive Evaluation Benchmark for Large Vision-Language Models",
+    "authors": [
+      "Peng Xu",
+      "Wenqi Shao",
+      "Kaipeng Zhang",
+      "Peng Gao",
+      "Shuo Liu",
+      "Meng Lei",
+      "Fanqing Meng",
+      "Siyuan Huang",
+      "Yu Qiao",
+      "Ping Luo"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2306.09265v1",
+    "abstract": "Large Vision-Language Models (LVLMs) have recently played a dominant role in multimodal vision-language learning. Despite the great success, it lacks a holistic evaluation of their efficacy. This paper presents a comprehensive evaluation of publicly available large multimodal models by building a LVLM evaluation Hub (LVLM-eHub). Our LVLM-eHub consists of $8$ representative LVLMs such as InstructBLIP and MiniGPT-4, which are thoroughly evaluated by a quantitative capability evaluation and an online arena platform. The former evaluates $6$ categories of multimodal capabilities of LVLMs such as visual question answering and embodied artificial intelligence on $47$ standard text-related visual benchmarks, while the latter provides the user-level evaluation of LVLMs in an open-world question-answering scenario. The study reveals several innovative findings. First, instruction-tuned LVLM with massive in-domain data such as InstructBLIP heavily overfits many existing tasks, generalizing poorly in the open-world scenario. Second, instruction-tuned LVLM with moderate instruction-following data may result in object hallucination issues (i.e., generate objects that are inconsistent with target images in the descriptions). It either makes the current evaluation metric such as CIDEr for image captioning ineffective or generates wrong answers. Third, employing a multi-turn reasoning evaluation framework can mitigate the issue of object hallucination, shedding light on developing an effective pipeline for LVLM evaluation. The findings provide a foundational framework for the conception and assessment of innovative strategies aimed at enhancing zero-shot multimodal techniques. Our LVLM-eHub will be available at https://github.com/OpenGVLab/Multi-Modality-Arena",
+    "pdf_url": "https://arxiv.org/pdf/2306.09265v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "Towards Vision-Language Mechanistic Interpretability: A Causal Tracing Tool for BLIP",
+    "authors": [
+      "Vedant Palit",
+      "Rohan Pandey",
+      "Aryaman Arora",
+      "Paul Pu Liang"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2308.14179v1",
+    "abstract": "Mechanistic interpretability seeks to understand the neural mechanisms that enable specific behaviors in Large Language Models (LLMs) by leveraging causality-based methods. While these approaches have identified neural circuits that copy spans of text, capture factual knowledge, and more, they remain unusable for multimodal models since adapting these tools to the vision-language domain requires considerable architectural changes. In this work, we adapt a unimodal causal tracing tool to BLIP to enable the study of the neural mechanisms underlying image-conditioned text generation. We demonstrate our approach on a visual question answering dataset, highlighting the causal relevance of later layer representations for all tokens. Furthermore, we release our BLIP causal tracing tool as open source to enable further experimentation in vision-language mechanistic interpretability by the community. Our code is available at https://github.com/vedantpalit/Towards-Vision-Language-Mechanistic-Interpretability.",
+    "pdf_url": "https://arxiv.org/pdf/2308.14179v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "Towards Vision-Language-Garment Models for Web Knowledge Garment Understanding and Generation",
+    "authors": [
+      "Jan Ackermann",
+      "Kiyohiro Nakayama",
+      "Guandao Yang",
+      "Tong Wu",
+      "Gordon Wetzstein"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2506.05210v2",
+    "abstract": "Multimodal foundation models have demonstrated strong generalization, yet their ability to transfer knowledge to specialized domains such as garment generation remains underexplored. We introduce VLG, a vision-language-garment model that synthesizes garments from textual descriptions and visual imagery. Our experiments assess VLG's zero-shot generalization, investigating its ability to transfer web-scale reasoning to unseen garment styles and prompts. Preliminary results indicate promising transfer capabilities, highlighting the potential for multimodal foundation models to adapt effectively to specialized domains like fashion design.",
+    "pdf_url": "https://arxiv.org/pdf/2506.05210v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "Explaining Vision and Language through Graphs of Events in Space and Time",
+    "authors": [
+      "Mihai Masala",
+      "Nicolae Cudlenco",
+      "Traian Rebedea",
+      "Marius Leordeanu"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2309.08612v1",
+    "abstract": "Artificial Intelligence makes great advances today and starts to bridge the gap between vision and language. However, we are still far from understanding, explaining and controlling explicitly the visual content from a linguistic perspective, because we still lack a common explainable representation between the two domains. In this work we come to address this limitation and propose the Graph of Events in Space and Time (GEST), by which we can represent, create and explain, both visual and linguistic stories. We provide a theoretical justification of our model and an experimental validation, which proves that GEST can bring a solid complementary value along powerful deep learning models. In particular, GEST can help improve at the content-level the generation of videos from text, by being easily incorporated into our novel video generation engine. Additionally, by using efficient graph matching techniques, the GEST graphs can also improve the comparisons between texts at the semantic level.",
+    "pdf_url": "https://arxiv.org/pdf/2309.08612v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "On the Reliability of Vision-Language Models Under Adversarial Frequency-Domain Perturbations",
+    "authors": [
+      "Jordan Vice",
+      "Naveed Akhtar",
+      "Yansong Gao",
+      "Richard Hartley",
+      "Ajmal Mian"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2507.22398v3",
+    "abstract": "Vision-Language Models (VLMs) are increasingly used as perceptual modules for visual content reasoning, including through captioning and DeepFake detection. In this work, we expose a critical vulnerability of VLMs when exposed to subtle, structured perturbations in the frequency domain. Specifically, we highlight how these feature transformations undermine authenticity/DeepFake detection and automated image captioning tasks. We design targeted image transformations, operating in the frequency domain to systematically adjust VLM outputs when exposed to frequency-perturbed real and synthetic images. We demonstrate that the perturbation injection method generalizes across five state-of-the-art VLMs which includes different-parameter Qwen2/2.5 and BLIP models. Experimenting across ten real and generated image datasets reveals that VLM judgments are sensitive to frequency-based cues and may not wholly align with semantic content. Crucially, we show that visually-imperceptible spatial frequency transformations expose the fragility of VLMs deployed for automated image captioning and authenticity detection tasks. Our findings under realistic, black-box constraints challenge the reliability of VLMs, underscoring the need for robust multimodal perception systems.",
+    "pdf_url": "https://arxiv.org/pdf/2507.22398v3",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "How do language models learn facts? Dynamics, curricula and hallucinations",
+    "authors": [
+      "Nicolas Zucchet",
+      "Jörg Bornschein",
+      "Stephanie Chan",
+      "Andrew Lampinen",
+      "Razvan Pascanu",
+      "Soham De"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2503.21676v2",
+    "abstract": "Large language models accumulate vast knowledge during pre-training, yet the dynamics governing this acquisition remain poorly understood. This work investigates the learning dynamics of language models on a synthetic factual recall task, uncovering three key findings: First, language models learn in three phases, exhibiting a performance plateau before acquiring precise factual knowledge. Mechanistically, this plateau coincides with the formation of attention-based circuits that support recall. Second, the training data distribution significantly impacts learning dynamics, as imbalanced distributions lead to shorter plateaus. Finally, hallucinations emerge simultaneously with knowledge, and integrating new knowledge into the model through fine-tuning is challenging, as it quickly corrupts its existing parametric memories. Our results emphasize the importance of data distribution in knowledge acquisition and suggest novel data scheduling strategies to accelerate neural network training.",
+    "pdf_url": "https://arxiv.org/pdf/2503.21676v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.CL",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Vision-Language Model for Object Detection and Segmentation: A Review and Evaluation",
+    "authors": [
+      "Yongchao Feng",
+      "Yajie Liu",
+      "Shuai Yang",
+      "Wenrui Cai",
+      "Jinqing Zhang",
+      "Qiqi Zhan",
+      "Ziyue Huang",
+      "Hongxi Yan",
+      "Qiao Wan",
+      "Chenguang Liu",
+      "Junzhe Wang",
+      "Jiahui Lv",
+      "Ziqi Liu",
+      "Tengyuan Shi",
+      "Qingjie Liu",
+      "Yunhong Wang"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2504.09480v1",
+    "abstract": "Vision-Language Model (VLM) have gained widespread adoption in Open-Vocabulary (OV) object detection and segmentation tasks. Despite they have shown promise on OV-related tasks, their effectiveness in conventional vision tasks has thus far been unevaluated. In this work, we present the systematic review of VLM-based detection and segmentation, view VLM as the foundational model and conduct comprehensive evaluations across multiple downstream tasks for the first time: 1) The evaluation spans eight detection scenarios (closed-set detection, domain adaptation, crowded objects, etc.) and eight segmentation scenarios (few-shot, open-world, small object, etc.), revealing distinct performance advantages and limitations of various VLM architectures across tasks. 2) As for detection tasks, we evaluate VLMs under three finetuning granularities: \\textit{zero prediction}, \\textit{visual fine-tuning}, and \\textit{text prompt}, and further analyze how different finetuning strategies impact performance under varied task. 3) Based on empirical findings, we provide in-depth analysis of the correlations between task characteristics, model architectures, and training methodologies, offering insights for future VLM design. 4) We believe that this work shall be valuable to the pattern recognition experts working in the fields of computer vision, multimodal learning, and vision foundation models by introducing them to the problem, and familiarizing them with the current status of the progress while providing promising directions for future research. A project associated with this review and evaluation has been created at https://github.com/better-chao/perceptual_abilities_evaluation.",
+    "pdf_url": "https://arxiv.org/pdf/2504.09480v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "Evaluating Vision-Language Models as Evaluators in Path Planning",
+    "authors": [
+      "Mohamed Aghzal",
+      "Xiang Yue",
+      "Erion Plaku",
+      "Ziyu Yao"
+    ],
+    "year": 2024,
+    "url": "http://arxiv.org/abs/2411.18711v4",
+    "abstract": "Despite their promise to perform complex reasoning, large language models (LLMs) have been shown to have limited effectiveness in end-to-end planning. This has inspired an intriguing question: if these models cannot plan well, can they still contribute to the planning framework as a helpful plan evaluator? In this work, we generalize this question to consider LLMs augmented with visual understanding, i.e., Vision-Language Models (VLMs). We introduce PathEval, a novel benchmark evaluating VLMs as plan evaluators in complex path-planning scenarios. Succeeding in the benchmark requires a VLM to be able to abstract traits of optimal paths from the scenario description, demonstrate precise low-level perception on each path, and integrate this information to decide the better path. Our analysis of state-of-the-art VLMs reveals that these models face significant challenges on the benchmark. We observe that the VLMs can precisely abstract given scenarios to identify the desired traits and exhibit mixed performance in integrating the provided information. Yet, their vision component presents a critical bottleneck, with models struggling to perceive low-level details about a path. Our experimental results show that this issue cannot be trivially addressed via end-to-end fine-tuning; rather, task-specific discriminative adaptation of these vision encoders is needed for these VLMs to become effective path evaluators.",
+    "pdf_url": "https://arxiv.org/pdf/2411.18711v4",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.CL"
+    ]
+  },
+  {
+    "title": "Toward More Reliable Artificial Intelligence: Reducing Hallucinations in Vision-Language Models",
+    "authors": [
+      "Kassoum Sanogo",
+      "Renzo Ardiccioni"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2512.07564v1",
+    "abstract": "Vision-language models (VLMs) frequently generate hallucinated content plausible but incorrect claims about image content. We propose a training-free self-correction framework enabling VLMs to iteratively refine responses through uncertainty-guided visual re-attention. Our method combines multidimensional uncertainty quantification (token entropy, attention dispersion, semantic consistency, claim confidence) with attention-guided cropping of under-explored regions. Operating entirely with frozen, pretrained VLMs, our framework requires no gradient updates. We validate our approach on the POPE and MMHAL BENCH benchmarks using the Qwen2.5-VL-7B [23] architecture. Experimental results demonstrate that our method reduces hallucination rates by 9.8 percentage points compared to the baseline, while improving object existence accuracy by 4.7 points on adversarial splits. Furthermore, qualitative analysis confirms that uncertainty-guided re-attention successfully grounds corrections in visual evidence where standard decoding fails. We validate our approach on Qwen2.5-VL-7B [23], with plans to extend validation across diverse architectures in future versions. We release our code and methodology to facilitate future research in trustworthy multimodal systems.",
+    "pdf_url": "https://arxiv.org/pdf/2512.07564v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Coordinated Robustness Evaluation Framework for Vision-Language Models",
+    "authors": [
+      "Ashwin Ramesh Babu",
+      "Sajad Mousavi",
+      "Vineet Gundecha",
+      "Sahand Ghorbanpour",
+      "Avisek Naug",
+      "Antonio Guillen",
+      "Ricardo Luna Gutierrez",
+      "Soumyendu Sarkar"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2506.05429v1",
+    "abstract": "Vision-language models, which integrate computer vision and natural language processing capabilities, have demonstrated significant advancements in tasks such as image captioning and visual question and answering. However, similar to traditional models, they are susceptible to small perturbations, posing a challenge to their robustness, particularly in deployment scenarios. Evaluating the robustness of these models requires perturbations in both the vision and language modalities to learn their inter-modal dependencies. In this work, we train a generic surrogate model that can take both image and text as input and generate joint representation which is further used to generate adversarial perturbations for both the text and image modalities. This coordinated attack strategy is evaluated on the visual question and answering and visual reasoning datasets using various state-of-the-art vision-language models. Our results indicate that the proposed strategy outperforms other multi-modal attacks and single-modality attacks from the recent literature. Our results demonstrate their effectiveness in compromising the robustness of several state-of-the-art pre-trained multi-modal models such as instruct-BLIP, ViLT and others.",
+    "pdf_url": "https://arxiv.org/pdf/2506.05429v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Multi-Frame, Lightweight & Efficient Vision-Language Models for Question Answering in Autonomous Driving",
+    "authors": [
+      "Akshay Gopalkrishnan",
+      "Ross Greer",
+      "Mohan Trivedi"
+    ],
+    "year": 2024,
+    "url": "http://arxiv.org/abs/2403.19838v2",
+    "abstract": "Vision-Language Models (VLMs) and Multi-Modal Language models (MMLMs) have become prominent in autonomous driving research, as these models can provide interpretable textual reasoning and responses for end-to-end autonomous driving safety tasks using traffic scene images and other data modalities. However, current approaches to these systems use expensive large language model (LLM) backbones and image encoders, making such systems unsuitable for real-time autonomous driving systems where tight memory constraints exist and fast inference time is necessary. To address these previous issues, we develop EM-VLM4AD, an efficient, lightweight, multi-frame vision language model which performs Visual Question Answering for autonomous driving. In comparison to previous approaches, EM-VLM4AD requires at least 10 times less memory and floating point operations, while also achieving higher CIDEr and ROUGE-L scores than the existing baseline on the DriveLM dataset. EM-VLM4AD also exhibits the ability to extract relevant information from traffic views related to prompts and can answer questions for various autonomous driving subtasks. We release our code to train and evaluate our model at https://github.com/akshaygopalkr/EM-VLM4AD.",
+    "pdf_url": "https://arxiv.org/pdf/2403.19838v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "Distilling Large Vision-Language Model with Out-of-Distribution Generalizability",
+    "authors": [
+      "Xuanlin Li",
+      "Yunhao Fang",
+      "Minghua Liu",
+      "Zhan Ling",
+      "Zhuowen Tu",
+      "Hao Su"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2307.03135v3",
+    "abstract": "Large vision-language models have achieved outstanding performance, but their size and computational requirements make their deployment on resource-constrained devices and time-sensitive tasks impractical. Model distillation, the process of creating smaller, faster models that maintain the performance of larger models, is a promising direction towards the solution. This paper investigates the distillation of visual representations in large teacher vision-language models into lightweight student models using a small- or mid-scale dataset. Notably, this study focuses on open-vocabulary out-of-distribution (OOD) generalization, a challenging problem that has been overlooked in previous model distillation literature. We propose two principles from vision and language modality perspectives to enhance student's OOD generalization: (1) by better imitating teacher's visual representation space, and carefully promoting better coherence in vision-language alignment with the teacher; (2) by enriching the teacher's language representations with informative and finegrained semantic attributes to effectively distinguish between different labels. We propose several metrics and conduct extensive experiments to investigate their techniques. The results demonstrate significant improvements in zero-shot and few-shot student performance on open-vocabulary out-of-distribution classification, highlighting the effectiveness of our proposed approaches. Poster: https://xuanlinli17.github.io/pdfs/iccv23_large_vlm_distillation_poster.pdf Code: https://github.com/xuanlinli17/large_vlm_distillation_ood",
+    "pdf_url": "https://arxiv.org/pdf/2307.03135v3",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ]
+  }
+]

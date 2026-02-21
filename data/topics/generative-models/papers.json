@@ -1,0 +1,384 @@
+[
+  {
+    "title": "Pre to Post-Treatment Glioblastoma MRI Prediction using a Latent Diffusion Model",
+    "authors": [
+      "Alexandre G. Leclercq",
+      "Sébastien Bougleux",
+      "Noémie N. Moreau",
+      "Alexis Desmonts",
+      "Romain Hérault",
+      "Aurélien Corroyer-Dulmont"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2510.17851v1",
+    "abstract": "Glioblastoma (GBM) is an aggressive primary brain tumor with a median survival of approximately 15 months. In clinical practice, the Stupp protocol serves as the standard first-line treatment. However, patients exhibit highly heterogeneous therapeutic responses which required at least two months before first visual impact can be observed, typically with MRI. Early prediction treatment response is crucial for advancing personalized medicine. Disease Progression Modeling (DPM) aims to capture the trajectory of disease evolution, while Treatment Response Prediction (TRP) focuses on assessing the impact of therapeutic interventions. Whereas most TRP approaches primarly rely on timeseries data, we consider the problem of early visual TRP as a slice-to-slice translation model generating post-treatment MRI from a pre-treatment MRI, thus reflecting the tumor evolution. To address this problem we propose a Latent Diffusion Model with a concatenation-based conditioning from the pre-treatment MRI and the tumor localization, and a classifier-free guidance to enhance generation quality using survival information, in particular post-treatment tumor evolution. Our model were trained and tested on a local dataset consisting of 140 GBM patients collected at Centre François Baclesse. For each patient we collected pre and post T1-Gd MRI, tumor localization manually delineated in the pre-treatment MRI by medical experts, and survival information.",
+    "pdf_url": "https://arxiv.org/pdf/2510.17851v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "doi": "10.1007/978-3-032-05472-2_18"
+  },
+  {
+    "title": "DiM: Distilling Dataset into Generative Model",
+    "authors": [
+      "Kai Wang",
+      "Jianyang Gu",
+      "Daquan Zhou",
+      "Zheng Zhu",
+      "Wei Jiang",
+      "Yang You"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2303.04707v2",
+    "abstract": "Dataset distillation reduces the network training cost by synthesizing small and informative datasets from large-scale ones. Despite the success of the recent dataset distillation algorithms, three drawbacks still limit their wider application: i). the synthetic images perform poorly on large architectures; ii). they need to be re-optimized when the distillation ratio changes; iii). the limited diversity restricts the performance when the distillation ratio is large. In this paper, we propose a novel distillation scheme to \\textbf{D}istill information of large train sets \\textbf{i}nto generative \\textbf{M}odels, named DiM. Specifically, DiM learns to use a generative model to store the information of the target dataset. During the distillation phase, we minimize the differences in logits predicted by a models pool between real and generated images. At the deployment stage, the generative model synthesizes various training samples from random noises on the fly. Due to the simple yet effective designs, the trained DiM can be directly applied to different distillation ratios and large architectures without extra cost. We validate the proposed DiM across 4 datasets and achieve state-of-the-art results on all of them. To the best of our knowledge, we are the first to achieve higher accuracy on complex architectures than simple ones, such as 75.1\\% with ResNet-18 and 72.6\\% with ConvNet-3 on ten images per class of CIFAR-10. Besides, DiM outperforms previous methods with 10\\% $\\sim$ 22\\% when images per class are 1 and 10 on the SVHN dataset.",
+    "pdf_url": "https://arxiv.org/pdf/2303.04707v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "Operationalizing Specifications, In Addition to Test Sets for Evaluating Constrained Generative Models",
+    "authors": [
+      "Vikas Raunak",
+      "Matt Post",
+      "Arul Menezes"
+    ],
+    "year": 2022,
+    "url": "http://arxiv.org/abs/2212.00006v1",
+    "abstract": "In this work, we present some recommendations on the evaluation of state-of-the-art generative models for constrained generation tasks. The progress on generative models has been rapid in recent years. These large-scale models have had three impacts: firstly, the fluency of generation in both language and vision modalities has rendered common average-case evaluation metrics much less useful in diagnosing system errors. Secondly, the same substrate models now form the basis of a number of applications, driven both by the utility of their representations as well as phenomena such as in-context learning, which raise the abstraction level of interacting with such models. Thirdly, the user expectations around these models and their feted public releases have made the technical challenge of out of domain generalization much less excusable in practice. Subsequently, our evaluation methodologies haven't adapted to these changes. More concretely, while the associated utility and methods of interacting with generative models have expanded, a similar expansion has not been observed in their evaluation practices. In this paper, we argue that the scale of generative models could be exploited to raise the abstraction level at which evaluation itself is conducted and provide recommendations for the same. Our recommendations are based on leveraging specifications as a powerful instrument to evaluate generation quality and are readily applicable to a variety of tasks.",
+    "pdf_url": "https://arxiv.org/pdf/2212.00006v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.HC",
+      "cs.CL",
+      "cs.CV",
+      "cs.CY"
+    ]
+  },
+  {
+    "title": "Quaternion Generative Adversarial Networks",
+    "authors": [
+      "Eleonora Grassucci",
+      "Edoardo Cicero",
+      "Danilo Comminiello"
+    ],
+    "year": 2021,
+    "url": "http://arxiv.org/abs/2104.09630v2",
+    "abstract": "Latest Generative Adversarial Networks (GANs) are gathering outstanding results through a large-scale training, thus employing models composed of millions of parameters requiring extensive computational capabilities. Building such huge models undermines their replicability and increases the training instability. Moreover, multi-channel data, such as images or audio, are usually processed by realvalued convolutional networks that flatten and concatenate the input, often losing intra-channel spatial relations. To address these issues related to complexity and information loss, we propose a family of quaternion-valued generative adversarial networks (QGANs). QGANs exploit the properties of quaternion algebra, e.g., the Hamilton product, that allows to process channels as a single entity and capture internal latent relations, while reducing by a factor of 4 the overall number of parameters. We show how to design QGANs and to extend the proposed approach even to advanced models.We compare the proposed QGANs with real-valued counterparts on several image generation benchmarks. Results show that QGANs are able to obtain better FID scores than real-valued GANs and to generate visually pleasing images. Furthermore, QGANs save up to 75% of the training parameters. We believe these results may pave the way to novel, more accessible, GANs capable of improving performance and saving computational resources.",
+    "pdf_url": "https://arxiv.org/pdf/2104.09630v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV",
+      "eess.IV"
+    ],
+    "doi": "10.1007/978-3-030-91390-8_4"
+  },
+  {
+    "title": "Generative Models in Decision Making: A Survey",
+    "authors": [
+      "Yinchuan Li",
+      "Xinyu Shao",
+      "Jianping Zhang",
+      "Haozhi Wang",
+      "Leo Maxime Brunswic",
+      "Kaiwen Zhou",
+      "Jiqian Dong",
+      "Kaiyang Guo",
+      "Xiu Li",
+      "Zhitang Chen",
+      "Jun Wang",
+      "Jianye Hao"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2502.17100v3",
+    "abstract": "In recent years, the exceptional performance of generative models in generative tasks has sparked significant interest in their integration into decision-making processes. Due to their ability to handle complex data distributions and their strong model capacity, generative models can be effectively incorporated into decision-making systems by generating trajectories that guide agents toward high-reward state-action regions or intermediate sub-goals. This paper presents a comprehensive review of the application of generative models in decision-making tasks. We classify seven fundamental types of generative models: energy-based models, generative adversarial networks, variational autoencoders, normalizing flows, diffusion models, generative flow networks, and autoregressive models. Regarding their applications, we categorize their functions into three main roles: controllers, modelers and optimizers, and discuss how each role contributes to decision-making. Furthermore, we examine the deployment of these models across five critical real-world decision-making scenarios. Finally, we summarize the strengths and limitations of current approaches and propose three key directions for advancing next-generation generative directive models: high-performance algorithms, large-scale generalized decision-making models, and self-evolving and adaptive models.",
+    "pdf_url": "https://arxiv.org/pdf/2502.17100v3",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "Improving Model Compatibility of Generative Adversarial Networks by Boundary Calibration",
+    "authors": [
+      "Si-An Chen",
+      "Chun-Liang Li",
+      "Hsuan-Tien Lin"
+    ],
+    "year": 2021,
+    "url": "http://arxiv.org/abs/2111.02316v1",
+    "abstract": "Generative Adversarial Networks (GANs) is a powerful family of models that learn an underlying distribution to generate synthetic data. Many existing studies of GANs focus on improving the realness of the generated image data for visual applications, and few of them concern about improving the quality of the generated data for training other classifiers -- a task known as the model compatibility problem. As a consequence, existing GANs often prefer generating `easier' synthetic data that are far from the boundaries of the classifiers, and refrain from generating near-boundary data, which are known to play an important roles in training the classifiers. To improve GAN in terms of model compatibility, we propose Boundary-Calibration GANs (BCGANs), which leverage the boundary information from a set of pre-trained classifiers using the original data. In particular, we introduce an auxiliary Boundary-Calibration loss (BC-loss) into the generator of GAN to match the statistics between the posterior distributions of original data and generated data with respect to the boundaries of the pre-trained classifiers. The BC-loss is provably unbiased and can be easily coupled with different GAN variants to improve their model compatibility. Experimental results demonstrate that BCGANs not only generate realistic images like original GANs but also achieves superior model compatibility than the original GANs.",
+    "pdf_url": "https://arxiv.org/pdf/2111.02316v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "A 3D generative model of pathological multi-modal MR images and segmentations",
+    "authors": [
+      "Virginia Fernandez",
+      "Walter Hugo Lopez Pinaya",
+      "Pedro Borges",
+      "Mark S. Graham",
+      "Tom Vercauteren",
+      "M. Jorge Cardoso"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2311.04552v1",
+    "abstract": "Generative modelling and synthetic data can be a surrogate for real medical imaging datasets, whose scarcity and difficulty to share can be a nuisance when delivering accurate deep learning models for healthcare applications. In recent years, there has been an increased interest in using these models for data augmentation and synthetic data sharing, using architectures such as generative adversarial networks (GANs) or diffusion models (DMs). Nonetheless, the application of synthetic data to tasks such as 3D magnetic resonance imaging (MRI) segmentation remains limited due to the lack of labels associated with the generated images. Moreover, many of the proposed generative MRI models lack the ability to generate arbitrary modalities due to the absence of explicit contrast conditioning. These limitations prevent the user from adjusting the contrast and content of the images and obtaining more generalisable data for training task-specific models. In this work, we propose brainSPADE3D, a 3D generative model for brain MRI and associated segmentations, where the user can condition on specific pathological phenotypes and contrasts. The proposed joint imaging-segmentation generative model is shown to generate high-fidelity synthetic images and associated segmentations, with the ability to combine pathologies. We demonstrate how the model can alleviate issues with segmentation model performance when unexpected pathologies are present in the data.",
+    "pdf_url": "https://arxiv.org/pdf/2311.04552v1",
+    "source": "arxiv",
+    "tags": [
+      "eess.IV",
+      "cs.CV"
+    ],
+    "doi": "10.1007/978-3-031-53767-7_13"
+  },
+  {
+    "title": "DDxT: Deep Generative Transformer Models for Differential Diagnosis",
+    "authors": [
+      "Mohammad Mahmudul Alam",
+      "Edward Raff",
+      "Tim Oates",
+      "Cynthia Matuszek"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2312.01242v1",
+    "abstract": "Differential Diagnosis (DDx) is the process of identifying the most likely medical condition among the possible pathologies through the process of elimination based on evidence. An automated process that narrows a large set of pathologies down to the most likely pathologies will be of great importance. The primary prior works have relied on the Reinforcement Learning (RL) paradigm under the intuition that it aligns better with how physicians perform DDx. In this paper, we show that a generative approach trained with simpler supervised and self-supervised learning signals can achieve superior results on the current benchmark. The proposed Transformer-based generative network, named DDxT, autoregressively produces a set of possible pathologies, i.e., DDx, and predicts the actual pathology using a neural network. Experiments are performed using the DDXPlus dataset. In the case of DDx, the proposed network has achieved a mean accuracy of 99.82% and a mean F1 score of 0.9472. Additionally, mean accuracy reaches 99.98% with a mean F1 score of 0.9949 while predicting ground truth pathology. The proposed DDxT outperformed the previous RL-based approaches by a big margin. Overall, the automated Transformer-based DDx generative model has the potential to become a useful tool for a physician in times of urgency.",
+    "pdf_url": "https://arxiv.org/pdf/2312.01242v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "Happy People -- Image Synthesis as Black-Box Optimization Problem in the Discrete Latent Space of Deep Generative Models",
+    "authors": [
+      "Steffen Jung",
+      "Jan Christian Schwedhelm",
+      "Claudia Schillings",
+      "Margret Keuper"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2306.06684v1",
+    "abstract": "In recent years, optimization in the learned latent space of deep generative models has been successfully applied to black-box optimization problems such as drug design, image generation or neural architecture search. Existing models thereby leverage the ability of neural models to learn the data distribution from a limited amount of samples such that new samples from the distribution can be drawn. In this work, we propose a novel image generative approach that optimizes the generated sample with respect to a continuously quantifiable property. While we anticipate absolutely no practically meaningful application for the proposed framework, it is theoretically principled and allows to quickly propose samples at the mere boundary of the training data distribution. Specifically, we propose to use tree-based ensemble models as mathematical programs over the discrete latent space of vector quantized VAEs, which can be globally solved. Subsequent weighted retraining on these queries allows to induce a distribution shift. In lack of a practically relevant problem, we consider a visually appealing application: the generation of happily smiling faces (where the training distribution only contains less happy people) - and show the principled behavior of our approach in terms of improved FID and higher smile degree over baseline approaches.",
+    "pdf_url": "https://arxiv.org/pdf/2306.06684v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "Memory Efficient Diffusion Probabilistic Models via Patch-based Generation",
+    "authors": [
+      "Shinei Arakawa",
+      "Hideki Tsunashima",
+      "Daichi Horita",
+      "Keitaro Tanaka",
+      "Shigeo Morishima"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2304.07087v1",
+    "abstract": "Diffusion probabilistic models have been successful in generating high-quality and diverse images. However, traditional models, whose input and output are high-resolution images, suffer from excessive memory requirements, making them less practical for edge devices. Previous approaches for generative adversarial networks proposed a patch-based method that uses positional encoding and global content information. Nevertheless, designing a patch-based approach for diffusion probabilistic models is non-trivial. In this paper, we resent a diffusion probabilistic model that generates images on a patch-by-patch basis. We propose two conditioning methods for a patch-based generation. First, we propose position-wise conditioning using one-hot representation to ensure patches are in proper positions. Second, we propose Global Content Conditioning (GCC) to ensure patches have coherent content when concatenated together. We evaluate our model qualitatively and quantitatively on CelebA and LSUN bedroom datasets and demonstrate a moderate trade-off between maximum memory consumption and generated image quality. Specifically, when an entire image is divided into 2 x 2 patches, our proposed approach can reduce the maximum memory consumption by half while maintaining comparable image quality.",
+    "pdf_url": "https://arxiv.org/pdf/2304.07087v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Case Study of GAI for Generating Novel Images for Real-World Embroidery",
+    "authors": [
+      "Kate Glazko",
+      "Anika Arugunta",
+      "Janelle Chan",
+      "Nancy Jimenez-Garcia",
+      "Tashfia Sharmin",
+      "Jennifer Mankoff"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2510.16223v1",
+    "abstract": "In this paper, we present a case study exploring the potential use of Generative Artificial Intelligence (GAI) to address the real-world need of making the design of embroiderable art patterns more accessible. Through an auto-ethnographic case study by a disabled-led team, we examine the application of GAI as an assistive technology in generating embroidery patterns, addressing the complexity involved in designing culturally-relevant patterns as well as those that meet specific needs regarding detail and color. We detail the iterative process of prompt engineering custom GPTs tailored for producing specific visual outputs, emphasizing the nuances of achieving desirable results that align with real-world embroidery requirements. Our findings underscore the mixed outcomes of employing GAI for producing embroiderable images, from facilitating creativity and inclusion to navigating the unpredictability of AI-generated designs. Future work aims to refine GAI tools we explored for generating embroiderable images to make them more performant and accessible, with the goal of fostering more inclusion in the domains of creativity and making.",
+    "pdf_url": "https://arxiv.org/pdf/2510.16223v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.HC",
+      "cs.CY"
+    ]
+  },
+  {
+    "title": "Auto-FEDUS: Autoregressive Generative Modeling of Doppler Ultrasound Signals from Fetal Electrocardiograms",
+    "authors": [
+      "Alireza Rafiei",
+      "Gari D. Clifford",
+      "Nasim Katebi"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2504.13233v1",
+    "abstract": "Fetal health monitoring through one-dimensional Doppler ultrasound (DUS) signals offers a cost-effective and accessible approach that is increasingly gaining interest. Despite its potential, the development of machine learning based techniques to assess the health condition of mothers and fetuses using DUS signals remains limited. This scarcity is primarily due to the lack of extensive DUS datasets with a reliable reference for interpretation and data imbalance across different gestational ages. In response, we introduce a novel autoregressive generative model designed to map fetal electrocardiogram (FECG) signals to corresponding DUS waveforms (Auto-FEDUS). By leveraging a neural temporal network based on dilated causal convolutions that operate directly on the waveform level, the model effectively captures both short and long-range dependencies within the signals, preserving the integrity of generated data. Cross-subject experiments demonstrate that Auto-FEDUS outperforms conventional generative architectures across both time and frequency domain evaluations, producing DUS signals that closely resemble the morphology of their real counterparts. The realism of these synthesized signals was further gauged using a quality assessment model, which classified all as good quality, and a heart rate estimation model, which produced comparable results for generated and real data, with a Bland-Altman limit of 4.5 beats per minute. This advancement offers a promising solution for mitigating limited data availability and enhancing the training of DUS-based fetal models, making them more effective and generalizable.",
+    "pdf_url": "https://arxiv.org/pdf/2504.13233v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "The Informed Sampler: A Discriminative Approach to Bayesian Inference in Generative Computer Vision Models",
+    "authors": [
+      "Varun Jampani",
+      "Sebastian Nowozin",
+      "Matthew Loper",
+      "Peter V. Gehler"
+    ],
+    "year": 2014,
+    "url": "http://arxiv.org/abs/1402.0859v3",
+    "abstract": "Computer vision is hard because of a large variability in lighting, shape, and texture; in addition the image signal is non-additive due to occlusion. Generative models promised to account for this variability by accurately modelling the image formation process as a function of latent variables with prior beliefs. Bayesian posterior inference could then, in principle, explain the observation. While intuitively appealing, generative models for computer vision have largely failed to deliver on that promise due to the difficulty of posterior inference. As a result the community has favoured efficient discriminative approaches. We still believe in the usefulness of generative models in computer vision, but argue that we need to leverage existing discriminative or even heuristic computer vision methods. We implement this idea in a principled way with an \"informed sampler\" and in careful experiments demonstrate it on challenging generative models which contain renderer programs as their components. We concentrate on the problem of inverting an existing graphics rendering engine, an approach that can be understood as \"Inverse Graphics\". The informed sampler, using simple discriminative proposals based on existing computer vision technology, achieves significant improvements of inference.",
+    "pdf_url": "https://arxiv.org/pdf/1402.0859v3",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.LG",
+      "stat.ML"
+    ],
+    "doi": "10.1016/j.cviu.2015.03.002"
+  },
+  {
+    "title": "Bayesian Image Reconstruction using Deep Generative Models",
+    "authors": [
+      "Razvan V Marinescu",
+      "Daniel Moyer",
+      "Polina Golland"
+    ],
+    "year": 2020,
+    "url": "http://arxiv.org/abs/2012.04567v5",
+    "abstract": "Machine learning models are commonly trained end-to-end and in a supervised setting, using paired (input, output) data. Examples include recent super-resolution methods that train on pairs of (low-resolution, high-resolution) images. However, these end-to-end approaches require re-training every time there is a distribution shift in the inputs (e.g., night images vs daylight) or relevant latent variables (e.g., camera blur or hand motion). In this work, we leverage state-of-the-art (SOTA) generative models (here StyleGAN2) for building powerful image priors, which enable application of Bayes' theorem for many downstream reconstruction tasks. Our method, Bayesian Reconstruction through Generative Models (BRGM), uses a single pre-trained generator model to solve different image restoration tasks, i.e., super-resolution and in-painting, by combining it with different forward corruption models. We keep the weights of the generator model fixed, and reconstruct the image by estimating the Bayesian maximum a-posteriori (MAP) estimate over the input latent vector that generated the reconstructed image. We further use variational inference to approximate the posterior distribution over the latent vectors, from which we sample multiple solutions. We demonstrate BRGM on three large and diverse datasets: (i) 60,000 images from the Flick Faces High Quality dataset (ii) 240,000 chest X-rays from MIMIC III and (iii) a combined collection of 5 brain MRI datasets with 7,329 scans. Across all three datasets and without any dataset-specific hyperparameter tuning, our simple approach yields performance competitive with current task-specific state-of-the-art methods on super-resolution and in-painting, while being more generalisable and without requiring any training. Our source code and pre-trained models are available online: https://razvanmarinescu.github.io/brgm/.",
+    "pdf_url": "https://arxiv.org/pdf/2012.04567v5",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.LG",
+      "cs.NE",
+      "eess.IV",
+      "stat.ML"
+    ]
+  },
+  {
+    "title": "MolGAN: An implicit generative model for small molecular graphs",
+    "authors": [
+      "Nicola De Cao",
+      "Thomas Kipf"
+    ],
+    "year": 2018,
+    "url": "http://arxiv.org/abs/1805.11973v2",
+    "abstract": "Deep generative models for graph-structured data offer a new angle on the problem of chemical synthesis: by optimizing differentiable models that directly generate molecular graphs, it is possible to side-step expensive search procedures in the discrete and vast space of chemical structures. We introduce MolGAN, an implicit, likelihood-free generative model for small molecular graphs that circumvents the need for expensive graph matching procedures or node ordering heuristics of previous likelihood-based methods. Our method adapts generative adversarial networks (GANs) to operate directly on graph-structured data. We combine our approach with a reinforcement learning objective to encourage the generation of molecules with specific desired chemical properties. In experiments on the QM9 chemical database, we demonstrate that our model is capable of generating close to 100% valid compounds. MolGAN compares favorably both to recent proposals that use string-based (SMILES) representations of molecules and to a likelihood-based method that directly generates graphs, albeit being susceptible to mode collapse. Code at https://github.com/nicola-decao/MolGAN",
+    "pdf_url": "https://arxiv.org/pdf/1805.11973v2",
+    "source": "arxiv",
+    "tags": [
+      "stat.ML",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Manipulating and Mitigating Generative Model Biases without Retraining",
+    "authors": [
+      "Jordan Vice",
+      "Naveed Akhtar",
+      "Richard Hartley",
+      "Ajmal Mian"
+    ],
+    "year": 2024,
+    "url": "http://arxiv.org/abs/2404.02530v2",
+    "abstract": "Text-to-image (T2I) generative models have gained increased popularity in the public domain. While boasting impressive user-guided generative abilities, their black-box nature exposes users to intentionally- and intrinsically-biased outputs. Bias manipulation (and mitigation) techniques typically rely on careful tuning of learning parameters and training data to adjust decision boundaries to influence model bias characteristics, which is often computationally demanding. We propose a dynamic and computationally efficient manipulation of T2I model biases by exploiting their rich language embedding spaces without model retraining. We show that leveraging foundational vector algebra allows for a convenient control over language model embeddings to shift T2I model outputs and control the distribution of generated classes. As a by-product, this control serves as a form of precise prompt engineering to generate images which are generally implausible using regular text prompts. We demonstrate a constructive application of our technique by balancing the frequency of social classes in generated images, effectively balancing class distributions across three social bias dimensions. We also highlight a negative implication of bias manipulation by framing our method as a backdoor attack with severity control using semantically-null input triggers, reporting up to 100% attack success rate. Key-words: Text-to-Image Models, Generative Models, Bias, Prompt Engineering, Backdoor Attacks",
+    "pdf_url": "https://arxiv.org/pdf/2404.02530v2",
+    "source": "arxiv",
+    "tags": [
+      "cs.CV",
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "Approximate Query Processing using Deep Generative Models",
+    "authors": [
+      "Saravanan Thirumuruganathan",
+      "Shohedul Hasan",
+      "Nick Koudas",
+      "Gautam Das"
+    ],
+    "year": 2019,
+    "url": "http://arxiv.org/abs/1903.10000v3",
+    "abstract": "Data is generated at an unprecedented rate surpassing our ability to analyze them. The database community has pioneered many novel techniques for Approximate Query Processing (AQP) that could give approximate results in a fraction of time needed for computing exact results. In this work, we explore the usage of deep learning (DL) for answering aggregate queries specifically for interactive applications such as data exploration and visualization. We use deep generative models, an unsupervised learning based approach, to learn the data distribution faithfully such that aggregate queries could be answered approximately by generating samples from the learned model. The model is often compact - few hundred KBs - so that arbitrary AQP queries could be answered on the client side without contacting the database server. Our other contributions include identifying model bias and minimizing it through a rejection sampling based approach and an algorithm to build model ensembles for AQP for improved accuracy. Our extensive experiments show that our proposed approach can provide answers with high accuracy and low latency.",
+    "pdf_url": "https://arxiv.org/pdf/1903.10000v3",
+    "source": "arxiv",
+    "tags": [
+      "cs.DB",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Cognitive Architecture Toward Common Ground Sharing Among Humans and Generative AIs: Trial on Model-Model Interactions in Tangram Naming Task",
+    "authors": [
+      "Junya Morita",
+      "Tatsuya Yui",
+      "Takeru Amaya",
+      "Ryuichiro Higashinaka",
+      "Yugo Takeuchi"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2311.05851v1",
+    "abstract": "For generative AIs to be trustworthy, establishing transparent common grounding with humans is essential. As a preparation toward human-model common grounding, this study examines the process of model-model common grounding. In this context, common ground is defined as a cognitive framework shared among agents in communication, enabling the connection of symbols exchanged between agents to the meanings inherent in each agent. This connection is facilitated by a shared cognitive framework among the agents involved. In this research, we focus on the tangram naming task (TNT) as a testbed to examine the common-ground-building process. Unlike previous models designed for this task, our approach employs generative AIs to visualize the internal processes of the model. In this task, the sender constructs a metaphorical image of an abstract figure within the model and generates a detailed description based on this image. The receiver interprets the generated description from the partner by constructing another image and reconstructing the original abstract figure. Preliminary results from the study show an improvement in task performance beyond the chance level, indicating the effect of the common cognitive framework implemented in the models. Additionally, we observed that incremental backpropagations leveraging successful communication cases for a component of the model led to a statistically significant increase in performance. These results provide valuable insights into the mechanisms of common grounding made by generative AIs, improving human communication with the evolving intelligent machines in our future society.",
+    "pdf_url": "https://arxiv.org/pdf/2311.05851v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.AI"
+    ],
+    "doi": "10.1609/aaaiss.v2i1.27699"
+  },
+  {
+    "title": "Evaluating Generative Models for Tabular Data: Novel Metrics and Benchmarking",
+    "authors": [
+      "Dayananda Herurkar",
+      "Ahmad Ali",
+      "Andreas Dengel"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2504.20900v1",
+    "abstract": "Generative models have revolutionized multiple domains, yet their application to tabular data remains underexplored. Evaluating generative models for tabular data presents unique challenges due to structural complexity, large-scale variability, and mixed data types, making it difficult to intuitively capture intricate patterns. Existing evaluation metrics offer only partial insights, lacking a comprehensive measure of generative performance. To address this limitation, we propose three novel evaluation metrics: FAED, FPCAD, and RFIS. Our extensive experimental analysis, conducted on three standard network intrusion detection datasets, compares these metrics with established evaluation methods such as Fidelity, Utility, TSTR, and TRTS. Our results demonstrate that FAED effectively captures generative modeling issues overlooked by existing metrics. While FPCAD exhibits promising performance, further refinements are necessary to enhance its reliability. Our proposed framework provides a robust and practical approach for assessing generative models in tabular data applications.",
+    "pdf_url": "https://arxiv.org/pdf/2504.20900v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Brain Imaging Generation with Latent Diffusion Models",
+    "authors": [
+      "Walter H. L. Pinaya",
+      "Petru-Daniel Tudosiu",
+      "Jessica Dafflon",
+      "Pedro F da Costa",
+      "Virginia Fernandez",
+      "Parashkev Nachev",
+      "Sebastien Ourselin",
+      "M. Jorge Cardoso"
+    ],
+    "year": 2022,
+    "url": "http://arxiv.org/abs/2209.07162v1",
+    "abstract": "Deep neural networks have brought remarkable breakthroughs in medical image analysis. However, due to their data-hungry nature, the modest dataset sizes in medical imaging projects might be hindering their full potential. Generating synthetic data provides a promising alternative, allowing to complement training datasets and conducting medical image research at a larger scale. Diffusion models recently have caught the attention of the computer vision community by producing photorealistic synthetic images. In this study, we explore using Latent Diffusion Models to generate synthetic images from high-resolution 3D brain images. We used T1w MRI images from the UK Biobank dataset (N=31,740) to train our models to learn about the probabilistic distribution of brain images, conditioned on covariables, such as age, sex, and brain structure volumes. We found that our models created realistic data, and we could use the conditioning variables to control the data generation effectively. Besides that, we created a synthetic dataset with 100,000 brain images and made it openly available to the scientific community.",
+    "pdf_url": "https://arxiv.org/pdf/2209.07162v1",
+    "source": "arxiv",
+    "tags": [
+      "eess.IV",
+      "cs.CV",
+      "q-bio.QM"
+    ]
+  }
+]
