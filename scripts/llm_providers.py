@@ -1,6 +1,6 @@
 """Abstraction multi-provider LLM pour SciBase.
 
-Supporte Ollama (local), DeepSeek (API) et Claude (API).
+Supporte Ollama (local), DeepSeek (API), Claude (API) et Groq (API).
 """
 
 import os
@@ -49,7 +49,7 @@ class OllamaProvider(BaseLLMProvider):
             "model": self.model,
             "messages": messages,
             "stream": False,
-        }, timeout=300)
+        }, timeout=1800)
         resp.raise_for_status()
         data = resp.json()
         return LLMResponse(
@@ -126,10 +126,43 @@ class ClaudeProvider(BaseLLMProvider):
         return bool(self.api_key)
 
 
+class GroqProvider(BaseLLMProvider):
+    """Provider pour l'API Groq (compatible OpenAI)."""
+
+    def __init__(self, model: str = "llama-3.3-70b-versatile", api_key: Optional[str] = None):
+        self.model = model
+        self.api_key = api_key or os.environ.get("GROQ_API_KEY")
+        if not self.api_key:
+            raise ValueError("GROQ_API_KEY requis (variable d'env ou paramètre)")
+
+    def generate(self, prompt: str, system: str = "") -> LLMResponse:
+        from openai import OpenAI
+
+        client = OpenAI(api_key=self.api_key, base_url="https://api.groq.com/openai/v1")
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
+
+        response = client.chat.completions.create(
+            model=self.model,
+            messages=messages,
+        )
+        return LLMResponse(
+            content=response.choices[0].message.content,
+            model=self.model,
+            provider="groq",
+        )
+
+    def check_availability(self) -> bool:
+        return bool(self.api_key)
+
+
 PROVIDERS = {
     "ollama": OllamaProvider,
     "deepseek": DeepSeekProvider,
     "claude": ClaudeProvider,
+    "groq": GroqProvider,
 }
 
 
@@ -137,7 +170,7 @@ def get_provider(name: str = "ollama", **kwargs) -> BaseLLMProvider:
     """Factory function pour obtenir un provider LLM.
 
     Args:
-        name: Nom du provider (ollama, deepseek, claude)
+        name: Nom du provider (ollama, deepseek, claude, groq)
         **kwargs: Arguments passés au constructeur du provider
 
     Returns:

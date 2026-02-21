@@ -1,6 +1,6 @@
 """Générateur de résumés vulgarisés pour SciBase.
 
-Utilise un LLM (Ollama/DeepSeek/Claude) pour produire des résumés
+Utilise un LLM (Ollama/DeepSeek/Claude/Groq) pour produire des résumés
 accessibles à partir des papers et du contenu existant.
 """
 
@@ -156,7 +156,7 @@ def generate_paper_summaries(
 def main():
     parser = argparse.ArgumentParser(description="Génère des résumés vulgarisés pour SciBase")
     parser.add_argument("--topic", required=True, help="Nom du topic à traiter")
-    parser.add_argument("--provider", default="ollama", choices=["ollama", "deepseek", "claude"],
+    parser.add_argument("--provider", default="ollama", choices=["ollama", "deepseek", "claude", "groq"],
                         help="Provider LLM (défaut: ollama)")
     parser.add_argument("--model", default=None, help="Modèle spécifique à utiliser")
     parser.add_argument("--mode", default="all", choices=["topic", "papers", "all"],

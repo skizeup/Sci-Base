@@ -72,6 +72,7 @@ data/topics/<topic-name>/
 - `python scripts/arxiv_fetcher.py --topic "machine learning"` — fetch papers
 - `python scripts/summarizer.py --topic "machine learning"` — génère les résumés (ollama par défaut)
 - `python scripts/summarizer.py --topic "machine learning" --provider claude` — résumés via Claude API
+- `python scripts/summarizer.py --topic "machine learning" --provider groq` — résumés via Groq API (gratuit)
 - `python scripts/summarizer.py --topic "machine learning" --mode papers` — résumés individuels uniquement
 - `python scripts/summarizer.py --topic "machine learning" --dry-run` — prévisualisation sans LLM
 - `npm run dev` — lance le site en local (dans /web)
@@ -82,3 +83,4 @@ data/topics/<topic-name>/
 - **ollama** (défaut) : LLM local via Ollama, modèle `deepseek-r1`. Nécessite `ollama serve`.
 - **deepseek** : API DeepSeek. Variable d'env `DEEPSEEK_API_KEY` requise.
 - **claude** : API Anthropic. Variable d'env `ANTHROPIC_API_KEY` requise.
+- **groq** : API Groq (gratuit, compatible OpenAI). Variable d'env `GROQ_API_KEY` requise. Modèle `llama-3.3-70b-versatile`.

@@ -18,6 +18,11 @@
 | [Natural Language Processing](data/topics/natural-language-processing/) | 7 | Intermediaire | Traitement du langage : embeddings, BERT, GPT, LLMs, RAG |
 | [Computer Vision](data/topics/computer-vision/) | 7 | Intermediaire | Vision par ordinateur : classification, détection, segmentation, diffusion |
 | [Reinforcement Learning](data/topics/reinforcement-learning/) | 7 | Intermediaire | Apprentissage par renforcement : DQN, PPO, AlphaGo, RLHF |
+| [Transfer Learning](data/topics/transfer-learning/) | 20 | Intermediaire | Apprentissage par transfert : fine-tuning, domain adaptation, few-shot |
+| [Generative Models](data/topics/generative-models/) | 20 | Intermediaire | Modèles génératifs : GANs, VAEs, diffusion, normalizing flows |
+| [Graph Neural Networks](data/topics/graph-neural-networks/) | 20 | Avance | Réseaux de neurones sur graphes : GCN, GAT, message passing |
+| [Large Language Models](data/topics/large-language-models/) | 20 | Avance | Grands modèles de langage : GPT, LLaMA, RLHF, scaling laws |
+| [Vision-Language Models](data/topics/vision-language-models/) | 20 | Avance | Modèles vision-langage : CLIP, multimodal, image-text alignment |
 
 ## Parcours d'apprentissage
 
@@ -25,9 +30,14 @@ Le parcours recommandé suit cette progression :
 
 ```
 Machine Learning (debutant)
-    └── Deep Learning (debutant)
-            ├── NLP (intermediaire)
-            └── Computer Vision (intermediaire)
+    ├── Deep Learning (debutant)
+    │       ├── NLP (intermediaire)
+    │       │       └── Large Language Models (avance)
+    │       ├── Computer Vision (intermediaire)
+    │       │       └── Vision-Language Models (avance) ← aussi NLP
+    │       ├── Transfer Learning (intermediaire) ← aussi ML
+    │       ├── Generative Models (intermediaire)
+    │       └── Graph Neural Networks (avance)
     └── Reinforcement Learning (intermediaire)
 ```
 
@@ -69,6 +79,9 @@ python scripts/summarizer.py --topic "machine learning" --provider claude
 # Avec l'API DeepSeek
 python scripts/summarizer.py --topic "machine learning" --provider deepseek
 
+# Avec l'API Groq (gratuit, ultra rapide)
+python scripts/summarizer.py --topic "machine learning" --provider groq
+
 # Résumés de papers uniquement
 python scripts/summarizer.py --topic "machine learning" --mode papers
 
@@ -83,6 +96,7 @@ python scripts/summarizer.py --topic "machine learning" --dry-run
 | `ollama` | Local (gratuit) | `deepseek-r1` | [Ollama](https://ollama.ai) installe + `ollama serve` |
 | `deepseek` | API | `deepseek-chat` | Variable d'env `DEEPSEEK_API_KEY` |
 | `claude` | API | `claude-sonnet-4-5-20250929` | Variable d'env `ANTHROPIC_API_KEY` |
+| `groq` | API (gratuit) | `llama-3.3-70b-versatile` | Variable d'env `GROQ_API_KEY` |
 
 > Les résumés sont générés une seule fois et stockés dans le repo. Les utilisateurs qui clonent le projet n'ont **pas besoin** d'un LLM pour consulter le contenu.
 
@@ -109,7 +123,7 @@ docs/                     Documentation
 
 - **Data** : Markdown + JSON
 - **Scripts** : Python 3.11+
-- **LLM** : Ollama (local) / DeepSeek / Claude (API)
+- **LLM** : Ollama (local) / DeepSeek / Claude / Groq (API)
 - **Web** (Phase 2) : Next.js 14 + TypeScript + Tailwind CSS
 - **Math** : KaTeX pour le rendu LaTeX
 
