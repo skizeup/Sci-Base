@@ -1,0 +1,75 @@
+[
+  {
+    "title": "ImageNet Classification with Deep Convolutional Neural Networks",
+    "authors": ["Alex Krizhevsky", "Ilya Sutskever", "Geoffrey E. Hinton"],
+    "year": 2012,
+    "abstract": "We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSVRC-2010 contest into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 37.5% and 17.0% which is considerably better than the previous state-of-the-art.",
+    "url": "https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html",
+    "source": "manual",
+    "tags": ["cnn", "imagenet", "classification", "alexnet"]
+  },
+  {
+    "title": "Deep Residual Learning for Image Recognition",
+    "authors": ["Kaiming He", "Xiangyu Zhang", "Shaoqing Ren", "Jian Sun"],
+    "year": 2015,
+    "abstract": "Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions.",
+    "url": "https://arxiv.org/abs/1512.03385",
+    "pdf_url": "https://arxiv.org/pdf/1512.03385",
+    "source": "arxiv",
+    "tags": ["resnet", "residual-connections", "cnn", "imagenet"],
+    "doi": "10.48550/arXiv.1512.03385"
+  },
+  {
+    "title": "Generative Adversarial Networks",
+    "authors": ["Ian J. Goodfellow", "Jean Pouget-Abadie", "Mehdi Mirza", "Bing Xu", "David Warde-Farley", "Sherjil Ozair", "Aaron Courville", "Yoshua Bengio"],
+    "year": 2014,
+    "abstract": "We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model G that captures the data distribution, and a discriminative model D that estimates the probability that a sample came from the training data rather than G.",
+    "url": "https://arxiv.org/abs/1406.2661",
+    "pdf_url": "https://arxiv.org/pdf/1406.2661",
+    "source": "arxiv",
+    "tags": ["gan", "generative-models", "unsupervised-learning"],
+    "doi": "10.48550/arXiv.1406.2661"
+  },
+  {
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "authors": ["Alexey Dosovitskiy", "Lucas Beyer", "Alexander Kolesnikov", "Dirk Weissenborn", "Xiaohua Zhai", "Thomas Unterthiner", "Mostafa Dehghani", "Matthias Minderer", "Georg Heigold", "Sylvain Gelly", "Jakob Uszkoreit", "Neil Houlsby"],
+    "year": 2020,
+    "abstract": "While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. We show that a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks.",
+    "url": "https://arxiv.org/abs/2010.11929",
+    "pdf_url": "https://arxiv.org/pdf/2010.11929",
+    "source": "arxiv",
+    "tags": ["vit", "transformers", "computer-vision", "classification"],
+    "doi": "10.48550/arXiv.2010.11929"
+  },
+  {
+    "title": "Denoising Diffusion Probabilistic Models",
+    "authors": ["Jonathan Ho", "Ajay Jain", "Pieter Abbeel"],
+    "year": 2020,
+    "abstract": "We present high quality image synthesis results using diffusion probabilistic models, a class of latent variable models inspired by considerations from nonequilibrium thermodynamics. Our best results are obtained by training on a weighted variational bound designed according to a novel connection between diffusion probabilistic models and denoising score matching.",
+    "url": "https://arxiv.org/abs/2006.11239",
+    "pdf_url": "https://arxiv.org/pdf/2006.11239",
+    "source": "arxiv",
+    "tags": ["diffusion-models", "generative-models", "image-synthesis"],
+    "doi": "10.48550/arXiv.2006.11239"
+  },
+  {
+    "title": "Learning Representations by Back-Propagating Errors",
+    "authors": ["David E. Rumelhart", "Geoffrey E. Hinton", "Ronald J. Williams"],
+    "year": 1986,
+    "abstract": "We describe a new learning procedure, back-propagation, for networks of neurone-like units. The procedure repeatedly adjusts the weights of the connections in the network so as to minimize a measure of the difference between the actual output vector of the net and the desired output vector.",
+    "url": "https://www.nature.com/articles/323533a0",
+    "source": "manual",
+    "tags": ["backpropagation", "neural-networks", "foundational"],
+    "doi": "10.1038/323533a0"
+  },
+  {
+    "title": "Long Short-Term Memory",
+    "authors": ["Sepp Hochreiter", "Jurgen Schmidhuber"],
+    "year": 1997,
+    "abstract": "Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's 1991 analysis of this problem, then address it by introducing a novel, efficient, gradient-based method called long short-term memory (LSTM).",
+    "url": "https://www.bioinf.jku.at/publications/older/2604.pdf",
+    "source": "manual",
+    "tags": ["lstm", "rnn", "sequence-modeling"],
+    "doi": "10.1162/neco.1997.9.8.1735"
+  }
+]

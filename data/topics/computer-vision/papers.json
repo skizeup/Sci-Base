@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+    "authors": ["Karen Simonyan", "Andrew Zisserman"],
+    "year": 2014,
+    "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers.",
+    "url": "https://arxiv.org/abs/1409.1556",
+    "pdf_url": "https://arxiv.org/pdf/1409.1556",
+    "source": "arxiv",
+    "tags": ["vgg", "cnn", "imagenet", "classification"],
+    "doi": "10.48550/arXiv.1409.1556"
+  },
+  {
+    "title": "You Only Look Once: Unified, Real-Time Object Detection",
+    "authors": ["Joseph Redmon", "Santosh Divvala", "Ross Girshick", "Ali Farhadi"],
+    "year": 2015,
+    "abstract": "We present YOLO, a new approach to object detection. Prior work on object detection repurposes classifiers to perform detection. Instead, we frame object detection as a regression problem to spatially separated bounding boxes and associated class probabilities. A single neural network predicts bounding boxes and class probabilities directly from full images in one evaluation.",
+    "url": "https://arxiv.org/abs/1506.02640",
+    "pdf_url": "https://arxiv.org/pdf/1506.02640",
+    "source": "arxiv",
+    "tags": ["yolo", "object-detection", "real-time"],
+    "doi": "10.48550/arXiv.1506.02640"
+  },
+  {
+    "title": "Mask R-CNN",
+    "authors": ["Kaiming He", "Georgia Gkioxari", "Piotr Dollar", "Ross Girshick"],
+    "year": 2017,
+    "abstract": "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition.",
+    "url": "https://arxiv.org/abs/1703.06870",
+    "pdf_url": "https://arxiv.org/pdf/1703.06870",
+    "source": "arxiv",
+    "tags": ["instance-segmentation", "object-detection", "mask-rcnn"],
+    "doi": "10.48550/arXiv.1703.06870"
+  },
+  {
+    "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+    "authors": ["Olaf Ronneberger", "Philipp Fischer", "Thomas Brox"],
+    "year": 2015,
+    "abstract": "There is large consent that successful training of deep networks requires many thousands of annotated training samples. In this paper, we present a network and training strategy that relies on the strong use of data augmentation to use the available annotated samples more efficiently. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization.",
+    "url": "https://arxiv.org/abs/1505.04597",
+    "pdf_url": "https://arxiv.org/pdf/1505.04597",
+    "source": "arxiv",
+    "tags": ["unet", "segmentation", "medical-imaging"],
+    "doi": "10.48550/arXiv.1505.04597"
+  },
+  {
+    "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+    "authors": ["Robin Rombach", "Andreas Blattmann", "Dominik Lorenz", "Patrick Esser", "Bjorn Ommer"],
+    "year": 2021,
+    "abstract": "By decomposing the image formation process into a sequential application of denoising autoencoders, diffusion models can achieve state-of-the-art synthesis results on image data. We apply diffusion models in the latent space of powerful pretrained autoencoders, enabling training on limited computational resources while retaining their quality and flexibility.",
+    "url": "https://arxiv.org/abs/2112.10752",
+    "pdf_url": "https://arxiv.org/pdf/2112.10752",
+    "source": "arxiv",
+    "tags": ["stable-diffusion", "latent-diffusion", "generative-models", "image-synthesis"],
+    "doi": "10.48550/arXiv.2112.10752"
+  },
+  {
+    "title": "Feature Pyramid Networks for Object Detection",
+    "authors": ["Tsung-Yi Lin", "Piotr Dollar", "Ross Girshick", "Kaiming He", "Bharath Hariharan", "Serge Belongie"],
+    "year": 2016,
+    "abstract": "Feature pyramids are a basic component in recognition systems for detecting objects at different scales. This paper exploits the inherent multi-scale, pyramidal hierarchy of deep convolutional networks to construct feature pyramids with marginal extra cost. A top-down architecture with lateral connections is developed for building high-level semantic feature maps at all scales.",
+    "url": "https://arxiv.org/abs/1612.03144",
+    "pdf_url": "https://arxiv.org/pdf/1612.03144",
+    "source": "arxiv",
+    "tags": ["fpn", "object-detection", "multi-scale"],
+    "doi": "10.48550/arXiv.1612.03144"
+  },
+  {
+    "title": "Segment Anything",
+    "authors": ["Alexander Kirillov", "Eric Mintun", "Nikhila Ravi", "Hanzi Mao", "Chloe Rolland", "Laura Gustafson", "Tete Xiao", "Spencer Whitehead", "Alexander C. Berg", "Wan-Yen Lo", "Piotr Dollar", "Ross Girshick"],
+    "year": 2023,
+    "abstract": "We introduce the Segment Anything (SA) project: a new task, model, and dataset for image segmentation. Using our efficient model in a data collection loop, we built the largest segmentation dataset to date, with over 1 billion masks on 11M licensed and privacy respecting images.",
+    "url": "https://arxiv.org/abs/2304.02643",
+    "pdf_url": "https://arxiv.org/pdf/2304.02643",
+    "source": "arxiv",
+    "tags": ["sam", "segmentation", "foundation-models", "zero-shot"],
+    "doi": "10.48550/arXiv.2304.02643"
+  }
+]

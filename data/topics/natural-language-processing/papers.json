@@ -1,0 +1,79 @@
+[
+  {
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "authors": ["Jacob Devlin", "Ming-Wei Chang", "Kenton Lee", "Kristina Toutanova"],
+    "year": 2018,
+    "abstract": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.",
+    "url": "https://arxiv.org/abs/1810.04805",
+    "pdf_url": "https://arxiv.org/pdf/1810.04805",
+    "source": "arxiv",
+    "tags": ["bert", "transformers", "pre-training", "language-models"],
+    "doi": "10.48550/arXiv.1810.04805"
+  },
+  {
+    "title": "Language Models are Few-Shot Learners",
+    "authors": ["Tom B. Brown", "Benjamin Mann", "Nick Ryder", "Melanie Subbiah", "Jared Kaplan", "Prafulla Dhariwal", "Arvind Neelakantan", "Pranav Shyam", "Girish Sastry", "Amanda Askell", "Sandhini Agarwal", "Ariel Herbert-Voss", "Gretchen Krueger", "Tom Henighan", "Rewon Child", "Aditya Ramesh", "Daniel M. Ziegler", "Jeffrey Wu", "Clemens Winter", "Christopher Hesse", "Mark Chen", "Eric Sigler", "Mateusz Litwin", "Scott Gray", "Benjamin Chess", "Jack Clark", "Christopher Berner", "Sam McCandlish", "Alec Radford", "Ilya Sutskever", "Dario Amodei"],
+    "year": 2020,
+    "abstract": "We demonstrate that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. We train GPT-3, an autoregressive language model with 175 billion parameters, and test its performance in the few-shot setting.",
+    "url": "https://arxiv.org/abs/2005.14165",
+    "pdf_url": "https://arxiv.org/pdf/2005.14165",
+    "source": "arxiv",
+    "tags": ["gpt-3", "few-shot", "language-models", "scaling"],
+    "doi": "10.48550/arXiv.2005.14165"
+  },
+  {
+    "title": "Efficient Estimation of Word Representations in Vector Space",
+    "authors": ["Tomas Mikolov", "Kai Chen", "Greg Corrado", "Jeffrey Dean"],
+    "year": 2013,
+    "abstract": "We propose two novel model architectures for computing continuous vector representations of words from very large data sets. The quality of these representations is measured in a word similarity task, and the results are compared to the previously best performing techniques based on different types of neural networks.",
+    "url": "https://arxiv.org/abs/1301.3781",
+    "pdf_url": "https://arxiv.org/pdf/1301.3781",
+    "source": "arxiv",
+    "tags": ["word2vec", "word-embeddings", "representation-learning"],
+    "doi": "10.48550/arXiv.1301.3781"
+  },
+  {
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "authors": ["Patrick Lewis", "Ethan Perez", "Aleksandra Piktus", "Fabio Petroni", "Vladimir Karpukhin", "Naman Goyal", "Heinrich Kuttler", "Mike Lewis", "Wen-tau Yih", "Tim Rocktaschel", "Sebastian Riedel", "Douwe Kiela"],
+    "year": 2020,
+    "abstract": "Large pre-trained language models have been shown to store factual knowledge in their parameters. However, their ability to access and precisely manipulate knowledge is still limited. We explore a general-purpose fine-tuning recipe for retrieval-augmented generation (RAG) — models which combine pre-trained parametric and non-parametric memory for language generation.",
+    "url": "https://arxiv.org/abs/2005.11401",
+    "pdf_url": "https://arxiv.org/pdf/2005.11401",
+    "source": "arxiv",
+    "tags": ["rag", "retrieval", "knowledge", "language-models"],
+    "doi": "10.48550/arXiv.2005.11401"
+  },
+  {
+    "title": "Sequence to Sequence Learning with Neural Networks",
+    "authors": ["Ilya Sutskever", "Oriol Vinyals", "Quoc V. Le"],
+    "year": 2014,
+    "abstract": "Deep Neural Networks are powerful models that have achieved excellent performance on difficult learning tasks. We present a general end-to-end approach to sequence learning that makes minimal assumptions on the sequence structure. Our method uses a multilayered Long Short-Term Memory (LSTM) to map the input sequence to a vector of a fixed dimensionality, and then another deep LSTM to decode the target sequence from the vector.",
+    "url": "https://arxiv.org/abs/1409.3215",
+    "pdf_url": "https://arxiv.org/pdf/1409.3215",
+    "source": "arxiv",
+    "tags": ["seq2seq", "lstm", "machine-translation", "encoder-decoder"],
+    "doi": "10.48550/arXiv.1409.3215"
+  },
+  {
+    "title": "LLaMA: Open and Efficient Foundation Language Models",
+    "authors": ["Hugo Touvron", "Thibaut Lavril", "Gautier Izacard", "Xavier Martinet", "Marie-Anne Lachaux", "Timothee Lacroix", "Baptiste Roziere", "Naman Goyal", "Eric Hambro", "Faisal Azhar", "Aurelien Rodriguez", "Armand Joulin", "Edouard Grave", "Guillaume Lample"],
+    "year": 2023,
+    "abstract": "We introduce LLaMA, a collection of foundation language models ranging from 7B to 65B parameters. We train our models on trillions of tokens, and show that it is possible to train state-of-the-art models using publicly available datasets exclusively, without resorting to proprietary and inaccessible datasets.",
+    "url": "https://arxiv.org/abs/2302.13971",
+    "pdf_url": "https://arxiv.org/pdf/2302.13971",
+    "source": "arxiv",
+    "tags": ["llama", "open-source", "language-models", "foundation-models"],
+    "doi": "10.48550/arXiv.2302.13971"
+  },
+  {
+    "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+    "authors": ["Dzmitry Bahdanau", "Kyunghyun Cho", "Yoshua Bengio"],
+    "year": 2014,
+    "abstract": "Neural machine translation is a recently proposed approach to machine translation. Unlike the traditional statistical machine translation, the neural machine translation aims at building a single neural network that can be jointly tuned to maximize the translation performance. We conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder-decoder architecture, and propose to extend this by allowing a model to automatically search for parts of a source sentence that are relevant to predicting a target word.",
+    "url": "https://arxiv.org/abs/1409.0473",
+    "pdf_url": "https://arxiv.org/pdf/1409.0473",
+    "source": "arxiv",
+    "tags": ["attention", "machine-translation", "seq2seq"],
+    "doi": "10.48550/arXiv.1409.0473"
+  }
+]

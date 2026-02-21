@@ -1,12 +1,12 @@
 {
   "version": "1.0",
   "title": "Parcours d'apprentissage SciBase",
-  "description": "Parcours progressifs pour apprendre les sciences via SciBase",
+  "description": "Parcours progressifs pour apprendre les sciences de l'IA via SciBase",
   "paths": [
     {
       "id": "fondamentaux-ia-ml",
       "title": "Fondamentaux de l'IA et du Machine Learning",
-      "description": "Parcours introductif couvrant les bases du machine learning puis l'apprentissage par renforcement",
+      "description": "Parcours complet des bases du ML jusqu'aux domaines spécialisés",
       "topics": [
         {
           "topic_id": "machine-learning",
@@ -15,9 +15,27 @@
           "prerequisites": []
         },
         {
+          "topic_id": "deep-learning",
+          "level": "debutant",
+          "order": 2,
+          "prerequisites": ["machine-learning"]
+        },
+        {
+          "topic_id": "natural-language-processing",
+          "level": "intermediaire",
+          "order": 3,
+          "prerequisites": ["deep-learning"]
+        },
+        {
+          "topic_id": "computer-vision",
+          "level": "intermediaire",
+          "order": 4,
+          "prerequisites": ["deep-learning"]
+        },
+        {
           "topic_id": "reinforcement-learning",
           "level": "intermediaire",
-          "order": 2,
+          "order": 5,
           "prerequisites": ["machine-learning"]
         }
       ]
