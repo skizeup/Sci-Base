@@ -22,6 +22,20 @@ Pour comprendre le RL, il est essentiel de maîtriser quelques concepts fondamen
   - La **fonction de valeur d'action** (ou Q-value), $Q^\pi(s,a)$, qui représente la valeur espérée de prendre l'action $a$ dans l'état $s$ et de suivre ensuite la politique $\pi$.
 - **Exploration vs Exploitation** : Un dilemme central du RL est de savoir si l'agent doit exploiter les actions qui sont déjà connues pour être bonnes ou explorer de nouvelles actions qui pourraient être meilleures. Une stratégie classique pour résoudre ce dilemme est l'algorithme $\epsilon$-greedy.
 
+##Diagrammes
+
+Le diagramme suivant illustre la boucle d'interaction entre l'agent et l'environnement dans le cadre de l'apprentissage par renforcement :
+
+```mermaid
+flowchart LR
+    A[Agent] -->|Action a| B[Environnement]
+    B -->|État s| A
+    B -->|Récompense r| A
+    A --> C{Politique π}
+    C -->|Exploration| D[Nouvelle action]
+    C -->|Exploitation| E[Meilleure action connue]
+```
+
 ##État de l'art
 Le domaine du RL a connu des avancées considérables ces dernières années. Des articles comme **Playing Atari with Deep Reinforcement Learning** et **Mastering the Game of Go with Deep Neural Networks and Tree Search** ont montré comment les techniques de RL peuvent être utilisées pour atteindre des niveaux de performance exceptionnels dans des jeux complexes. Le papier **Proximal Policy Optimization Algorithms** a introduit de nouvelles méthodes pour l'optimisation des politiques, tandis que **Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm** a démontré comment le RL peut être appliqué avec succès à d'autres jeux de stratégie. Pour le contrôle continu, **Continuous Control with Deep Reinforcement Learning** (DDPG) a étendu les méthodes de RL aux espaces d'actions continus, essentiels pour la robotique et le contrôle moteur. Plus récemment, **Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model** (MuZero) a démontré qu'un agent peut apprendre à la fois le modèle de l'environnement et la politique optimale, sans même connaître les règles du jeu. Récemment, **Training Language Models to Follow Instructions with Human Feedback** a exploré l'utilisation du RL pour améliorer les modèles de langage en incorporant la rétroaction humaine.
 

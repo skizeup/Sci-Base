@@ -16,6 +16,35 @@ Pour comprendre les modèles génératifs, plusieurs notions clés sont essentie
 - **Modèles de diffusion** : Ces modèles apprennent à inverser un processus de bruitage progressif. Le processus forward ajoute du bruit aux données, et le réseau cherche à prédire le bruit ajouté pour reconstruire les données originales pas à pas, sur la base d'une loi de probabilité telle que :
   $$q(x_t | x_{t-1}) = \mathcal{N}(x_t; \sqrt{1-\beta_t}\, x_{t-1}, \beta_t I)$$
 
+##Diagrammes
+
+Le diagramme suivant compare les trois grandes familles de modèles génératifs :
+
+```mermaid
+flowchart TD
+    subgraph GAN
+        G1[Bruit z] --> G2[Générateur]
+        G2 --> G3[Image générée]
+        G3 --> G4[Discriminateur]
+        G5[Image réelle] --> G4
+        G4 --> G6[Réel ou Faux ?]
+    end
+
+    subgraph VAE
+        V1[Donnée x] --> V2[Encodeur]
+        V2 --> V3[Espace latent z]
+        V3 --> V4[Décodeur]
+        V4 --> V5[Reconstruction]
+    end
+
+    subgraph Diffusion
+        D1[Image nette] --> D2[Ajout de bruit]
+        D2 --> D3[Image bruitée]
+        D3 --> D4[Réseau de débruitage]
+        D4 --> D5[Image reconstruite]
+    end
+```
+
 ##État de l'art
 Récemment, les avancées dans le domaine des modèles génératifs ont été spectaculaires, avec des applications dans la génération d'images réalistes (comme le montrent les articles "**Pre to Post-Treatment Glioblastoma MRI Prediction using a Latent Diffusion Model**" et "**A 3D generative model of pathological multi-modal MR images and segmentations**"), la création de musique, et même la conception de molécules. Les travaux tels que "**DiM: Distilling Dataset into Generative Model**" et "**Generative Models in Decision Making: A Survey**" mettent en lumière les possibilités d'utilisation de ces modèles pour améliorer la prise de décision et la génération de données synthétiques pour l'augmentation de données. De plus, des études comme "**Operationalizing Specifications, In Addition to Test Sets for Evaluating Constrained Generative Models**" soulignent l'importance d'évaluer ces modèles de manière plus approfondie.
 

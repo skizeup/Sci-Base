@@ -54,6 +54,28 @@ Ce domaine est fondamental car il est à la base de technologies que nous utilis
 - **Validation croisée** : Évalue la performance du modèle sur des données non vues  
   Analogie : Tester un nouveau médicament sur des patients différents de ceux de l'étude initiale
 
+## Diagrammes
+
+Le diagramme suivant présente les trois grands paradigmes du machine learning et leurs sous-domaines :
+
+```mermaid
+mindmap
+  root((Machine Learning))
+    Apprentissage supervisé
+      Classification
+      Régression
+      SVM
+      Forêts aléatoires
+    Apprentissage non supervisé
+      Clustering
+      Réduction de dimension
+      Détection d anomalies
+    Apprentissage par renforcement
+      Agent / Environnement
+      Récompenses
+      Politique
+```
+
 ## État de l'art
 
 ### Articles de référence

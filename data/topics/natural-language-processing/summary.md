@@ -14,6 +14,23 @@ Un autre concept clé est le **mécanisme d'attention**, qui permet à un modèl
 $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 Cette formule calcule les poids d'attention en fonction des requêtes ($Q$), des clés ($K$) et des valeurs ($V$), et est au cœur des architectures Transformer.
 
+##Diagrammes
+
+Le diagramme suivant illustre le pipeline de traitement du texte en NLP, des données brutes jusqu'à la sortie du modèle :
+
+```mermaid
+flowchart LR
+    A[Texte brut] --> B[Tokenisation]
+    B --> C[Représentation numérique]
+    C --> D{Méthode}
+    D --> E[Bag of Words / TF-IDF]
+    D --> F[Word2Vec / GloVe]
+    D --> G[BERT / GPT]
+    E --> H[Sortie du modèle]
+    F --> H
+    G --> H
+```
+
 ##État de l'art
 Les avancées récentes dans le domaine du NLP sont considérables. Les **Transformers** ont révolutionné le traitement du langage en permettant un traitement parallèle de toute la séquence d'entrée. Les modèles comme **BERT**, présentés dans l'article "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding", ont prouvé leur efficacité dans les tâches de compréhension du langage. L'article "Language Models are Few-Shot Learners" montre comment les modèles de langage à grande échelle comme GPT-3 peuvent apprendre à effectuer diverses tâches avec peu d'exemples. Les **Word Embeddings**, introduits dans "Efficient Estimation of Word Representations in Vector Space", ont amélioré la représentation des mots dans un espace vectoriel. La **génération de texte** basée sur le mécanisme d'attention et les Transformers a également fait l'objet de recherches approfondies, comme le montre "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks". Du côté des modèles open-source, "LLaMA: Open and Efficient Foundation Language Models" démontre qu'un modèle plus petit mais entraîné sur davantage de données peut rivaliser avec les plus grands modèles propriétaires, rendant la recherche en NLP plus accessible.
 

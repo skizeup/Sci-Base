@@ -18,6 +18,25 @@ $$
 
 C'est la brique de base des réseaux de neurones convolutifs (CNN), qui sont largement utilisés dans la vision par ordinateur pour des tâches comme la classification d'images, la détection d'objets, la segmentation sémantique et bien plus encore.
 
+##Diagrammes
+
+Le diagramme suivant montre comment une image est traitée par un réseau convolutif et les différentes tâches de vision par ordinateur :
+
+```mermaid
+flowchart TD
+    A[Image en entrée] --> B[Convolutions + Pooling]
+    B --> C[Feature Maps]
+    C --> D{Tâche}
+    D --> E[Classification]
+    D --> F[Détection d objets]
+    D --> G[Segmentation]
+    D --> H[Génération]
+    E --> E1[Chat ou Chien ?]
+    F --> F1[Boîtes englobantes]
+    G --> G1[Masques par pixel]
+    H --> H1[Nouvelles images]
+```
+
 ##État de l'art
 Les avancées récentes dans le domaine de la vision par ordinateur ont été spectaculaires, avec des progrès constants dans les architectures de réseaux de neurones. Les **Vision Transformers (ViT)**, par exemple, utilisent des techniques inspirées du traitement du langage naturel pour analyser les images en les découpant en patches traités comme des tokens. Cela permet aux modèles de mieux capturer les relations spatiales à grande échelle.
 

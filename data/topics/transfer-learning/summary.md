@@ -18,6 +18,25 @@ où $f_\theta$ est le modèle pré-entraîné gelé, et seuls $W$ et $b$ sont ap
   - **Few-shot** : adapter un modèle avec très peu d'exemples (1 à 10 par classe).
   - **Zero-shot** : utiliser un modèle sur des classes jamais vues pendant l'entraînement, grâce à des descriptions textuelles ou des embeddings sémantiques.
 
+##Diagrammes
+
+Le diagramme suivant résume la stratégie de choix entre les différentes approches de transfer learning :
+
+```mermaid
+flowchart TD
+    A[Modèle pré-entraîné] --> B{Données disponibles ?}
+    B -->|Peu de données| C[Feature Extraction]
+    B -->|Beaucoup de données| D[Fine-tuning]
+    B -->|Aucune donnée| J[Zero-shot]
+    C --> E[Geler les couches]
+    E --> F[Entraîner le classifieur]
+    D --> G[Dégeler les couches]
+    G --> H[Learning rate réduit]
+    F --> I[Tâche cible]
+    H --> I
+    J --> I
+```
+
 ##État de l'art
 Les recherches récentes dans le domaine du transfer learning ont abouti à des avancées significatives. Des articles comme *"Transfer Learning Toolkit: Primers and Benchmarks"*, *"Federated and Transfer Learning: A Survey on Adversaries and Defense Mechanisms"*, et *"Transfer Learning with Pre-trained Conditional Generative Models"* montrent l'intérêt croissant pour cette technique. Le transfer learning est appliqué dans divers domaines, de la classification d'images médicales à l'adaptation de modèles de langage pour des domaines spécialisés. Des techniques comme le fine-tuning et l'adaptation de domaine ont prouvé leur efficacité pour améliorer les performances des modèles sur de nouvelles tâches.
 

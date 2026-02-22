@@ -13,6 +13,20 @@ Pour comprendre le deep learning, il est essentiel de connaître quelques notion
 - **Fonctions d'activation** : elles déterminent comment le neurone traite les informations. Les plus courantes incluent ReLU ($f(x) = \max(0, x)$), Sigmoid ($f(x) = \frac{1}{1+e^{-x}}$) et Softmax, qui transforme un vecteur en une distribution de probabilités.
 - **Rétropropagation (Backpropagation)** : c'est l'algorithme qui calcule le gradient de la fonction de coût par rapport à chaque poids du réseau. Cela permet de réajuster les poids pour améliorer les performances du modèle.
 
+##Diagrammes
+
+Le schéma suivant illustre la boucle d'entraînement d'un réseau de neurones profond :
+
+```mermaid
+flowchart LR
+    A[Données] --> B[Forward Pass]
+    B --> C[Prédiction]
+    C --> D[Fonction de coût]
+    D --> E[Backpropagation]
+    E --> F[Mise à jour des poids]
+    F --> B
+```
+
 ##État de l'art
 Le deep learning a connu des avancées spectaculaires, notamment dans les domaines de la vision par ordinateur et du traitement du langage naturel. Des articles comme "ImageNet Classification with Deep Convolutional Neural Networks" et "Deep Residual Learning for Image Recognition" ont montré l'efficacité des réseaux de neurones convolutionnels (CNN) pour la reconnaissance d'images. Les réseaux de neurones transformeurs, présentés dans "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale", ont également démontré leur puissance dans le traitement d'images.
 

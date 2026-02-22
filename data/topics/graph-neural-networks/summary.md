@@ -21,6 +21,21 @@ où $\tilde{A} = A + I$ est la matrice d'adjacence augmentée et $\tilde{D}$ la 
 
 * **Graph Attention Networks (GAT)** : les GAT utilisent un mécanisme d'attention pour pondérer différemment les contributions de chaque voisin, permettant au modèle d'apprendre quelles connexions sont les plus importantes.
 
+## Diagrammes
+
+Le diagramme suivant illustre le mécanisme de message passing, brique fondamentale des GNNs :
+
+```mermaid
+flowchart LR
+    A[Noeud v] --> B[Collecte des voisins]
+    B --> C[Agrégation]
+    C --> D[Mise à jour]
+    D --> E[Nouvelle représentation]
+    E --> F{Couche suivante ?}
+    F -->|Oui| B
+    F -->|Non| G[Représentation finale]
+```
+
 ## État de l'art
 Les recherches récentes sur les GNNs explorent plusieurs directions prometteuses.
 
