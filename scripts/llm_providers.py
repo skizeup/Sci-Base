@@ -136,7 +136,10 @@ class GroqProvider(BaseLLMProvider):
             raise ValueError("GROQ_API_KEY requis (variable d'env ou paramètre)")
 
     def generate(self, prompt: str, system: str = "") -> LLMResponse:
-        from openai import OpenAI
+        import re
+        import time
+
+        from openai import OpenAI, RateLimitError
 
         client = OpenAI(api_key=self.api_key, base_url="https://api.groq.com/openai/v1")
         messages = []
@@ -144,15 +147,30 @@ class GroqProvider(BaseLLMProvider):
             messages.append({"role": "system", "content": system})
         messages.append({"role": "user", "content": prompt})
 
-        response = client.chat.completions.create(
-            model=self.model,
-            messages=messages,
-        )
-        return LLMResponse(
-            content=response.choices[0].message.content,
-            model=self.model,
-            provider="groq",
-        )
+        max_retries = 5
+        for attempt in range(max_retries):
+            try:
+                response = client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                )
+                return LLMResponse(
+                    content=response.choices[0].message.content,
+                    model=self.model,
+                    provider="groq",
+                )
+            except RateLimitError as e:
+                if attempt == max_retries - 1:
+                    raise
+                msg = str(e)
+                match = re.search(r"try again in (\d+(?:\.\d+)?)s", msg)
+                wait = float(match.group(1)) + 1 if match else 30
+                # Handle "Xm Ys" format
+                match_min = re.search(r"try again in (\d+)m([\d.]+)s", msg)
+                if match_min:
+                    wait = int(match_min.group(1)) * 60 + float(match_min.group(2)) + 1
+                print(f"  [rate-limit] Attente de {wait:.0f}s (tentative {attempt + 1}/{max_retries})...")
+                time.sleep(wait)
 
     def check_availability(self) -> bool:
         return bool(self.api_key)
