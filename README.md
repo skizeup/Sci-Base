@@ -6,6 +6,43 @@
 
 ---
 
+## Site web
+
+**SciBase est disponible en tant que site web interactif** avec rendu LaTeX, diagrammes Mermaid, et recherche intégrée.
+
+```bash
+cd web && npm install && npm run dev
+# → http://localhost:3000
+```
+
+### Stack web
+
+| Technologie | Rôle |
+|-------------|------|
+| Next.js 14 (App Router) | Framework React, SSG |
+| TypeScript | Typage statique |
+| Tailwind CSS | Styling + `@tailwindcss/typography` pour le rendu prose |
+| unified / remark / rehype | Pipeline Markdown → HTML |
+| KaTeX (rehype-katex) | Rendu LaTeX au build-time (zero JS client) |
+| Mermaid.js | Diagrammes (client-side, dynamic import) |
+| Fuse.js | Recherche client-side (index JSON pré-généré) |
+| gray-matter | Parsing du frontmatter YAML |
+
+### Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage — grille des 10 topics |
+| `/topics/[slug]` | Page topic — vue d'ensemble, résumé IA, papers, ressources |
+| `/topics/[slug]/papers` | Liste des papers d'un topic |
+| `/topics/[slug]/papers/[slug]` | Résumé vulgarisé d'un paper |
+| `/parcours` | Parcours d'apprentissage progressif |
+| `/recherche` | Recherche full-page (248 items indexés) |
+
+**146 pages statiques** générées au build.
+
+---
+
 ## Parcours d'apprentissage
 
 ```
@@ -41,27 +78,36 @@ Machine Learning (debutant)
 Chaque dossier de topic contient :
 
 - **`_index.md`** — Explication pédagogique du domaine avec concepts clés et formules
-- **`summary.md`** — Résumé vulgarisé généré par IA
+- **`summary.md`** — Résumé vulgarisé généré par IA avec diagrammes Mermaid
 - **`papers.json`** — Papers fondamentaux soigneusement sélectionnés
 - **`paper-summaries/`** — Un résumé en français pour chaque paper
 - **`resources.md`** — Cours, livres et outils recommandés
-
-## Commencer
-
-**Rien à installer.** Explorez les topics directement ici sur GitHub — cliquez sur un topic dans le tableau ci-dessus et commencez à lire.
-
-Le site web interactif arrive bientôt pour une meilleure expérience de navigation.
 
 ---
 
 <details>
 <summary><b>Pour les contributeurs</b></summary>
 
-### Installation des scripts
+### Installation
 
 ```bash
+# Scripts Python (fetchers, summarizer)
 pip install -r scripts/requirements.txt
+
+# Site web
+cd web && npm install
 ```
+
+### Développement web
+
+```bash
+cd web
+npm run dev      # Dev server → http://localhost:3000
+npm run build    # Build prod (146 pages statiques)
+npm run lint     # Lint TypeScript/ESLint
+```
+
+Le `prebuild` script génère automatiquement `public/search-index.json` (index Fuse.js).
 
 ### Récupérer des papers depuis arXiv
 
@@ -78,7 +124,7 @@ Le summarizer utilise un LLM pour produire des résumés en français. Les résu
 # Ollama (local, gratuit)
 python scripts/summarizer.py --topic "machine learning"
 
-# Groq (API gratuite, rapide)
+# Groq (API gratuite, rapide) — RECOMMANDÉ
 python scripts/summarizer.py --topic "machine learning" --provider groq
 
 # Claude ou DeepSeek
