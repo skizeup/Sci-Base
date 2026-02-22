@@ -13,7 +13,23 @@ import type {
   SearchItem,
 } from './types';
 
-const DATA_DIR = path.join(process.cwd(), '..', 'data');
+function findDataDir(): string {
+  // Try ../data (when cwd is web/)
+  const fromWeb = path.join(process.cwd(), '..', 'data');
+  if (fs.existsSync(fromWeb)) return fromWeb;
+
+  // Try ./data (when cwd is repo root)
+  const fromRoot = path.join(process.cwd(), 'data');
+  if (fs.existsSync(fromRoot)) return fromRoot;
+
+  // Try ../../data (deeper nesting)
+  const fromDeep = path.join(process.cwd(), '..', '..', 'data');
+  if (fs.existsSync(fromDeep)) return fromDeep;
+
+  throw new Error(`Cannot find data/ directory. cwd=${process.cwd()}`);
+}
+
+const DATA_DIR = findDataDir();
 const TOPICS_DIR = path.join(DATA_DIR, 'topics');
 
 // ── Topic slugs ──

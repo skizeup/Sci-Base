@@ -4,8 +4,21 @@ import { fileURLToPath } from 'url';
 import matter from 'gray-matter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const TOPICS_DIR = path.join(__dirname, '..', '..', 'data', 'topics');
 const OUTPUT = path.join(__dirname, '..', 'public', 'search-index.json');
+
+function findTopicsDir() {
+  const candidates = [
+    path.join(__dirname, '..', '..', 'data', 'topics'),
+    path.join(process.cwd(), '..', 'data', 'topics'),
+    path.join(process.cwd(), 'data', 'topics'),
+  ];
+  for (const dir of candidates) {
+    if (fs.existsSync(dir)) return dir;
+  }
+  throw new Error(`Cannot find data/topics. cwd=${process.cwd()}, __dirname=${__dirname}`);
+}
+
+const TOPICS_DIR = findTopicsDir();
 
 function extractTitle(markdown) {
   const match = markdown.match(/^#\s+(.+)$/m);
