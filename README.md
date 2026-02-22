@@ -8,9 +8,12 @@
 
 ## Site web
 
-**SciBase est disponible en tant que site web interactif** avec rendu LaTeX, diagrammes Mermaid, et recherche intégrée.
+**[sci-base.vercel.app](https://sci-base.vercel.app)** — le site est déployé et accessible publiquement.
+
+Rendu LaTeX, diagrammes Mermaid interactifs, recherche intégrée, parcours d'apprentissage progressif.
 
 ```bash
+# Développement local
 cd web && npm install && npm run dev
 # → http://localhost:3000
 ```
@@ -107,7 +110,15 @@ npm run build    # Build prod (146 pages statiques)
 npm run lint     # Lint TypeScript/ESLint
 ```
 
-Le `prebuild` script génère automatiquement `public/search-index.json` (index Fuse.js).
+Le `prebuild` script copie les données et génère `public/search-index.json` (index Fuse.js).
+
+### Déploiement
+
+Le site est déployé automatiquement sur [Vercel](https://vercel.com) à chaque `git push` sur `master`.
+
+- **URL** : [sci-base.vercel.app](https://sci-base.vercel.app)
+- **Root directory** : `web`
+- **Build** : `npm run build` (prebuild copie `data/` + génère l'index de recherche, puis `next build` génère 146 pages statiques)
 
 ### Récupérer des papers depuis arXiv
 

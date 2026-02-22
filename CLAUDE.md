@@ -3,7 +3,7 @@
 ## Vision
 Plateforme d'apprentissage scientifique open-source.
 Phase 1 : Repo GitHub curé de ressources scientifiques — FAIT (10 topics, 119 papers).
-Phase 2 : Site web Next.js interactif — FAIT (146 pages statiques).
+Phase 2 : Site web Next.js interactif — FAIT (146 pages statiques, live sur sci-base.vercel.app).
 
 ## Stack
 
@@ -134,7 +134,11 @@ app/
 - **claude** : API Anthropic. Variable d'env `ANTHROPIC_API_KEY` requise.
 - **groq** : API Groq (gratuit, compatible OpenAI). Variable d'env `GROQ_API_KEY` requise. Modèle `llama-3.3-70b-versatile`.
 
-## Déploiement
-- Vercel : root directory = `web/`, framework = Next.js
-- Le chemin `path.join(process.cwd(), '..', 'data', 'topics')` fonctionne car cwd = /vercel/.../web/
-- Le prebuild script génère public/search-index.json automatiquement
+## Déploiement — live sur [sci-base.vercel.app](https://sci-base.vercel.app)
+- Vercel : root directory = `web/`
+- `web/vercel.json` : `framework: null`, `outputDirectory: "out"` (désactive l'intégration Next.js native de Vercel)
+- `output: 'export'` dans next.config.mjs → HTML statique dans `out/`
+- `web/scripts/copyData.mjs` : copie `data/` dans `web/data/` au prebuild (Vercel sandbox le root directory, `../data` n'est pas accessible)
+- `web/scripts/generateSearchIndex.mjs` : génère `public/search-index.json` (248 items)
+- Auto-deploy à chaque `git push` sur master
+- **Important** : avec Root Directory = `web/`, les fichiers hors de `web/` ne sont PAS accessibles au build. Le script `copyData.mjs` résout ce problème.
