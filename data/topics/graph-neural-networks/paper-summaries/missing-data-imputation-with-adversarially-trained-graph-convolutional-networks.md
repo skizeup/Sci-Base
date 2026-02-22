@@ -12,7 +12,7 @@ Les auteurs proposent une nouvelle approche pour imputer les données manquantes
 
 ### Résultats clés
 Les résultats principaux de cette recherche sont :
-* La méthode proposée robuste les meilleures approches actuelles pour l'imputation des données manquantes, notamment pour les grands pourcentages de valeurs manquantes.
+* La méthode proposée surpasse les meilleures approches actuelles pour l'imputation des données manquantes, notamment pour les grands pourcentages de valeurs manquantes.
 * L'utilisation d'une perte adversaire et d'une pénalité de gradient améliore la performance de la méthode.
 * Les extensions de l'architecture de base, telles que l'utilisation de connexions résiduelles entre les couches et de statistiques globales calculées à partir du jeu de données, peuvent également améliorer la précision.
 

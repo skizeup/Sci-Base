@@ -4,7 +4,6 @@ generated_at: 2026-02-21T12:16:37Z
 topic: machine-learning
 ---
 
-```markdown
 # Machine Learning : L'apprentissage automatique expliqué simplement
 
 ## Introduction
@@ -47,7 +46,7 @@ Ce domaine est fondamental car il est à la base de technologies que nous utilis
 
 - **Descente de gradient** : Optimise les paramètres du modèle  
   $$\theta \leftarrow \theta - \alpha \nabla J(\theta)$$  
-  Analogie : Chercher la plus haute montagne en suivant toujours la pente la plus forte
+  Analogie : Descendre au fond d'une vallée en suivant toujours la pente la plus forte vers le bas
 
 - **Biais vs variance** : Trouve le bon équilibre entre un modèle trop simple (fort biais) et trop complexe (forte variance)  
   Analogie : Trouver la juste épaisseur d'une chemise pour qu'elle ne soit ni trop serrée ni trop lâche
@@ -57,7 +56,7 @@ Ce domaine est fondamental car il est à la base de technologies que nous utilis
 
 ## État de l'art
 
-### Les dernières avancées
+### Articles de référence
 
 1. **Attention Is All You Need** (2017) - Transformateurs : Révolutionne le NLP en utilisant uniquement des mécanismes d'attention, sans réseaux de neurones récurrents. C'est le fondement des modèles comme GPT et BERT.
 
@@ -97,4 +96,3 @@ Ce domaine est fondamental car il est à la base de technologies que nous utilis
 - Explorer les applications concrètes du ML dans votre domaine d'intérêt
 - Réaliser un projet simple (ex: prédire les notes d'étudiants à partir de leurs réseaux sociaux)
 - Suivre les conférences récentes de l'ACL (NLP) ou NeurIPS (deep learning)
-```

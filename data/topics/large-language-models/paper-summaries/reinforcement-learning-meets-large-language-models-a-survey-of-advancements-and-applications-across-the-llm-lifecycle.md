@@ -13,7 +13,7 @@ Les auteurs proposent une revue systématique des avancées théoriques et prati
 ### Résultats clés
 Les auteurs présentent une revue complète des avancées dans l'utilisation de l'apprentissage par renforcement pour améliorer les LLM, y compris :
 * Les progrès théoriques et pratiques de l'apprentissage par renforcement pour améliorer le raisonnement et la compréhension des intentions humaines des LLM
-* Les différentes stratégies d'application de l'apprentissage par renforcement à diversas phases du cycle de vie d'un LLM
+* Les différentes stratégies d'application de l'apprentissage par renforcement à diverses phases du cycle de vie d'un LLM
 * Les ensembles de données et les références d'évaluation existants pour la fine-tuning de l'apprentissage par renforcement
 * Les outils et les cadres de formation open-source disponibles pour la recherche et la pratique
 

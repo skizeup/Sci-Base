@@ -13,7 +13,7 @@ L'approche proposée consiste à considérer les Transformers comme des réseaux
 ### Résultats clés
 Les résultats clés de cette recherche sont :
 - Les Transformers peuvent être vus comme des GNNs opérant sur des graphes fully connectés.
-- Le mécanisme d'auto-attention des Transformers captures l'importance relative des tokens les uns par rapport aux autres.
+- Le mécanisme d'auto-attention des Transformers capture l'importance relative des tokens les uns par rapport aux autres.
 - Les encodings positionnels fournissent des informations sur l'ordre séquentiel ou la structure des données.
 - Les Transformers sont plus efficaces que les GNNs classiques en raison de leur implémentation via des opérations matricielles denses, ce qui les rend plus rapides sur le matériel moderne.
 
@@ -22,4 +22,4 @@ Ce paper est important car il établit un lien théorique entre les Transformers
 - Le traitement du langage naturel
 - L'apprentissage de représentations sur des graphes
 - Les applications où les relations entre les éléments d'entrée sont importantes
-Cette recherche suggère également que les Transformers sont particulièrement bien adaptés aux capacités des matériaux modernes, ce qui explique leur réussite dans de nombreux domaines. Ceci pourrait conduire à de nouvelles approches pour optimiser les performances des réseaux de neurones en fonction des caractéristiques du matériel sur lequel ils sont exécutés.
+Cette recherche suggère également que les Transformers sont particulièrement bien adaptés aux capacités du matériel informatique moderne, ce qui explique leur réussite dans de nombreux domaines. Ceci pourrait conduire à de nouvelles approches pour optimiser les performances des réseaux de neurones en fonction des caractéristiques du matériel sur lequel ils sont exécutés.

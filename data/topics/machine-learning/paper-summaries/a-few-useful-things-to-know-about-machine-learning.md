@@ -4,7 +4,6 @@ generated_at: 2026-02-21T12:20:37Z
 topic: machine-learning
 ---
 
-```markdown
 # Résumé vulgarisé : A Few Useful Things to Know About Machine Learning
 
 ## Contexte
@@ -48,4 +47,3 @@ Cet article est important pour plusieurs raisons :
 4.  **Influence durable** : Publié en 2012, cet article reste très cité et reste une référence pour comprendre les principes fondamentaux et les bonnes pratiques de l'apprentissage automatique.
 
 En résumé, Pedro Domingos a offert au monde de l'IA une sorte de manuel de construction plus humain, axé sur les bonnes pratiques et l'évitement des pièges, plutôt qu'une simple liste d'outils techniquement complexes. C'est un point de départ indispensable pour quiconque veut comprendre et utiliser l'apprentissage automatique efficacement.
-```

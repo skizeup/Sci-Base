@@ -4,7 +4,6 @@ generated_at: 2026-02-21T12:18:06Z
 topic: machine-learning
 ---
 
-```markdown
 # Résumé vulgarisé du paper : **Attention Is All You Need**
 
 ## Contexte
@@ -29,4 +28,3 @@ Ce paper est considéré comme une **révolution** dans le domaine de l'apprenti
 
 *   **Pourquoi c'est important ?** Il a simplifié radicalement la conception des modèles NLP, rendant leur développement plus efficace. Il a montré que l'attention est un concept fondamental plus puissant que les mécanismes de traitement séquentiel.
 *   **Applications potentielles ?** Tous les modèles NLP actuels (comme les assistants virtuels, les traducteurs, les correcteurs orthographiques, les chatbots) sont basés sur l'idée initiale du Transformer. Le succès du Transformer a permis la création de modèles encore plus grands et puissants (comme BERT, GPT, T5), poussant l'IA à faire des choses encore plus impressionnantes.
-```
