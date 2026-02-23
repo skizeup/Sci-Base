@@ -180,7 +180,7 @@ app/
 - **Nb questions** : 5 (débutant), 10 (intermédiaire), 15 (avancé)
 - **Types** : QCM (4 options) + Vrai/Faux
 - **Composant** : `Quiz.tsx` — client component avec state, progression, score
-- **Scores** : `localStorage('scibase-quiz-<slug>')` — meilleur score persisté
+- **Scores** : `useQuizScore` hook (dual localStorage/Supabase)
 - **Search** : quizzes indexés dans Fuse.js (type `'quiz'`)
 - **CTA** : lien "Testez vos connaissances" sur chaque page topic (si quiz existe)
 
@@ -188,9 +188,10 @@ app/
 
 - **Client** : `@supabase/supabase-js` v2, client-side only (compatible `output: 'export'`)
 - **Env vars** : `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` (build-time, publiques par design)
-- **Auth providers** : Email/Password, Google OAuth, GitHub OAuth
+- **Auth providers** : Email/Password (autoconfirm ON), GitHub OAuth — Google OAuth a configurer
 - **Tables** : `profiles`, `topic_progress`, `quiz_scores`, `bookmarks` — toutes protégées par RLS
-- **SQL schema** : `supabase/schema.sql` — à exécuter manuellement dans le SQL Editor Supabase
+- **Projet** : `fpvbiephobgmadcalwwk` (region `eu-west-1`)
+- **SQL schema** : `supabase/schema.sql` — déjà exécuté en prod
 - **Stratégie dual** : anonyme = localStorage seul, connecté = Supabase + localStorage (cache)
 - **Migration** : au premier login, localStorage est migré vers Supabase (flag `scibase-migrated`)
 - **Fichiers clés** :
@@ -210,7 +211,7 @@ app/
 
 ### Web
 - `cd web && npm run dev` — lance le site en local (http://localhost:3000)
-- `cd web && npm run build` — build prod (193 pages statiques, prebuild génère search-index.json + sitemap.xml)
+- `cd web && npm run build` — build prod (194 pages statiques, prebuild génère search-index.json + sitemap.xml)
 - `cd web && npm run lint` — lint TypeScript/ESLint
 
 ### Scripts Python
