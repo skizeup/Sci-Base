@@ -25,7 +25,7 @@ export default function Header() {
             Recherche
           </Link>
           <a
-            href="https://github.com/LucasMusic0/Sci-Base"
+            href="https://github.com/skizeup/Sci-Base"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-gray-600 hover:text-brand-600 transition-colors"
@@ -64,7 +64,7 @@ export default function Header() {
               Recherche
             </Link>
             <a
-              href="https://github.com/LucasMusic0/Sci-Base"
+              href="https://github.com/skizeup/Sci-Base"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-sm text-gray-700 hover:text-brand-600"

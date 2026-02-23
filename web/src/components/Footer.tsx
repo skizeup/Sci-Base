@@ -5,7 +5,7 @@ export default function Footer() {
         <p>SciBase — Plateforme d&apos;apprentissage scientifique open-source</p>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/LucasMusic0/Sci-Base"
+            href="https://github.com/skizeup/Sci-Base"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-700 transition-colors"
