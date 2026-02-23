@@ -7,6 +7,7 @@ Phase 2 : Site web Next.js interactif — FAIT (live sur sci-base.vercel.app).
 Phase 3 Sprint 1 : Dark mode + SEO — FAIT.
 Phase 3 Sprint 2 : Nouveaux topics + Parcours interactif — FAIT.
 Phase 3 Sprint 3 : Quizzes interactifs — FAIT (13 quiz, 193 pages statiques).
+Phase 3 Sprint 3 (suite) : Supabase auth + progression + bookmarks — FAIT (194 pages).
 
 ## Stack
 
@@ -23,6 +24,7 @@ Phase 3 Sprint 3 : Quizzes interactifs — FAIT (13 quiz, 193 pages statiques).
 - Diagrammes : Mermaid.js (client-side, dynamic import, thème adapté light/dark)
 - Recherche : Fuse.js (client-side, index JSON pré-généré au build via scripts/generateSearchIndex.mjs)
 - Frontmatter : gray-matter
+- Auth/DB : Supabase (`@supabase/supabase-js` v2, client-side only — email + Google + GitHub)
 - SEO : metadataBase, Open Graph, Twitter cards, robots.txt, sitemap.xml (190 URLs au build)
 - SSG : generateStaticParams sur toutes les routes dynamiques
 
@@ -90,9 +92,21 @@ components/
   PaperCard.tsx    — Carte paper avec liens et tags
   MarkdownRenderer.tsx — Client component, rendu HTML + init Mermaid (dynamic import, thème adapté)
   SearchBar.tsx    — Recherche Fuse.js (dropdown compact ou full page)
-  LearningPath.tsx — Parcours interactif : 3 colonnes, flèches SVG au hover, progression localStorage
-  Quiz.tsx         — Quiz interactif : questions, score, explications, localStorage
+  LearningPath.tsx — Parcours interactif : 3 colonnes, flèches SVG au hover, progression useProgress hook
+  Quiz.tsx         — Quiz interactif : questions, score, explications, useQuizScore hook
   Breadcrumb.tsx   — Fil d'Ariane
+  Providers.tsx    — Wrapper client pour AuthProvider
+  AuthModal.tsx    — Modal connexion/inscription (email + OAuth Google/GitHub)
+  UserMenu.tsx     — Dropdown avatar utilisateur (profil, déconnexion)
+  BookmarkButton.tsx — Bouton favori (coeur, toggle, Supabase)
+
+contexts/
+  AuthContext.tsx   — Provider auth Supabase (session, login/logout, migration localStorage)
+
+hooks/
+  useProgress.ts   — Progression topics (dual localStorage/Supabase)
+  useQuizScore.ts  — Scores quiz (dual localStorage/Supabase)
+  useBookmarks.ts  — Favoris Supabase (requiert login)
 
 app/
   page.tsx                              — Homepage (hero + grille topics)
@@ -102,6 +116,7 @@ app/
   topics/[slug]/quiz/page.tsx           — Quiz interactif par topic
   parcours/page.tsx                     — Parcours d'apprentissage
   recherche/page.tsx                    — Page recherche
+  profil/page.tsx                       — Page profil utilisateur (stats, scores, favoris)
 ```
 
 ## Routes web
@@ -115,8 +130,9 @@ app/
 | `/topics/[slug]/quiz` | 13 | Quiz interactif par topic |
 | `/parcours` | 1 | Parcours interactif (3 colonnes, flèches SVG, progression localStorage) |
 | `/recherche` | 1 | Recherche full-page (322 items indexés) |
+| `/profil` | 1 | Page profil utilisateur (stats, scores, favoris — client-side) |
 
-**Total : 193 pages statiques**
+**Total : 194 pages statiques**
 
 ## Plugins Markdown custom
 
@@ -167,6 +183,28 @@ app/
 - **Scores** : `localStorage('scibase-quiz-<slug>')` — meilleur score persisté
 - **Search** : quizzes indexés dans Fuse.js (type `'quiz'`)
 - **CTA** : lien "Testez vos connaissances" sur chaque page topic (si quiz existe)
+
+## Supabase (Auth + Données utilisateur)
+
+- **Client** : `@supabase/supabase-js` v2, client-side only (compatible `output: 'export'`)
+- **Env vars** : `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` (build-time, publiques par design)
+- **Auth providers** : Email/Password, Google OAuth, GitHub OAuth
+- **Tables** : `profiles`, `topic_progress`, `quiz_scores`, `bookmarks` — toutes protégées par RLS
+- **SQL schema** : `supabase/schema.sql` — à exécuter manuellement dans le SQL Editor Supabase
+- **Stratégie dual** : anonyme = localStorage seul, connecté = Supabase + localStorage (cache)
+- **Migration** : au premier login, localStorage est migré vers Supabase (flag `scibase-migrated`)
+- **Fichiers clés** :
+  - `lib/supabase.ts` — client singleton (placeholder si env vars absentes)
+  - `lib/database.types.ts` — types TS des tables Supabase
+  - `contexts/AuthContext.tsx` — provider auth, session, migration localStorage
+  - `components/Providers.tsx` — wrapper client pour providers
+  - `components/AuthModal.tsx` — modal connexion/inscription (email + OAuth)
+  - `components/UserMenu.tsx` — dropdown avatar (profil, déconnexion)
+  - `components/BookmarkButton.tsx` — bouton favori (coeur)
+  - `hooks/useProgress.ts` — progression topics (dual localStorage/Supabase)
+  - `hooks/useQuizScore.ts` — scores quiz (dual localStorage/Supabase)
+  - `hooks/useBookmarks.ts` — favoris (Supabase uniquement)
+  - `app/profil/page.tsx` — page profil (stats, scores, favoris)
 
 ## Commandes
 

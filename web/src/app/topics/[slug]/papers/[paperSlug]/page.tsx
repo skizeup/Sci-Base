@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { getTopicSlugs, getTopicMeta, getPaperSummarySlugs, getPaperSummaryFull } from '@/lib/content';
 import Breadcrumb from '@/components/Breadcrumb';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
+import BookmarkButton from '@/components/BookmarkButton';
 import Link from 'next/link';
 
 export function generateStaticParams() {
@@ -56,7 +57,11 @@ export default async function PaperSummaryPage({ params }: { params: { slug: str
         ]}
       />
 
-      {/* Meta info */}
+      {/* Bookmark + Meta info */}
+      <div className="flex items-center gap-4 mb-4">
+        <BookmarkButton topicSlug={params.slug} paperSlug={params.paperSlug} />
+      </div>
+
       {summary.generatedBy && (
         <p className="text-xs text-gray-400 dark:text-gray-500 mb-6">
           Généré par {summary.generatedBy}

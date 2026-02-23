@@ -50,3 +50,8 @@ html.dark body {
 .dark .katex {
   color: inherit;
 }
+
+/* Auth modal backdrop - prevent body scroll */
+body:has(.fixed.inset-0) {
+  overflow: hidden;
+}

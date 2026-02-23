@@ -4,6 +4,7 @@ import { getTopicSlugs, getTopicFull, getAllTopicsMeta } from '@/lib/content';
 import Breadcrumb from '@/components/Breadcrumb';
 import LevelBadge from '@/components/LevelBadge';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
+import BookmarkButton from '@/components/BookmarkButton';
 import Link from 'next/link';
 
 export function generateStaticParams() {
@@ -48,6 +49,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
         <div className="flex items-center gap-3 mb-2">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">{topic.title}</h1>
           <LevelBadge level={topic.level} />
+          <BookmarkButton topicSlug={topic.slug} />
         </div>
         {topic.prerequisites.length > 0 && (
           <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">

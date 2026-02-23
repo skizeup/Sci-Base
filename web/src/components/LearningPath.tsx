@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import type { TopicMeta, Level } from '@/lib/types';
+import { useProgress } from '@/hooks/useProgress';
 
 const LEVELS: Level[] = ['debutant', 'intermediaire', 'avance'];
 
@@ -58,16 +59,15 @@ interface ArrowData {
   path: string;
 }
 
-const STORAGE_KEY = 'scibase-progress';
-
 export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef(new Map<string, HTMLDivElement>());
 
   const [arrows, setArrows] = useState<ArrowData[]>([]);
   const [hoveredTopic, setHoveredTopic] = useState<string | null>(null);
-  const [completed, setCompleted] = useState<Set<string>>(new Set());
   const [isDark, setIsDark] = useState(false);
+
+  const { completed, toggleCompleted } = useProgress();
 
   // Group topics by level
   const topicsByLevel = useMemo(() => {
@@ -88,14 +88,6 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
     });
     return map;
   }, [topics]);
-
-  // Load progress from localStorage
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) setCompleted(new Set(JSON.parse(raw)));
-    } catch { /* ignore */ }
-  }, []);
 
   // Track dark mode via MutationObserver
   useEffect(() => {
@@ -128,7 +120,6 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
         let path: string;
 
         if (sameColumn) {
-          // Same column: arc through the left side
           const x1 = fr.left - cr.left;
           const y1 = fr.top + fr.height / 2 - cr.top;
           const x2 = tr.left - cr.left;
@@ -136,7 +127,6 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
           const bulge = -40;
           path = `M ${x1} ${y1} C ${x1 + bulge} ${y1}, ${x2 + bulge} ${y2}, ${x2} ${y2}`;
         } else {
-          // Cross-column: right center → left center
           const x1 = fr.right - cr.left + 2;
           const y1 = fr.top + fr.height / 2 - cr.top;
           const x2 = tr.left - cr.left - 2;
@@ -164,18 +154,12 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
     };
   }, [computeArrows]);
 
-  // Toggle progress checkbox
-  const toggleCompleted = useCallback((slug: string, e: React.MouseEvent) => {
+  // Handle checkbox click
+  const handleToggle = useCallback((slug: string, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setCompleted(prev => {
-      const next = new Set(prev);
-      if (next.has(slug)) next.delete(slug);
-      else next.add(slug);
-      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(next))); } catch { /* ignore */ }
-      return next;
-    });
-  }, []);
+    toggleCompleted(slug);
+  }, [toggleCompleted]);
 
   // Connected topics for hover highlight
   const connectedSlugs = useMemo(() => {
@@ -280,7 +264,7 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
 
                           {/* Progress checkbox */}
                           <button
-                            onClick={e => toggleCompleted(topic.slug, e)}
+                            onClick={e => handleToggle(topic.slug, e)}
                             className={[
                               'flex-shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-200',
                               isDone
@@ -328,7 +312,6 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
             const isConnected = hoveredTopic !== null &&
               (arrow.from === hoveredTopic || arrow.to === hoveredTopic);
 
-            // Hidden by default, only visible on hover
             if (!hoveredTopic) return null;
 
             return (

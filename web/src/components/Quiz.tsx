@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { Quiz, Question, Difficulty } from '@/lib/types';
+import { useQuizScore } from '@/hooks/useQuizScore';
 
 const difficultyConfig: Record<Difficulty, { label: string; className: string }> = {
   facile: {
@@ -42,17 +43,8 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
   const [score, setScore] = useState(0);
   const [answers, setAnswers] = useState<Map<string, number>>(new Map());
   const [finished, setFinished] = useState(false);
-  const [bestScore, setBestScore] = useState<number | null>(null);
 
-  const storageKey = `scibase-quiz-${topicSlug}`;
-
-  // Charger le meilleur score
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(storageKey);
-      if (saved !== null) setBestScore(parseInt(saved, 10));
-    } catch { /* SSR or no localStorage */ }
-  }, [storageKey]);
+  const { bestScore, saveScore } = useQuizScore(topicSlug);
 
   const currentQuestion: Question = questions[currentIndex];
   const progress = ((currentIndex + (finished ? 1 : 0)) / total) * 100;
@@ -74,17 +66,10 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
       setSelectedAnswer(null);
       setIsRevealed(false);
     } else {
-      // Fin du quiz
+      // Fin du quiz — calculate final score including current question
+      const finalScore = selectedAnswer === currentQuestion.correct_answer ? score + 1 : score;
       setFinished(true);
-      // Sauvegarder le meilleur score
-      try {
-        const current = localStorage.getItem(storageKey);
-        const currentBest = current !== null ? parseInt(current, 10) : 0;
-        if (score > currentBest) {
-          localStorage.setItem(storageKey, score.toString());
-          setBestScore(score);
-        }
-      } catch { /* no localStorage */ }
+      saveScore(finalScore, total);
     }
   }
 
@@ -99,7 +84,14 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
 
   // Écran de fin
   if (finished) {
-    const percentage = Math.round((score / total) * 100);
+    // Recalculate final score from answers
+    let finalScore = 0;
+    for (const q of questions) {
+      const userAnswer = answers.get(q.id);
+      if (userAnswer === q.correct_answer) finalScore++;
+    }
+
+    const percentage = Math.round((finalScore / total) * 100);
     const byDifficulty = { facile: { correct: 0, total: 0 }, moyen: { correct: 0, total: 0 }, difficile: { correct: 0, total: 0 } };
     for (const q of questions) {
       byDifficulty[q.difficulty].total++;
@@ -112,7 +104,7 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
         {/* Score principal */}
         <div className="text-center mb-8 p-8 rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-900/20 dark:to-brand-800/20 border border-brand-200 dark:border-brand-800">
           <div className="text-6xl font-bold text-brand-600 dark:text-brand-400 mb-2">
-            {score}/{total}
+            {finalScore}/{total}
           </div>
           <div className="text-lg text-gray-600 dark:text-gray-300 mb-1">
             {percentage >= 80 ? 'Excellent !' : percentage >= 60 ? 'Bien joue !' : percentage >= 40 ? 'Pas mal !' : 'Continue tes efforts !'}
@@ -120,7 +112,7 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
           <div className="text-sm text-gray-500 dark:text-gray-400">
             {percentage}% de bonnes reponses
           </div>
-          {bestScore !== null && bestScore > score && (
+          {bestScore !== null && bestScore > finalScore && (
             <div className="mt-2 text-xs text-gray-400 dark:text-gray-500">
               Meilleur score : {bestScore}/{total}
             </div>

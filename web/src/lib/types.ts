@@ -85,6 +85,22 @@ export interface Quiz {
   questions: Question[];
 }
 
+// ── User / Auth ──
+
+export interface UserProfile {
+  id: string;
+  display_name: string | null;
+  avatar_url: string | null;
+  created_at: string;
+}
+
+export interface BookmarkItem {
+  item_type: 'topic' | 'paper';
+  topic_slug: string;
+  paper_slug: string | null;
+  created_at: string;
+}
+
 // ── Search ──
 
 export interface SearchItem {
