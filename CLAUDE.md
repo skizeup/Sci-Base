@@ -3,7 +3,7 @@
 ## Vision
 Plateforme d'apprentissage scientifique open-source.
 Phase 1 : Repo GitHub curé de ressources scientifiques — FAIT (13 topics, 148 papers).
-Phase 2 : Site web Next.js interactif — FAIT (180 pages statiques, live sur sci-base.vercel.app).
+Phase 2 : Site web Next.js interactif — FAIT (live sur sci-base.vercel.app).
 Phase 3 Sprint 1 : Dark mode + SEO — FAIT.
 Phase 3 Sprint 2 : Nouveaux topics + Parcours interactif — FAIT.
 Phase 3 Sprint 3 : Quizzes interactifs — FAIT (13 quiz, 193 pages statiques).
@@ -23,7 +23,7 @@ Phase 3 Sprint 3 : Quizzes interactifs — FAIT (13 quiz, 193 pages statiques).
 - Diagrammes : Mermaid.js (client-side, dynamic import, thème adapté light/dark)
 - Recherche : Fuse.js (client-side, index JSON pré-généré au build via scripts/generateSearchIndex.mjs)
 - Frontmatter : gray-matter
-- SEO : metadataBase, Open Graph, Twitter cards, robots.txt, sitemap.xml (177 URLs au build)
+- SEO : metadataBase, Open Graph, Twitter cards, robots.txt, sitemap.xml (190 URLs au build)
 - SSG : generateStaticParams sur toutes les routes dynamiques
 
 ## Sources de données
@@ -38,6 +38,7 @@ Phase 3 Sprint 3 : Quizzes interactifs — FAIT (13 quiz, 193 pages statiques).
 - papers.json suit le schéma défini dans data/schemas/paper.schema.json
 - learning-path.json suit le schéma défini dans data/schemas/learning-path.schema.json
 - Fichiers générés (summary.md, paper-summaries/*.md) contiennent un frontmatter YAML avec generated_by, generated_at, topic
+- quiz.json suit le schéma défini dans data/schemas/quiz.schema.json
 - Contenu en français prioritairement, papers en anglais OK
 - Commits conventionnels (feat:, fix:, docs:)
 
@@ -76,7 +77,7 @@ data/topics/<topic-name>/
 ## Architecture web (web/src/)
 ```
 lib/
-  types.ts         — Interfaces TS (Paper, Topic, Level, SearchItem, LearningPath...)
+  types.ts         — Interfaces TS (Paper, Topic, Level, SearchItem, LearningPath, Quiz, Question...)
   markdown.ts      — Pipeline unified + plugins custom (rehypeMermaid, rehypeRewriteLinks)
   content.ts       — Lecture data/topics/ via fs au build-time (SSG)
 
@@ -151,7 +152,7 @@ app/
 - **Twitter cards** : `summary_large_image` défini globalement
 - **generateMetadata** : chaque page dynamique ajoute `openGraph.url` pour l'URL canonique
 - **robots.txt** : fichier statique dans `web/public/`, Allow all + lien vers sitemap
-- **sitemap.xml** : généré au prebuild par `generateSitemap.mjs` (177 URLs, priorités 1.0→0.5)
+- **sitemap.xml** : généré au prebuild par `generateSitemap.mjs` (190 URLs, priorités 1.0→0.5)
 - **poweredByHeader** : désactivé dans `next.config.mjs`
 
 ## Quizzes interactifs
@@ -171,7 +172,7 @@ app/
 
 ### Web
 - `cd web && npm run dev` — lance le site en local (http://localhost:3000)
-- `cd web && npm run build` — build prod (180 pages statiques, prebuild génère search-index.json + sitemap.xml)
+- `cd web && npm run build` — build prod (193 pages statiques, prebuild génère search-index.json + sitemap.xml)
 - `cd web && npm run lint` — lint TypeScript/ESLint
 
 ### Scripts Python
