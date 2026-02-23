@@ -43,11 +43,11 @@ export default async function TopicPage({ params }: { params: { slug: string } }
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <h1 className="text-3xl font-bold text-gray-900">{topic.title}</h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">{topic.title}</h1>
           <LevelBadge level={topic.level} />
         </div>
         {topic.prerequisites.length > 0 && (
-          <div className="flex items-center gap-2 text-sm text-gray-500">
+          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
             <span>Prérequis :</span>
             {topic.prerequisites.map((prereq) => {
               const prereqTopic = allTopics.find((t) => t.slug === prereq);
@@ -55,7 +55,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
                 <Link
                   key={prereq}
                   href={`/topics/${prereq}`}
-                  className="text-brand-600 hover:text-brand-800 transition-colors"
+                  className="text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 transition-colors"
                 >
                   {prereqTopic?.title || prereq}
                 </Link>
@@ -67,7 +67,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
 
       {/* Vue d'ensemble */}
       <section className="mb-12">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
           Vue d&apos;ensemble
         </h2>
         <MarkdownRenderer html={topic.indexHtml} />
@@ -76,7 +76,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
       {/* Résumé IA */}
       {topic.summaryHtml && (
         <section className="mb-12">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
             Résumé vulgarisé
           </h2>
           <MarkdownRenderer html={topic.summaryHtml} />
@@ -85,15 +85,15 @@ export default async function TopicPage({ params }: { params: { slug: string } }
 
       {/* Papers preview */}
       <section className="mb-12">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
           Papers ({topic.papers.length})
         </h2>
         <div className="space-y-3">
           {topic.papers.slice(0, 5).map((paper, i) => (
-            <div key={i} className="flex items-start justify-between gap-4 p-4 rounded-lg bg-gray-50 border border-gray-100">
+            <div key={i} className="flex items-start justify-between gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
               <div className="min-w-0">
-                <p className="font-medium text-gray-900 text-sm">{paper.title}</p>
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="font-medium text-gray-900 dark:text-gray-100 text-sm">{paper.title}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                   {paper.authors.slice(0, 3).join(', ')}
                   {paper.authors.length > 3 && ' et al.'} — {paper.year}
                 </p>
@@ -103,7 +103,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
                   href={paper.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="shrink-0 text-xs text-brand-600 hover:text-brand-800"
+                  className="shrink-0 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300"
                 >
                   Lien
                 </a>
@@ -114,7 +114,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
         {topic.papers.length > 5 && (
           <Link
             href={`/topics/${topic.slug}/papers`}
-            className="inline-block mt-4 text-sm text-brand-600 hover:text-brand-800 font-medium"
+            className="inline-block mt-4 text-sm text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 font-medium"
           >
             Voir les {topic.papers.length} papers →
           </Link>
@@ -122,7 +122,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
         {topic.paperSummaries.length > 0 && (
           <Link
             href={`/topics/${topic.slug}/papers`}
-            className="inline-block mt-2 ml-4 text-sm text-gray-500 hover:text-gray-700"
+            className="inline-block mt-2 ml-4 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
           >
             {topic.paperSummaries.length} résumés disponibles
           </Link>
@@ -132,7 +132,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
       {/* Ressources */}
       {topic.resourcesHtml && (
         <section className="mb-12">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
             Ressources
           </h2>
           <MarkdownRenderer html={topic.resourcesHtml} />
@@ -140,9 +140,9 @@ export default async function TopicPage({ params }: { params: { slug: string } }
       )}
 
       {/* Navigation prev/next */}
-      <nav className="flex items-center justify-between pt-8 border-t border-gray-200">
+      <nav className="flex items-center justify-between pt-8 border-t border-gray-200 dark:border-gray-700">
         {prevTopic ? (
-          <Link href={`/topics/${prevTopic.slug}`} className="group flex items-center gap-2 text-sm text-gray-500 hover:text-brand-600">
+          <Link href={`/topics/${prevTopic.slug}`} className="group flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400">
             <svg className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
@@ -150,7 +150,7 @@ export default async function TopicPage({ params }: { params: { slug: string } }
           </Link>
         ) : <div />}
         {nextTopic ? (
-          <Link href={`/topics/${nextTopic.slug}`} className="group flex items-center gap-2 text-sm text-gray-500 hover:text-brand-600">
+          <Link href={`/topics/${nextTopic.slug}`} className="group flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400">
             {nextTopic.title}
             <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

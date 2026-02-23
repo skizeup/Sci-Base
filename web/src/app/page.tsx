@@ -9,16 +9,16 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-brand-50 to-white py-16 sm:py-24">
+      <section className="bg-gradient-to-b from-brand-50 dark:from-gray-900 to-white dark:to-gray-950 py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Apprendre l&apos;IA et le <span className="text-brand-600">Machine Learning</span>
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            Apprendre l&apos;IA et le <span className="text-brand-600 dark:text-brand-400">Machine Learning</span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
             Des ressources scientifiques vulgarisées, structurées par niveau.
             Papers de recherche expliqués simplement, parcours d&apos;apprentissage progressif.
           </p>
-          <div className="flex items-center justify-center gap-6 text-sm text-gray-500 mb-8">
+          <div className="flex items-center justify-center gap-6 text-sm text-gray-500 dark:text-gray-400 mb-8">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-brand-500" />
               {topics.length} topics
@@ -41,7 +41,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/recherche"
-              className="inline-flex items-center px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium text-sm hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center px-5 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
             >
               Rechercher
             </Link>
@@ -51,7 +51,7 @@ export default function HomePage() {
 
       {/* Topic grid */}
       <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8">
           Tous les topics
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

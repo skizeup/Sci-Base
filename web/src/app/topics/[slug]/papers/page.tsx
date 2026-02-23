@@ -46,10 +46,10 @@ export default function PapersPage({ params }: { params: { slug: string } }) {
       />
 
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
           Papers — {meta.title}
         </h1>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           {papers.length} papers · {summaries.length} résumés vulgarisés disponibles
         </p>
       </div>

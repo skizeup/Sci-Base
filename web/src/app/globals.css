@@ -9,6 +9,12 @@ body {
   background: #fafbfc;
 }
 
+.dark body,
+html.dark body {
+  color: #f3f4f6;
+  background: #030712;
+}
+
 /* Prose overrides for rendered markdown */
 .prose pre.mermaid {
   background: transparent;
@@ -32,6 +38,15 @@ body {
   @apply text-blue-600 hover:text-blue-800 transition-colors;
 }
 
+.dark .prose a {
+  @apply text-blue-400 hover:text-blue-300;
+}
+
 .prose h2 {
   @apply scroll-mt-20;
+}
+
+/* KaTeX dark mode */
+.dark .katex {
+  color: inherit;
 }

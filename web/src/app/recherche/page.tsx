@@ -17,7 +17,7 @@ export default function RecherchePage() {
         ]}
       />
 
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Recherche</h1>
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Recherche</h1>
 
       <SearchBar fullPage />
     </div>

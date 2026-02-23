@@ -20,8 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="fr" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`,
+          }}
+        />
+      </head>
+      <body className={`${inter.className} antialiased bg-[#fafbfc] dark:bg-gray-950 text-[#1a1a2e] dark:text-gray-100 transition-colors`}>
         <Header />
         <main className="min-h-[calc(100vh-12rem)]">
           {children}

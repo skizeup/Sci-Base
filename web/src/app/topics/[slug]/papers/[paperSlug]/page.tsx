@@ -55,7 +55,7 @@ export default async function PaperSummaryPage({ params }: { params: { slug: str
 
       {/* Meta info */}
       {summary.generatedBy && (
-        <p className="text-xs text-gray-400 mb-6">
+        <p className="text-xs text-gray-400 dark:text-gray-500 mb-6">
           Généré par {summary.generatedBy}
           {summary.generatedAt && ` le ${new Date(summary.generatedAt).toLocaleDateString('fr-FR')}`}
         </p>
@@ -65,10 +65,10 @@ export default async function PaperSummaryPage({ params }: { params: { slug: str
       <MarkdownRenderer html={summary.html} />
 
       {/* Back link */}
-      <div className="mt-8 pt-4 border-t border-gray-200">
+      <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
         <Link
           href={`/topics/${params.slug}/papers`}
-          className="text-sm text-brand-600 hover:text-brand-800"
+          className="text-sm text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300"
         >
           ← Retour aux papers de {meta.title}
         </Link>
@@ -79,7 +79,7 @@ export default async function PaperSummaryPage({ params }: { params: { slug: str
         {prevSummary ? (
           <Link
             href={`/topics/${params.slug}/papers/${prevSummary.slug}`}
-            className="group flex items-center gap-2 text-sm text-gray-500 hover:text-brand-600 max-w-[45%]"
+            className="group flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 max-w-[45%]"
           >
             <svg className="w-4 h-4 shrink-0 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -90,7 +90,7 @@ export default async function PaperSummaryPage({ params }: { params: { slug: str
         {nextSummary ? (
           <Link
             href={`/topics/${params.slug}/papers/${nextSummary.slug}`}
-            className="group flex items-center gap-2 text-sm text-gray-500 hover:text-brand-600 max-w-[45%] text-right"
+            className="group flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 max-w-[45%] text-right"
           >
             <span className="truncate">{nextSummary.title}</span>
             <svg className="w-4 h-4 shrink-0 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
