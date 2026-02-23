@@ -12,7 +12,7 @@ export default function ParcoursPage() {
   const topics = getAllTopicsMeta();
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
+    <div className="max-w-6xl mx-auto px-4 py-8">
       <Breadcrumb
         items={[
           { label: 'Accueil', href: '/' },
@@ -26,7 +26,8 @@ export default function ParcoursPage() {
         </h1>
         <p className="text-gray-600 dark:text-gray-400">
           Suivez ce parcours progressif pour maîtriser les fondamentaux de l&apos;IA
-          et du Machine Learning. Chaque topic s&apos;appuie sur les précédents.
+          et du Machine Learning. Survolez un topic pour voir ses dépendances,
+          et cochez ceux que vous avez terminés.
         </p>
       </div>
 
