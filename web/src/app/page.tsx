@@ -1,6 +1,15 @@
+import type { Metadata } from 'next';
 import { getAllTopicsMeta } from '@/lib/content';
 import TopicCard from '@/components/TopicCard';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'SciBase — Apprendre l\'IA et le Machine Learning',
+  description: 'Plateforme d\'apprentissage scientifique open-source. Explorez 10 topics, 119 papers vulgarisés et un parcours structuré en IA et Machine Learning.',
+  openGraph: {
+    url: '/',
+  },
+};
 
 export default function HomePage() {
   const topics = getAllTopicsMeta();

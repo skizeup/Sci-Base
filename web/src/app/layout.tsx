@@ -7,11 +7,23 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sci-base.vercel.app'),
   title: {
     default: 'SciBase — Apprendre l\'IA et le Machine Learning',
     template: '%s | SciBase',
   },
   description: 'Plateforme d\'apprentissage scientifique open-source. Explorez 10 topics, 119 papers vulgarisés et un parcours structuré.',
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    siteName: 'SciBase',
+    title: 'SciBase — Apprendre l\'IA et le Machine Learning',
+    description: 'Plateforme d\'apprentissage scientifique open-source. Explorez 10 topics, 119 papers vulgarisés et un parcours structuré.',
+    url: 'https://sci-base.vercel.app',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
 };
 
 export default function RootLayout({

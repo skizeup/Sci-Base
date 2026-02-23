@@ -25,6 +25,9 @@ export async function generateMetadata({ params }: { params: { slug: string; pap
   return {
     title: `${summary.title} — ${meta.title}`,
     description: `Résumé vulgarisé de ${summary.title}`,
+    openGraph: {
+      url: `/topics/${params.slug}/papers/${params.paperSlug}`,
+    },
   };
 }
 

@@ -17,6 +17,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: topic.title,
     description: topic.description,
+    openGraph: {
+      url: `/topics/${params.slug}`,
+    },
   };
 }
 

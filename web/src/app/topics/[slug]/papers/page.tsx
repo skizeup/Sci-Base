@@ -13,6 +13,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: `Papers — ${meta.title}`,
     description: `${meta.paperCount} papers de recherche en ${meta.title}`,
+    openGraph: {
+      url: `/topics/${params.slug}/papers`,
+    },
   };
 }
 
