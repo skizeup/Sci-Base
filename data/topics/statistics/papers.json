@@ -1,0 +1,154 @@
+[
+  {
+    "title": "Changing Data Sources in the Age of Machine Learning for Official Statistics",
+    "authors": [
+      "Cedric De Boom",
+      "Michael Reusens"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2306.04338v1",
+    "abstract": "Data science has become increasingly essential for the production of official statistics, as it enables the automated collection, processing, and analysis of large amounts of data. With such data science practices in place, it enables more timely, more insightful and more flexible reporting. However, the quality and integrity of data-science-driven statistics rely on the accuracy and reliability of the data sources and the machine learning techniques that support them. In particular, changes in data sources are inevitable to occur and pose significant risks that are crucial to address in the context of machine learning for official statistics. This paper gives an overview of the main risks, liabilities, and uncertainties associated with changing data sources in the context of machine learning for official statistics. We provide a checklist of the most prevalent origins and causes of changing data sources; not only on a technical level but also regarding ownership, ethics, regulation, and public perception. Next, we highlight the repercussions of changing data sources on statistical reporting. These include technical effects such as concept drift, bias, availability, validity, accuracy and completeness, but also the neutrality and potential discontinuation of the statistical offering. We offer a few important precautionary measures, such as enhancing robustness in both data sourcing and statistical techniques, and thorough monitoring. In doing so, machine learning-based official statistics can maintain integrity, reliability, consistency, and relevance in policy-making, decision-making, and public discourse.",
+    "pdf_url": "https://arxiv.org/pdf/2306.04338v1",
+    "source": "arxiv",
+    "tags": [
+      "stat.ML",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Statistical Inference, Learning and Models in Big Data",
+    "authors": [
+      "Beate Franke",
+      "Jean-François Plante",
+      "Ribana Roscher",
+      "Annie Lee",
+      "Cathal Smyth",
+      "Armin Hatefi",
+      "Fuqi Chen",
+      "Einat Gil",
+      "Alexander Schwing",
+      "Alessandro Selvitella",
+      "Michael M. Hoffman",
+      "Roger Grosse",
+      "Dieter Hendricks",
+      "Nancy Reid"
+    ],
+    "year": 2015,
+    "url": "http://arxiv.org/abs/1509.02900v2",
+    "abstract": "The need for new methods to deal with big data is a common theme in most scientific fields, although its definition tends to vary with the context. Statistical ideas are an essential part of this, and as a partial response, a thematic program on statistical inference, learning, and models in big data was held in 2015 in Canada, under the general direction of the Canadian Statistical Sciences Institute, with major funding from, and most activities located at, the Fields Institute for Research in Mathematical Sciences. This paper gives an overview of the topics covered, describing challenges and strategies that seem common to many different areas of application, and including some examples of applications to make these challenges and strategies more concrete.",
+    "pdf_url": "https://arxiv.org/pdf/1509.02900v2",
+    "source": "arxiv",
+    "tags": [
+      "stat.ML",
+      "cs.LG"
+    ],
+    "doi": "10.1111/insr.12176"
+  },
+  {
+    "title": "Active learning for data streams: a survey",
+    "authors": [
+      "Davide Cacciarelli",
+      "Murat Kulahci"
+    ],
+    "year": 2023,
+    "url": "http://arxiv.org/abs/2302.08893v4",
+    "abstract": "Online active learning is a paradigm in machine learning that aims to select the most informative data points to label from a data stream. The problem of minimizing the cost associated with collecting labeled observations has gained a lot of attention in recent years, particularly in real-world applications where data is only available in an unlabeled form. Annotating each observation can be time-consuming and costly, making it difficult to obtain large amounts of labeled data. To overcome this issue, many active learning strategies have been proposed in the last decades, aiming to select the most informative observations for labeling in order to improve the performance of machine learning models.",
+    "pdf_url": "https://arxiv.org/pdf/2302.08893v4",
+    "source": "arxiv",
+    "tags": [
+      "stat.ML",
+      "cs.LG",
+      "stat.ME"
+    ],
+    "doi": "10.1007/s10994-023-06454-2"
+  },
+  {
+    "title": "The Sample Complexity of Simple Binary Hypothesis Testing",
+    "authors": [
+      "Ankit Pensia",
+      "Varun Jog",
+      "Po-Ling Loh"
+    ],
+    "year": 2024,
+    "url": "http://arxiv.org/abs/2403.16981v2",
+    "abstract": "The sample complexity of simple binary hypothesis testing is the smallest number of i.i.d. samples required to distinguish between two distributions p and q in either: (i) the prior-free setting, with type-I error at most α and type-II error at most β; or (ii) the Bayesian setting, with Bayes error at most δ and prior distribution (π, 1-π). This paper derives a formula that characterizes the sample complexity for all error parameters in both settings. The formula admits equivalent expressions in terms of certain divergences from the Jensen-Shannon and Hellinger families. We explore applications to robust hypothesis testing, distributed hypothesis testing, sequential hypothesis testing, and hypothesis testing with erasures.",
+    "pdf_url": "https://arxiv.org/pdf/2403.16981v2",
+    "source": "arxiv",
+    "tags": [
+      "math.ST",
+      "cs.IT",
+      "stat.ML"
+    ]
+  },
+  {
+    "title": "Two-sample Bayesian Nonparametric Hypothesis Testing",
+    "authors": [
+      "Chris C. Holmes",
+      "François Caron",
+      "Jim E. Griffin",
+      "David A. Stephens"
+    ],
+    "year": 2009,
+    "url": "http://arxiv.org/abs/0910.5060v3",
+    "abstract": "In this article we describe Bayesian nonparametric procedures for two-sample hypothesis testing. Namely, given two sets of samples, we wish to evaluate the evidence for the null hypothesis H0: F1 ≡ F2 versus the alternative H1: F1 ≠ F2. Our method is based upon a nonparametric Pólya tree prior centered either subjectively or using an empirical procedure. We show that the Pólya tree prior leads to an analytic expression for the marginal likelihood under the two hypotheses and hence an explicit measure of the probability of the null.",
+    "pdf_url": "https://arxiv.org/pdf/0910.5060v3",
+    "source": "arxiv",
+    "tags": [
+      "stat.ME"
+    ],
+    "doi": "10.1214/14-BA914"
+  },
+  {
+    "title": "Approximate Inference for Fully Bayesian Gaussian Process Regression",
+    "authors": [
+      "Vidhi Lalchand",
+      "Carl Edward Rasmussen"
+    ],
+    "year": 2019,
+    "url": "http://arxiv.org/abs/1912.13440v2",
+    "abstract": "Learning in Gaussian Process models occurs through the adaptation of hyperparameters of the mean and the covariance function. The classical approach entails maximizing the marginal likelihood yielding fixed point estimates (an approach called Type II maximum likelihood or ML-II). An alternative learning procedure is to infer the posterior over hyperparameters in a hierarchical specification of GPs we call Fully Bayesian Gaussian Process Regression (GPR). This work considers two approximation schemes for the intractable hyperparameter posterior: 1) Hamiltonian Monte Carlo (HMC) yielding a sampling-based approximation and 2) Variational Inference (VI) where the posterior over hyperparameters is approximated by a factorized Gaussian (mean-field) or a full-rank Gaussian accounting for correlations between hyperparameters. We analyze the predictive performance for fully Bayesian GPR on a range of benchmark data sets.",
+    "pdf_url": "https://arxiv.org/pdf/1912.13440v2",
+    "source": "arxiv",
+    "tags": [
+      "stat.ML",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Normalizing Flow Regression for Bayesian Inference with Offline Likelihood Evaluations",
+    "authors": [
+      "Chengkun Li",
+      "Bobby Huggins",
+      "Petrus Mikkola",
+      "Luigi Acerbi"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2504.11554v1",
+    "abstract": "Bayesian inference with computationally expensive likelihood evaluations remains a significant challenge in many scientific domains. We propose normalizing flow regression (NFR), a novel offline inference method for approximating posterior distributions. Unlike traditional surrogate approaches that require additional sampling or inference steps, NFR directly yields a tractable posterior approximation through regression on existing log-density evaluations. We introduce training techniques specifically for flow regression, such as tailored priors and likelihood functions, to achieve robust posterior and model evidence estimation. We demonstrate NFR's effectiveness on synthetic benchmarks and real-world applications from neuroscience and biology, showing superior or comparable performance to existing methods.",
+    "pdf_url": "https://arxiv.org/pdf/2504.11554v1",
+    "source": "arxiv",
+    "tags": [
+      "stat.ML",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Bayesian Nonparametric Weighted Sampling Inference",
+    "authors": [
+      "Yajuan Si",
+      "Natesh S. Pillai",
+      "Andrew Gelman"
+    ],
+    "year": 2013,
+    "url": "http://arxiv.org/abs/1309.1799v4",
+    "abstract": "It has historically been a challenge to perform Bayesian inference in a design-based survey context. The present paper develops a Bayesian model for sampling inference in the presence of inverse-probability weights. We use a hierarchical approach in which we model the distribution of the weights of the nonsampled units in the population and simultaneously include them as predictors in a nonparametric Gaussian process regression. We use simulation studies to evaluate the performance of our procedure and compare it to the classical design-based estimator. We apply our method to the Fragile Family and Child Wellbeing Study. Our studies find the Bayesian nonparametric finite population estimator to be more robust than the classical design-based estimator without loss in efficiency, which works because we induce regularization for small cells and thus this is a way of automatically smoothing the highly variable weights.",
+    "pdf_url": "https://arxiv.org/pdf/1309.1799v4",
+    "source": "arxiv",
+    "tags": [
+      "stat.ME",
+      "stat.AP",
+      "stat.CO"
+    ],
+    "doi": "10.1214/14-BA924"
+  }
+]

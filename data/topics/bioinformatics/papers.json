@@ -1,0 +1,241 @@
+[
+  {
+    "title": "Bayesian uncertainty analysis for complex systems biology models: emulation, global parameter searches and evaluation of gene functions",
+    "authors": [
+      "Ian Vernon",
+      "Junli Liu",
+      "Michael Goldstein",
+      "James Rowe",
+      "Jen Topping",
+      "Keith Lindsey"
+    ],
+    "year": 2016,
+    "url": "http://arxiv.org/abs/1607.06358v2",
+    "abstract": "Background: Many mathematical models have now been employed across every area of systems biology. These models increasingly involve large numbers of unknown parameters, have complex structure which can result in substantial evaluation time relative to the needs of the analysis, and need to be compared to observed data. The correct analysis of such models usually requires a global parameter search, over a high dimensional parameter space, that incorporates and respects the most important sources of uncertainty. This can be an extremely difficult task, but it is essential for any meaningful inference or prediction to be made about any biological system. It hence represents a fundamental challenge for the whole of systems biology. Results: Bayesian statistical methodology for the uncertainty analysis of complex models is introduced, which is designed to address the high dimensional global parameter search problem. Bayesian emulators that mimic the systems biology model but which are extremely fast to evaluate are embedded within an iterative history match: an efficient method to search high dimensional spaces within a more formal statistical setting, while incorporating major sources of uncertainty. The approach is demonstrated via application to two models of hormonal crosstalk in Arabidopsis root development, which have 32 rate parameters, for which we identify the sets of rate parameter values that lead to acceptable matches to observed trend data. The biological consequences of the resulting comparison, including the evaluation of gene functions, are described.",
+    "pdf_url": "https://arxiv.org/pdf/1607.06358v2",
+    "source": "arxiv",
+    "tags": [
+      "q-bio.MN",
+      "q-bio.CB",
+      "q-bio.QM",
+      "stat.AP",
+      "stat.ME"
+    ],
+    "doi": "10.1186/s12918-017-0484-3"
+  },
+  {
+    "title": "PRIMRose: Insights into the Per-Residue Energy Metrics of Proteins with Double InDel Mutations using Deep Learning",
+    "authors": [
+      "Stella Brown",
+      "Nicolas Preisig",
+      "Autumn Davis",
+      "Brian Hutchinson",
+      "Filip Jagodzinski"
+    ],
+    "year": 2025,
+    "url": "http://arxiv.org/abs/2512.06496v1",
+    "abstract": "Understanding how protein mutations affect protein structure is essential for advancements in computational biology and bioinformatics. We introduce PRIMRose, a novel approach that predicts energy values for each residue given a mutated protein sequence. Unlike previous models that assess global energy shifts, our method analyzes the localized energetic impact of double amino acid insertions or deletions (InDels) at the individual residue level, enabling residue-specific insights into structural and functional disruption. We implement a Convolutional Neural Network architecture to predict the energy changes of each residue in a protein mutation. We train our model on datasets constructed from nine proteins, grouped into three categories: one set with exhaustive double InDel mutations, another with approximately 145k randomly sampled double InDel mutations, and a third with approximately 80k randomly sampled double InDel mutations. Our model achieves high predictive accuracy across a range of energy metrics as calculated by the Rosetta molecular modeling suite and reveals localized patterns that influence model performance, such as solvent accessibility and secondary structure context. This per-residue analysis offers new insights into the mutational tolerance of specific regions within proteins and provides higher interpretable and biologically meaningful predictions of InDels' effects.",
+    "pdf_url": "https://arxiv.org/pdf/2512.06496v1",
+    "source": "arxiv",
+    "tags": [
+      "q-bio.BM",
+      "cs.AI",
+      "cs.LG",
+      "cs.NE",
+      "q-bio.QM"
+    ],
+    "doi": "10.1145/3768322.3769032"
+  },
+  {
+    "title": "Deciphering neural circuits for Caenorhabditis elegans behavior by computations and perturbations to genome and connectome",
+    "authors": [
+      "Jan Karbowski"
+    ],
+    "year": 2019,
+    "url": "http://arxiv.org/abs/1910.07451v1",
+    "abstract": "Caenorhabditis elegans nematode worms are the only animals with the known detailed neural connectivity diagram, well characterized genomics, and relatively simple quantifiable behavioral output. With this in mind, many researchers view this animal as the best candidate for a systems biology approach, where one can integrate molecular and cellular knowledge to gain global understanding of worm's behavior. This work reviews some research in this direction, emphasizing computational perspective, and points out some successes and challenges to meet this lofty goal.",
+    "pdf_url": "https://arxiv.org/pdf/1910.07451v1",
+    "source": "arxiv",
+    "tags": [
+      "q-bio.NC",
+      "q-bio.GN",
+      "q-bio.QM"
+    ],
+    "doi": "10.1016/j.coisb.2018.09.008"
+  },
+  {
+    "title": "Deep Learning in Bioinformatics",
+    "authors": [
+      "Seonwoo Min",
+      "Byunghan Lee",
+      "Sungroh Yoon"
+    ],
+    "year": 2016,
+    "url": "http://arxiv.org/abs/1603.06430v5",
+    "abstract": "In the era of big data, transformation of biomedical big data into valuable knowledge has been one of the most important challenges in bioinformatics. Deep learning has advanced rapidly since the early 2000s and now demonstrates state-of-the-art performance in various fields. Accordingly, application of deep learning in bioinformatics to gain insight from data has been emphasized in both academia and industry. Here, we review deep learning in bioinformatics, presenting examples of current research. To provide a useful and comprehensive perspective, we categorize research both by the bioinformatics domain (i.e., omics, biomedical imaging, biomedical signal processing) and deep learning architecture (i.e., deep neural networks, convolutional neural networks, recurrent neural networks, emergent architectures) and present brief descriptions of each study. Additionally, we discuss theoretical and practical issues of deep learning in bioinformatics and suggest future research directions. We believe that this review will provide valuable insights and serve as a starting point for researchers to apply deep learning approaches in their bioinformatics studies.",
+    "pdf_url": "https://arxiv.org/pdf/1603.06430v5",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "q-bio.GN"
+    ]
+  },
+  {
+    "title": "Universally Sloppy Parameter Sensitivities in Systems Biology",
+    "authors": [
+      "Ryan N. Gutenkunst",
+      "Joshua J. Waterfall",
+      "Fergal P. Casey",
+      "Kevin S. Brown",
+      "Christopher R. Myers",
+      "James P. Sethna"
+    ],
+    "year": 2007,
+    "url": "http://arxiv.org/abs/q-bio/0701039v3",
+    "abstract": "Quantitative computational models play an increasingly important role in modern biology. Such models typically involve many free parameters, and assigning their values is often a substantial obstacle to model development. Directly measuring in vivo biochemical parameters is difficult, and collectively fitting them to other data often yields large parameter uncertainties. Nevertheless, in earlier work we showed in a growth-factor-signaling model that collective fitting could yield well-constrained predictions, even when it left individual parameters very poorly constrained. We also showed that the model had a 'sloppy' spectrum of parameter sensitivities, with eigenvalues roughly evenly distributed over many decades. Here we use a collection of models from the literature to test whether such sloppy spectra are common in systems biology. Strikingly, we find that every model we examine has a sloppy spectrum of sensitivities. We also test several consequences of this sloppiness for building predictive models. In particular, sloppiness suggests that collective fits to even large amounts of ideal time-series data will often leave many parameters poorly constrained. Tests over our model collection are consistent with this suggestion. This difficulty with collective fits may seem to argue for direct parameter measurements, but sloppiness also implies that such measurements must be formidably precise and complete to usefully constrain many model predictions. We confirm this implication in our signaling model. Our results suggest that sloppy sensitivity spectra are universal in systems biology models. The prevalence of sloppiness highlights the power of collective fits and suggests that modelers should focus on predictions rather than on parameters.",
+    "pdf_url": "https://arxiv.org/pdf/q-bio/0701039v3",
+    "source": "arxiv",
+    "tags": [
+      "q-bio.QM",
+      "q-bio.MN"
+    ],
+    "doi": "10.1371/journal.pcbi.0030189"
+  },
+  {
+    "title": "Big Data Analytics in Bioinformatics: A Machine Learning Perspective",
+    "authors": [
+      "Hirak Kashyap",
+      "Hasin Afzal Ahmed",
+      "Nazrul Hoque",
+      "Swarup Roy",
+      "Dhruba Kumar Bhattacharyya"
+    ],
+    "year": 2015,
+    "url": "http://arxiv.org/abs/1506.05101v1",
+    "abstract": "Bioinformatics research is characterized by voluminous and incremental datasets and complex data analytics methods. The machine learning methods used in bioinformatics are iterative and parallel. These methods can be scaled to handle big data using the distributed and parallel computing technologies. Usually big data tools perform computation in batch-mode and are not optimized for iterative processing and high data dependency among operations. In the recent years, parallel, incremental, and multi-view machine learning algorithms have been proposed. Similarly, graph-based architectures and in-memory big data tools have been developed to minimize I/O cost and optimize iterative processing. However, there lack standard big data architectures and tools for many important bioinformatics problems, such as fast construction of co-expression and regulatory networks and salient module identification, detection of complexes over growing protein-protein interaction data, fast analysis of massive DNA, RNA, and protein sequence data, and fast querying on incremental and heterogeneous disease networks. This paper addresses the issues and challenges posed by several big data problems in bioinformatics, and gives an overview of the state of the art and the future research opportunities.",
+    "pdf_url": "https://arxiv.org/pdf/1506.05101v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.CE",
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "Fighting against uncertainty: An essential issue in bioinformatics",
+    "authors": [
+      "Michiaki Hamada"
+    ],
+    "year": 2013,
+    "url": "http://arxiv.org/abs/1305.3655v1",
+    "abstract": "Many bioinformatics problems, such as sequence alignment, gene prediction, phylogenetic tree estimation and RNA secondary structure prediction, are often affected by the \"uncertainty\" of a solution; that is, the probability of the solution is extremely small. This situation arises for estimation problems on high-dimensional discrete spaces in which the number of possible discrete solutions is immense. In the analysis of biological data or the development of prediction algorithms, this uncertainty should be handled carefully and appropriately. In this review, I will explain several methods to combat this uncertainty, presenting a number of examples in bioinformatics. The methods include (i) avoiding point estimation, (ii) maximum expected accuracy (MEA) estimations, and (iii) several strategies to design a pipeline involving several prediction methods. I believe that the basic concepts and ideas described in this review will be generally useful for estimation problems in various areas of bioinformatics.",
+    "pdf_url": "https://arxiv.org/pdf/1305.3655v1",
+    "source": "arxiv",
+    "tags": [
+      "q-bio.QM",
+      "q-bio.BM",
+      "q-bio.GN"
+    ]
+  },
+  {
+    "title": "Evaluation of Galaxy as a User-friendly Bioinformatics Tool for Enhancing Clinical Diagnostics in Genetics Laboratories",
+    "authors": [
+      "Hadi Almohab",
+      "Ramzy Al-Othmany"
+    ],
+    "year": 2024,
+    "url": "http://arxiv.org/abs/2409.17253v1",
+    "abstract": "Bioinformatics platforms have significantly changed clinical diagnostics by facilitating the analysis of genomic data, thereby advancing personalized medicine and improving patient care. This study examines the integration, usage patterns, challenges, and impact of the Galaxy platform within clinical diagnostics laboratories. We employed a convergent parallel mixed-methods design, collecting quantitative survey data and qualitative insights from structured interviews with fifteen participants across various clinical roles. The findings indicate a wide adoption of Galaxy, with participants expressing high satisfaction due to its user-friendly interface and notable improvements in workflow efficiency and diagnostic accuracy. Challenges such as data security and training needs were also identified, highlighting the platform's role in simplifying complex data analysis tasks. This study contributes to understanding the transformative potential of Galaxy in clinical practice and offers recommendations for optimizing its integration and functionality. These insights are crucial for advancing clinical diagnostics and enhancing patient outcomes.",
+    "pdf_url": "https://arxiv.org/pdf/2409.17253v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.HC"
+    ],
+    "doi": "10.5121/ijbb.2024.14303"
+  },
+  {
+    "title": "ISLAND: In-Silico Prediction of Proteins Binding Affinity Using Sequence Descriptors",
+    "authors": [
+      "Wajid Arshad Abbasi",
+      "Fahad Ul Hassan",
+      "Adiba Yaseen",
+      "Fayyaz Ul Amir Afsar Minhas"
+    ],
+    "year": 2017,
+    "url": "http://arxiv.org/abs/1711.10540v2",
+    "abstract": "Determination of binding affinity of proteins in the formation of protein complexes requires sophisticated, expensive and time-consuming experimentation which can be replaced with computational methods. Most computational prediction techniques require protein structures which limit their applicability to protein complexes with known structures. In this work, we explore sequence based protein binding affinity prediction using machine learning. Our paper highlights the fact that the generalization performance of even the state of the art sequence-only predictor of binding affinity is far from satisfactory and that the development of effective and practical methods in this domain is still an open problem. We also propose a novel sequence-only predictor of binding affinity called ISLAND which gives better accuracy than existing methods over the same validation set as well as on external independent test dataset. A cloud-based webserver implementation of ISLAND and its Python code are available at the URL: http://faculty.pieas.edu.pk/fayyaz/software.html#island.",
+    "pdf_url": "https://arxiv.org/pdf/1711.10540v2",
+    "source": "arxiv",
+    "tags": [
+      "q-bio.QM",
+      "cs.LG"
+    ],
+    "doi": "10.1186/s13040-020-00231-w"
+  },
+  {
+    "title": "A Novel Approach for Protein Structure Prediction",
+    "authors": [
+      "Saurabh Sarkar",
+      "Prateek Malhotra",
+      "Virender Guman"
+    ],
+    "year": 2012,
+    "url": "http://arxiv.org/abs/1206.3509v1",
+    "abstract": "The idea of this project is to study the protein structure and sequence relationship using the hidden markov model and artificial neural network. In this context we have assumed two hidden markov models. In first model we have taken protein secondary structures as hidden and protein sequences as observed. In second model we have taken protein sequences as hidden and protein structures as observed. The efficiencies for both the hidden markov models have been calculated. The results show that the efficiencies of first model is greater that the second one .These efficiencies are cross validated using artificial neural network. This signifies the importance of protein secondary structures as the main hidden controlling factors due to which we observe a particular amino acid sequence. This also signifies that protein secondary structure is more conserved in comparison to amino acid sequence.",
+    "pdf_url": "https://arxiv.org/pdf/1206.3509v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG",
+      "q-bio.BM"
+    ]
+  },
+  {
+    "title": "MUST-CNN: A Multilayer Shift-and-Stitch Deep Convolutional Architecture for Sequence-based Protein Structure Prediction",
+    "authors": [
+      "Zeming Lin",
+      "Jack Lanchantin",
+      "Yanjun Qi"
+    ],
+    "year": 2016,
+    "url": "http://arxiv.org/abs/1605.03004v1",
+    "abstract": "Predicting protein properties such as solvent accessibility and secondary structure from its primary amino acid sequence is an important task in bioinformatics. Recently, a few deep learning models have surpassed the traditional window based multilayer perceptron. Taking inspiration from the image classification domain we propose a deep convolutional neural network architecture, MUST-CNN, to predict protein properties. This architecture uses a novel multilayer shift-and-stitch (MUST) technique to generate fully dense per-position predictions on protein sequences. Our model is significantly simpler than the state-of-the-art, yet achieves better results. By combining MUST and the efficient convolution operation, we can consider far more parameters while retaining very fast prediction speeds. We beat the state-of-the-art performance on two large protein property prediction datasets.",
+    "pdf_url": "https://arxiv.org/pdf/1605.03004v1",
+    "source": "arxiv",
+    "tags": [
+      "cs.LG"
+    ]
+  },
+  {
+    "title": "AlphaFold predicts the most complex protein knot and composite protein knots",
+    "authors": [
+      "Maarten A. Brems",
+      "Robert Runkel",
+      "Todd O. Yeates",
+      "Peter Virnau"
+    ],
+    "year": 2022,
+    "url": "http://arxiv.org/abs/2207.07410v1",
+    "abstract": "The computer artificial intelligence system AlphaFold has recently predicted previously unknown three-dimensional structures of thousands of proteins. Focusing on the subset with high-confidence scores, we algorithmically analyze these predictions for cases where the protein backbone exhibits rare topological complexity, i.e. knotting. Amongst others, we discovered a $7_1$-knot, the most topologically complex knot ever found in a protein, as well several 6-crossing composite knots comprised of two methyltransferase or carbonic anhydrase domains, each containing a simple trefoil knot. These deeply embedded composite knots occur evidently by gene duplication and interconnection of knotted dimers. Finally, we report two new five-crossing knots including the first $5_1$-knot. Our list of analyzed structures forms the basis for future experimental studies to confirm these novel knotted topologies and to explore their complex folding mechanisms.",
+    "pdf_url": "https://arxiv.org/pdf/2207.07410v1",
+    "source": "arxiv",
+    "tags": [
+      "q-bio.BM",
+      "cond-mat.soft",
+      "physics.bio-ph"
+    ],
+    "doi": "10.1002/pro.4380"
+  },
+  {
+    "title": "Protein-to-genome alignment with miniprot",
+    "authors": [
+      "Heng Li"
+    ],
+    "year": 2022,
+    "url": "http://arxiv.org/abs/2210.08052v2",
+    "abstract": "Motivation: Protein-to-genome alignment is critical to annotating genes in non-model organisms. While there are a few tools for this purpose, all of them were developed over ten years ago and did not incorporate the latest advances in alignment algorithms. They are inefficient and could not keep up with the rapid production of new genomes and quickly growing protein databases. Results: Here we describe miniprot, a new aligner for mapping protein sequences to a complete genome. Miniprot integrates recent techniques such as k-mer sketch and SIMD-based dynamic programming. It is tens of times faster than existing tools while achieving comparable accuracy on real data. Availability and implementation: https://github.com/lh3/miniprot",
+    "pdf_url": "https://arxiv.org/pdf/2210.08052v2",
+    "source": "arxiv",
+    "tags": [
+      "q-bio.GN"
+    ]
+  }
+]

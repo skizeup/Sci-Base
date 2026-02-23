@@ -135,6 +135,7 @@ def validate_papers(papers: list[dict], schema_path: str) -> list[dict]:
 def main():
     parser = argparse.ArgumentParser(description="Fetch papers from arXiv for SciBase")
     parser.add_argument("--topic", required=True, help="Search query (e.g. 'machine learning')")
+    parser.add_argument("--slug", help="Override the auto-generated slug (e.g. 'statistics')")
     parser.add_argument(
         "--max-results",
         type=int,
@@ -145,7 +146,7 @@ def main():
 
     max_results = min(args.max_results, 100)
     topic = args.topic
-    slug = slugify(topic)
+    slug = args.slug if args.slug else slugify(topic)
 
     if not slug:
         print("Erreur : le nom de topic ne produit aucun slug valide.", file=sys.stderr)

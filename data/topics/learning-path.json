@@ -67,6 +67,24 @@
           "level": "avance",
           "order": 10,
           "prerequisites": ["deep-learning", "computer-vision", "natural-language-processing"]
+        },
+        {
+          "topic_id": "statistics",
+          "level": "debutant",
+          "order": 11,
+          "prerequisites": []
+        },
+        {
+          "topic_id": "mathematics-for-ai",
+          "level": "debutant",
+          "order": 12,
+          "prerequisites": []
+        },
+        {
+          "topic_id": "bioinformatics",
+          "level": "intermediaire",
+          "order": 13,
+          "prerequisites": ["machine-learning"]
         }
       ]
     }
