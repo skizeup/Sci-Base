@@ -4,6 +4,7 @@
 Plateforme d'apprentissage scientifique open-source.
 Phase 1 : Repo GitHub curé de ressources scientifiques — FAIT (10 topics, 119 papers).
 Phase 2 : Site web Next.js interactif — FAIT (146 pages statiques, live sur sci-base.vercel.app).
+Phase 3 Sprint 1 : Dark mode + SEO — FAIT.
 
 ## Stack
 
@@ -20,6 +21,7 @@ Phase 2 : Site web Next.js interactif — FAIT (146 pages statiques, live sur sc
 - Diagrammes : Mermaid.js (client-side, dynamic import, thème adapté light/dark)
 - Recherche : Fuse.js (client-side, index JSON pré-généré au build via scripts/generateSearchIndex.mjs)
 - Frontmatter : gray-matter
+- SEO : metadataBase, Open Graph, Twitter cards, robots.txt, sitemap.xml (142 URLs au build)
 - SSG : generateStaticParams sur toutes les routes dynamiques
 
 ## Sources de données
@@ -51,7 +53,7 @@ web/               — App Next.js (Phase 2)
     app/           — Pages (App Router)
     lib/           — Data layer (types, markdown pipeline, content reader)
     components/    — Composants React
-  scripts/         — Scripts Node.js (search index generator)
+  scripts/         — Scripts Node.js (search index, sitemap)
 notebooks/         — Notebooks Jupyter intégrables
 docs/              — Documentation du projet
 ```
@@ -125,11 +127,21 @@ app/
 - **KaTeX** : `.dark .katex { color: inherit }` dans globals.css
 - **Prose** : `dark:prose-invert` (plugin typography built-in)
 
+## SEO
+
+- **metadataBase** : `https://sci-base.vercel.app` dans `layout.tsx` — toutes les URLs OG sont résolues contre cette base
+- **Open Graph** : `type`, `locale` (fr_FR), `siteName`, `title`, `description`, `url` définis au niveau layout, hérités par les pages enfants
+- **Twitter cards** : `summary_large_image` défini globalement
+- **generateMetadata** : chaque page dynamique ajoute `openGraph.url` pour l'URL canonique
+- **robots.txt** : fichier statique dans `web/public/`, Allow all + lien vers sitemap
+- **sitemap.xml** : généré au prebuild par `generateSitemap.mjs` (142 URLs, priorités 1.0→0.5)
+- **poweredByHeader** : désactivé dans `next.config.mjs`
+
 ## Commandes
 
 ### Web
 - `cd web && npm run dev` — lance le site en local (http://localhost:3000)
-- `cd web && npm run build` — build prod (146 pages statiques, prebuild génère search-index.json)
+- `cd web && npm run build` — build prod (146 pages statiques, prebuild génère search-index.json + sitemap.xml)
 - `cd web && npm run lint` — lint TypeScript/ESLint
 
 ### Scripts Python
@@ -153,5 +165,6 @@ app/
 - `output: 'export'` dans next.config.mjs → HTML statique dans `out/`
 - `web/scripts/copyData.mjs` : copie `data/` dans `web/data/` au prebuild (Vercel sandbox le root directory, `../data` n'est pas accessible)
 - `web/scripts/generateSearchIndex.mjs` : génère `public/search-index.json` (248 items)
+- `web/scripts/generateSitemap.mjs` : génère `public/sitemap.xml` (142 URLs avec priorités)
 - Auto-deploy à chaque `git push` sur master
 - **Important** : avec Root Directory = `web/`, les fichiers hors de `web/` ne sont PAS accessibles au build. Le script `copyData.mjs` résout ce problème.

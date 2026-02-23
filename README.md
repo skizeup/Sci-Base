@@ -10,7 +10,7 @@
 
 **[sci-base.vercel.app](https://sci-base.vercel.app)** — le site est déployé et accessible publiquement.
 
-Rendu LaTeX, diagrammes Mermaid interactifs, recherche intégrée, parcours d'apprentissage progressif, dark mode automatique.
+Rendu LaTeX, diagrammes Mermaid interactifs, recherche intégrée, parcours d'apprentissage progressif, dark mode automatique, SEO (Open Graph, sitemap, robots.txt).
 
 ```bash
 # Développement local
@@ -52,6 +52,12 @@ Le site supporte un dark mode avec 3 modes :
 - **Sombre** — forcé dark
 
 Le choix est persisté dans `localStorage`. Le mode auto se met à jour automatiquement. Un script inline dans `<head>` empêche le flash blanc au chargement.
+
+### SEO
+
+- **Open Graph** + **Twitter Cards** sur toutes les pages (titre, description, URL canonique)
+- **sitemap.xml** généré au build (142 URLs avec priorités)
+- **robots.txt** avec lien vers le sitemap
 
 ---
 
@@ -119,7 +125,7 @@ npm run build    # Build prod (146 pages statiques)
 npm run lint     # Lint TypeScript/ESLint
 ```
 
-Le `prebuild` script copie les données et génère `public/search-index.json` (index Fuse.js).
+Le `prebuild` script copie les données, génère `public/search-index.json` (index Fuse.js) et `public/sitemap.xml` (142 URLs).
 
 ### Déploiement
 
@@ -127,7 +133,7 @@ Le site est déployé automatiquement sur [Vercel](https://vercel.com) à chaque
 
 - **URL** : [sci-base.vercel.app](https://sci-base.vercel.app)
 - **Root directory** : `web`
-- **Build** : `npm run build` (prebuild copie `data/` + génère l'index de recherche, puis `next build` génère 146 pages statiques)
+- **Build** : `npm run build` (prebuild copie `data/` + génère l'index de recherche + sitemap, puis `next build` génère 146 pages statiques)
 
 ### Récupérer des papers depuis arXiv
 
