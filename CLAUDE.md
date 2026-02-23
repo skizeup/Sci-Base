@@ -13,10 +13,11 @@ Phase 2 : Site web Next.js interactif — FAIT (146 pages statiques, live sur sc
 
 ### Web (Phase 2)
 - Framework : Next.js 14 (App Router) + TypeScript
-- Styling : Tailwind CSS + @tailwindcss/typography
+- Styling : Tailwind CSS (`darkMode: 'class'`) + @tailwindcss/typography (`dark:prose-invert`)
+- Dark mode : ThemeToggle 3 états (auto/clair/sombre), auto = basé sur l'heure locale (7h-20h light, 20h-7h dark)
 - Markdown : unified + remark-parse + remark-gfm + remark-math + remark-rehype
 - LaTeX : rehype-katex (rendu 100% build-time, zero JS client)
-- Diagrammes : Mermaid.js (client-side, dynamic import seulement si diagrammes présents)
+- Diagrammes : Mermaid.js (client-side, dynamic import, thème adapté light/dark)
 - Recherche : Fuse.js (client-side, index JSON pré-généré au build via scripts/generateSearchIndex.mjs)
 - Frontmatter : gray-matter
 - SSG : generateStaticParams sur toutes les routes dynamiques
@@ -75,12 +76,13 @@ lib/
   content.ts       — Lecture data/topics/ via fs au build-time (SSG)
 
 components/
-  Header.tsx       — Nav sticky avec burger mobile
+  Header.tsx       — Nav sticky avec burger mobile + ThemeToggle
   Footer.tsx       — Footer simple
+  ThemeToggle.tsx  — Toggle dark mode : auto (heure locale) / clair / sombre
   TopicCard.tsx    — Carte topic pour la grille
   LevelBadge.tsx   — Badge coloré (vert/ambre/violet)
   PaperCard.tsx    — Carte paper avec liens et tags
-  MarkdownRenderer.tsx — Client component, rendu HTML + init Mermaid (dynamic import)
+  MarkdownRenderer.tsx — Client component, rendu HTML + init Mermaid (dynamic import, thème adapté)
   SearchBar.tsx    — Recherche Fuse.js (dropdown compact ou full page)
   LearningPath.tsx — Visualisation parcours par niveau
   Breadcrumb.tsx   — Fil d'Ariane
@@ -111,6 +113,17 @@ app/
 
 - **rehypeMermaid** : transforme `<pre><code class="language-mermaid">` en `<pre class="mermaid">` (format attendu par Mermaid.js)
 - **rehypeRewriteLinks** : réécrit les liens `../topic-slug/` en `/topics/topic-slug` pour la navigation web
+
+## Dark mode
+
+- **Stratégie** : `darkMode: 'class'` dans Tailwind. Classe `dark` sur `<html>` active tous les `dark:` prefixes.
+- **ThemeToggle** : 3 modes cycliques — Auto (horloge) → Clair (soleil) → Sombre (lune)
+- **Mode Auto** : basé sur l'heure locale de l'utilisateur (7h-20h = light, 20h-7h = dark), re-check chaque minute
+- **Persistance** : `localStorage('theme')` pour le choix manuel, supprimé en mode auto
+- **Anti-flash** : script inline dans `<head>` lit localStorage/heure AVANT le premier rendu
+- **Mermaid** : MutationObserver sur `<html>` détecte le changement de classe `dark` → re-render avec le bon thème
+- **KaTeX** : `.dark .katex { color: inherit }` dans globals.css
+- **Prose** : `dark:prose-invert` (plugin typography built-in)
 
 ## Commandes
 

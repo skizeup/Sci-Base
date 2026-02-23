@@ -10,7 +10,7 @@
 
 **[sci-base.vercel.app](https://sci-base.vercel.app)** — le site est déployé et accessible publiquement.
 
-Rendu LaTeX, diagrammes Mermaid interactifs, recherche intégrée, parcours d'apprentissage progressif.
+Rendu LaTeX, diagrammes Mermaid interactifs, recherche intégrée, parcours d'apprentissage progressif, dark mode automatique.
 
 ```bash
 # Développement local
@@ -24,7 +24,7 @@ cd web && npm install && npm run dev
 |-------------|------|
 | Next.js 14 (App Router) | Framework React, SSG |
 | TypeScript | Typage statique |
-| Tailwind CSS | Styling + `@tailwindcss/typography` pour le rendu prose |
+| Tailwind CSS | Styling + `@tailwindcss/typography` + dark mode (`darkMode: 'class'`) |
 | unified / remark / rehype | Pipeline Markdown → HTML |
 | KaTeX (rehype-katex) | Rendu LaTeX au build-time (zero JS client) |
 | Mermaid.js | Diagrammes (client-side, dynamic import) |
@@ -43,6 +43,15 @@ cd web && npm install && npm run dev
 | `/recherche` | Recherche full-page (248 items indexés) |
 
 **146 pages statiques** générées au build.
+
+### Dark mode
+
+Le site supporte un dark mode avec 3 modes :
+- **Auto** — basé sur l'heure locale (7h-20h clair, 20h-7h sombre)
+- **Clair** — forcé light
+- **Sombre** — forcé dark
+
+Le choix est persisté dans `localStorage`. Le mode auto se met à jour automatiquement. Un script inline dans `<head>` empêche le flash blanc au chargement.
 
 ---
 
