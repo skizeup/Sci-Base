@@ -31,6 +31,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sci-base.vercel.app/topics/bioinformatics/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sci-base.vercel.app/topics/bioinformatics/papers/a-novel-approach-for-protein-structure-prediction</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -121,6 +127,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sci-base.vercel.app/topics/computer-vision/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sci-base.vercel.app/topics/computer-vision/papers/feature-pyramid-networks-for-object-detection</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -175,6 +187,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sci-base.vercel.app/topics/deep-learning/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sci-base.vercel.app/topics/deep-learning/papers/an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -227,6 +245,12 @@
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sci-base.vercel.app/topics/generative-models/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sci-base.vercel.app/topics/generative-models/papers/a-3d-generative-model-of-pathological-multi-modal-mr-images-and-segmentations</loc>
@@ -361,6 +385,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sci-base.vercel.app/topics/graph-neural-networks/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sci-base.vercel.app/topics/graph-neural-networks/papers/fast-and-deep-graph-neural-networks</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -401,6 +431,12 @@
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sci-base.vercel.app/topics/large-language-models/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sci-base.vercel.app/topics/large-language-models/papers/a-critical-review-of-causal-reasoning-benchmarks-for-large-language-models</loc>
@@ -535,6 +571,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sci-base.vercel.app/topics/machine-learning/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sci-base.vercel.app/topics/machine-learning/papers/a-few-useful-things-to-know-about-machine-learning</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -607,6 +649,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sci-base.vercel.app/topics/mathematics-for-ai/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sci-base.vercel.app/topics/mathematics-for-ai/papers/beyond-ntk-with-vanilla-gradient-descent-a-mean-field-analysis-of-neural-networks-with-polynomial-width-samples-and-time</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -667,6 +715,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sci-base.vercel.app/topics/natural-language-processing/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sci-base.vercel.app/topics/natural-language-processing/papers/bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -721,6 +775,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sci-base.vercel.app/topics/reinforcement-learning/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sci-base.vercel.app/topics/reinforcement-learning/papers/continuous-control-with-deep-reinforcement-learning</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -773,6 +833,12 @@
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sci-base.vercel.app/topics/statistics/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sci-base.vercel.app/topics/statistics/papers/active-learning-for-data-streams-a-survey</loc>
@@ -833,6 +899,12 @@
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sci-base.vercel.app/topics/transfer-learning/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sci-base.vercel.app/topics/transfer-learning/papers/communication-efficient-and-privacy-preserving-feature-based-federated-transfer-learning</loc>
@@ -941,6 +1013,12 @@
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sci-base.vercel.app/topics/vision-language-models/quiz</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sci-base.vercel.app/topics/vision-language-models/papers/behavioral-bias-of-vision-language-models-a-behavioral-finance-view</loc>

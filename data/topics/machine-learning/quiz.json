@@ -1,0 +1,75 @@
+{
+  "topic_id": "machine-learning",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:35:29Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Quelle est la principale différence entre l'apprentissage supervisé et l'apprentissage non supervisé ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Utilisation de données étiquetées",
+        "Utilisation de données non étiquetées",
+        "Utilisation d'un agent",
+        "Utilisation d'un modèle prédéfini"
+      ],
+      "correct_answer": 0,
+      "explanation": "L'apprentissage supervisé utilise des données étiquetées pour former un modèle, tandis que l'apprentissage non supervisé utilise des données non étiquetées pour découvrir des patterns."
+    },
+    {
+      "id": "q2",
+      "question": "Le deep learning est un sous-domaine du machine learning.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le deep learning est effectivement un sous-domaine du machine learning, qui se concentre sur l'utilisation de réseaux de neurones profonds pour résoudre des problèmes complexes."
+    },
+    {
+      "id": "q3",
+      "question": "Quel est l'objectif principal de la fonction de coût dans le machine learning ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Déterminer la complexité du modèle",
+        "Évaluer la performance du modèle",
+        "Sélectionner les données d'entraînement",
+        "Réduire la variance du modèle"
+      ],
+      "correct_answer": 1,
+      "explanation": "La fonction de coût mesure l'erreur entre les prédictions du modèle et les données réelles, permettant ainsi d'évaluer la performance du modèle."
+    },
+    {
+      "id": "q4",
+      "question": "La technique de validation croisée est utilisée pour",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Évaluer la performance du modèle sur des données de test",
+        "Sélectionner les hyperparamètres du modèle",
+        "Réduire la variance du modèle",
+        "Augmenter la complexité du modèle"
+      ],
+      "correct_answer": 0,
+      "explanation": "La validation croisée est utilisée pour évaluer la performance du modèle sur des données non vues, afin de vérifier sa capacité à généraliser."
+    },
+    {
+      "id": "q5",
+      "question": "Le problème de biais vs variance est lié à",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "La complexité du modèle",
+        "La quantité de données disponibles",
+        "La qualité des données",
+        "La méthode d'optimisation utilisée"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le problème de biais vs variance est lié à la complexité du modèle, car un modèle trop simple peut avoir un biais élevé, tandis qu'un modèle trop complexe peut avoir une variance élevée."
+    }
+  ]
+}

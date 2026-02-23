@@ -1,0 +1,203 @@
+{
+  "topic_id": "large-language-models",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:35:09Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Qu'est-ce que les Large Language Models (LLMs) sont-ils basés sur ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Réseau de neurones",
+        "Architecture Transformer",
+        "Apprentissage par renforcement",
+        "Régression linéaire"
+      ],
+      "correct_answer": 1,
+      "explanation": "Les LLMs sont basés sur l'architecture Transformer, qui repose sur le mécanisme d'auto-attention."
+    },
+    {
+      "id": "q2",
+      "question": "Les LLMs sont utilisés pour améliorer la compréhension du langage naturel.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les LLMs sont effectivement utilisés pour améliorer la compréhension du langage naturel grâce à leur capacité à comprendre et générer du langage de manière très performante."
+    },
+    {
+      "id": "q3",
+      "question": "Quelle est la formule de l'attention dans les LLMs ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Attention(Q, K, V) = softmax(QK^T/sqrt(d_k))V",
+        "Attention(Q, K, V) = softmax(QK^T/d_k)V",
+        "Attention(Q, K, V) = softmax(QK^T/sqrt(d_k))K",
+        "Attention(Q, K, V) = softmax(QK^T/d_k)K"
+      ],
+      "correct_answer": 0,
+      "explanation": "La formule de l'attention dans les LLMs est bien Attention(Q, K, V) = softmax(QK^T/sqrt(d_k))V."
+    },
+    {
+      "id": "q4",
+      "question": "Les LLMs sont entraînés en deux phases.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les LLMs sont effectivement entraînés en deux phases : le pré-entraînement auto-supervisé et le fine-tuning aligné avec les préférences humaines."
+    },
+    {
+      "id": "q5",
+      "question": "Quelle est la principale différence entre le pré-entraînement et le fine-tuning des LLMs ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Le pré-entraînement est réalisé sur des données annotées, tandis que le fine-tuning est réalisé sur des données non annotées",
+        "Le pré-entraînement est réalisé sur des données non annotées, tandis que le fine-tuning est réalisé sur des données annotées",
+        "Le pré-entraînement est réalisé sur des données de petite taille, tandis que le fine-tuning est réalisé sur des données de grande taille",
+        "Le pré-entraînement est réalisé sur des données de grande taille, tandis que le fine-tuning est réalisé sur des données de petite taille"
+      ],
+      "correct_answer": 1,
+      "explanation": "Le pré-entraînement est effectivement réalisé sur des données non annotées, tandis que le fine-tuning est réalisé sur des données annotées."
+    },
+    {
+      "id": "q6",
+      "question": "Les LLMs sont utilisés pour améliorer la génération de code.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les LLMs sont effectivement utilisés pour améliorer la génération de code, ce qui constitue l'une de leurs applications pratiques."
+    },
+    {
+      "id": "q7",
+      "question": "Qu'est-ce que le Reinforcement Learning from Human Feedback (RLHF) ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Un type de pré-entraînement pour les LLMs",
+        "Un type de fine-tuning pour les LLMs",
+        "Une technique pour améliorer la compréhension du langage naturel",
+        "Une méthode pour évaluer les performances des LLMs"
+      ],
+      "correct_answer": 1,
+      "explanation": "Le RLHF est effectivement une technique de fine-tuning qui permet d'aligner le modèle avec les intentions humaines."
+    },
+    {
+      "id": "q8",
+      "question": "Les LLMs sont utilisés dans des secteurs tels que l'éducation et la santé.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les LLMs ont des applications pratiques dans divers secteurs, notamment l'éducation et la santé, où ils peuvent être utilisés pour améliorer les résultats et l'efficacité."
+    },
+    {
+      "id": "q9",
+      "question": "Qu'est-ce que la quantization dans les LLMs ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Une technique pour réduire la précision des poids des modèles",
+        "Une technique pour augmenter la précision des poids des modèles",
+        "Une technique pour améliorer la compréhension du langage naturel",
+        "Une technique pour évaluer les performances des LLMs"
+      ],
+      "correct_answer": 0,
+      "explanation": "La quantization est effectivement une technique qui réduit la précision des poids des modèles pour améliorer l'efficacité et la rapidité."
+    },
+    {
+      "id": "q10",
+      "question": "Les LLMs suivent des lois de puissance prévisibles en fonction du nombre de paramètres.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les LLMs suivent effectivement des lois de puissance prévisibles en fonction du nombre de paramètres, ce qui est démontré par les lois d'échelle."
+    },
+    {
+      "id": "q11",
+      "question": "Qu'est-ce que le KV-cache dans les LLMs ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Un type de pré-entraînement pour les LLMs",
+        "Un type de fine-tuning pour les LLMs",
+        "Une technique pour accélérer l'inférence en misant en cache les clés/valeurs",
+        "Une méthode pour évaluer les performances des LLMs"
+      ],
+      "correct_answer": 2,
+      "explanation": "Le KV-cache est effectivement une technique qui accélère l'inférence en misant en cache les clés/valeurs pour améliorer la rapidité et l'efficacité."
+    },
+    {
+      "id": "q12",
+      "question": "Les LLMs sont utilisés pour améliorer la recherche d'information.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les LLMs sont effectivement utilisés pour améliorer la recherche d'information, ce qui constitue l'une de leurs applications pratiques."
+    },
+    {
+      "id": "q13",
+      "question": "Qu'est-ce que le LoRA dans les LLMs ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Un type de pré-entraînement pour les LLMs",
+        "Un type de fine-tuning pour les LLMs",
+        "Une adaptation de rang faible pour le fine-tuning efficace",
+        "Une méthode pour évaluer les performances des LLMs"
+      ],
+      "correct_answer": 2,
+      "explanation": "Le LoRA est effectivement une adaptation de rang faible pour le fine-tuning efficace, ce qui permet d'améliorer la précision et la rapidité des LLMs."
+    },
+    {
+      "id": "q14",
+      "question": "Les LLMs sont utilisés pour améliorer la génération de résumés.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les LLMs sont effectivement utilisés pour améliorer la génération de résumés, ce qui constitue l'une de leurs applications pratiques."
+    },
+    {
+      "id": "q15",
+      "question": "Qu'est-ce que le Transformer décodeur uniquement dans les LLMs ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Un type de pré-entraînement pour les LLMs",
+        "Un type de fine-tuning pour les LLMs",
+        "Un modèle qui ne peut attendre que les tokens précédents",
+        "Un modèle qui peut attendre tous les tokens"
+      ],
+      "correct_answer": 2,
+      "explanation": "Le Transformer décodeur uniquement est effectivement un modèle qui ne peut attendre que les tokens précédents, ce qui correspond à une attention causale."
+    }
+  ]
+}

@@ -48,6 +48,7 @@ export interface TopicFull extends TopicMeta {
   resourcesHtml: string;
   papers: Paper[];
   paperSummaries: PaperSummaryMeta[];
+  quiz?: Quiz | null;
 }
 
 export interface PaperSummaryMeta {
@@ -62,8 +63,32 @@ export interface PaperSummaryFull extends PaperSummaryMeta {
   generatedAt?: string;
 }
 
+// ── Quiz ──
+
+export type QuestionType = 'multiple_choice' | 'true_false';
+export type Difficulty = 'facile' | 'moyen' | 'difficile';
+
+export interface Question {
+  id: string;
+  question: string;
+  type: QuestionType;
+  difficulty: Difficulty;
+  options: string[];
+  correct_answer: number;
+  explanation: string;
+}
+
+export interface Quiz {
+  topic_id: string;
+  generated_by?: string;
+  generated_at?: string;
+  questions: Question[];
+}
+
+// ── Search ──
+
 export interface SearchItem {
-  type: 'topic' | 'paper' | 'paper-summary';
+  type: 'topic' | 'paper' | 'paper-summary' | 'quiz';
   title: string;
   description: string;
   url: string;

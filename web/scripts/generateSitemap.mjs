@@ -41,6 +41,12 @@ for (const slug of topicDirs) {
   addUrl(`/topics/${slug}`, 0.9, 'monthly');
   addUrl(`/topics/${slug}/papers`, 0.7, 'monthly');
 
+  // Quiz
+  const quizPath = path.join(TOPICS_DIR, slug, 'quiz.json');
+  if (fs.existsSync(quizPath)) {
+    addUrl(`/topics/${slug}/quiz`, 0.6, 'monthly');
+  }
+
   // Paper summaries
   const summariesDir = path.join(TOPICS_DIR, slug, 'paper-summaries');
   if (fs.existsSync(summariesDir)) {

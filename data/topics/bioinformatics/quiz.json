@@ -1,0 +1,137 @@
+{
+  "topic_id": "bioinformatics",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:33:51Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Quelle est la principale différence entre l'alignement global et l'alignement local de séquences ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "L'alignement global concerne les séquences complètes tandis que l'alignement local cherche les sous-régions les plus similaires.",
+        "L'alignement global est utilisé pour les protéines et l'alignement local pour les acides nucléiques.",
+        "L'alignement local est plus rapide que l'alignement global.",
+        "L'alignement global nécessite moins de données que l'alignement local."
+      ],
+      "correct_answer": 0,
+      "explanation": "L'alignement global compare deux séquences sur toute leur longueur, tandis que l'alignement local cherche à identifier les sous-régions les plus similaires entre deux séquences."
+    },
+    {
+      "id": "q2",
+      "question": "La bioinformatique est essentiellement utilisée pour la prédiction de structures protéiques.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 1,
+      "explanation": "La bioinformatique a des applications plus larges, incluant l'analyse de génomes, la découverte de médicaments, et la recherche en médecine personnalisée, bien qu'elle inclut la prédiction de structures protéiques."
+    },
+    {
+      "id": "q3",
+      "question": "Qu'est-ce que le séquençage NGS (Next-Generation Sequencing) ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Une méthode de séquençage qui produit des lectures de séquences très longues.",
+        "Un type de technique de séquençage qui produit un grand volume de données en peu de temps.",
+        "Un outil utilisé pour prédire les structures protéiques.",
+        "Une base de données pour stocker les informations génomiques."
+      ],
+      "correct_answer": 1,
+      "explanation": "Le séquençage NGS est une technologie de séquençage haute performance qui permet l'analyse rapide et à grande échelle du génome."
+    },
+    {
+      "id": "q4",
+      "question": "Le problème du repliement des protéines est de prédire la structure 3D d'une protéine à partir de sa séquence d'acides aminés.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "La prédiction de la structure 3D d'une protéine à partir de sa séquence d'acides aminés est un défi majeur en bioinformatique, connu sous le nom de problème du repliement des protéines."
+    },
+    {
+      "id": "q5",
+      "question": "Quel outil bioinformatique permet de rechercher rapidement des similarités dans les bases de données de séquences ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "BLAST",
+        "Smith-Waterman",
+        "Needleman-Wunsch",
+        "ClustalW"
+      ],
+      "correct_answer": 0,
+      "explanation": "BLAST (Basic Local Alignment Search Tool) est un outil bioinformatique utilisé pour rechercher des séquences similaires dans les bases de données."
+    },
+    {
+      "id": "q6",
+      "question": "La bioinformatique est utilisée dans la médecine personnalisée.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "La bioinformatique joue un rôle important dans la médecine personnalisée en aidant à analyser les données génomiques et à développer des thérapies ciblées."
+    },
+    {
+      "id": "q7",
+      "question": "Qu'est-ce que l'annotation en bioinformatique ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Le processus de prédiction de la structure 3D d'une protéine.",
+        "L'identification des gènes et des régions régulatrices dans une séquence d'ADN.",
+        "La recherche de similarités entre séquences.",
+        "La prédiction de la fonction d'une protéine."
+      ],
+      "correct_answer": 1,
+      "explanation": "L'annotation en bioinformatique implique l'identification des gènes, des régions régulatrices et des éléments fonctionnels dans une séquence d'ADN."
+    },
+    {
+      "id": "q8",
+      "question": "AlphaFold est un outil de prédiction de structure protéique qui utilise le deep learning.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "AlphaFold est un modèle informatique développé par DeepMind qui utilise le deep learning pour prédire la structure 3D des protéines avec une grande précision."
+    },
+    {
+      "id": "q9",
+      "question": "Qu'est-ce que le criblage virtuel en bioinformatique ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Une méthode pour prédire la structure 3D d'une protéine.",
+        "Un processus de docking moléculaire pour trouver des inhibiteurs de protéines.",
+        "Une technique de criblage in silico pour tester des millions de molécules contre une cible protéique.",
+        "Un outil pour l'analyse de données génomiques."
+      ],
+      "correct_answer": 2,
+      "explanation": "Le criblage virtuel est une technique bioinformatique qui utilise des simulations informatiques pour tester des millions de molécules contre une cible protéique afin d'identifier des candidats potentiels pour la découverte de médicaments."
+    },
+    {
+      "id": "q10",
+      "question": "La bioinformatique contribue à accélérer la découverte de nouveaux médicaments.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "La bioinformatique joue un rôle crucial dans la découverte de médicaments en aidant à identifier les cibles thérapeutiques, à prédire l'efficacité et la toxicité des composés, et à accélérer le processus de développement de nouveaux médicaments."
+    }
+  ]
+}

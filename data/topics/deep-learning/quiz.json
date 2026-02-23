@@ -1,0 +1,73 @@
+{
+  "topic_id": "deep-learning",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:33:57Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Qu'est-ce que le deep learning ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Un type de machine learning basé sur les réseaux de neurones artificiels",
+        "Un type de machine learning basé sur les arbres de décision",
+        "Un type de machine learning basé sur les algorithmes génétiques",
+        "Un type de machine learning basé sur les réseaux de neurones biologiques"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le deep learning est un type de machine learning qui utilise des réseaux de neurones artificiels pour apprendre et prendre des décisions."
+    },
+    {
+      "id": "q2",
+      "question": "Le deep learning est un sous-domaine du machine learning.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Oui, le deep learning est un sous-domaine du machine learning qui se concentre sur l'utilisation de réseaux de neurones artificiels pour apprendre et prendre des décisions."
+    },
+    {
+      "id": "q3",
+      "question": "Quelle est la fonction principale de la rétropropagation dans le deep learning ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "D'apprendre les données d'entraînement",
+        "De mettre à jour les poids des neurones",
+        "Decalculer la sortie des neurones",
+        "De sélectionner les fonction d'activation"
+      ],
+      "correct_answer": 1,
+      "explanation": "La rétropropagation est un algorithme qui permet de mettre à jour les poids des neurones en fonction de l'erreur commise par le réseau, ce qui permet d'améliorer les performances du modèle."
+    },
+    {
+      "id": "q4",
+      "question": "Les réseaux de neurones convolutionnels (CNN) sont principalement utilisés pour quel type de tâche ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "La reconnaissance de texte",
+        "La reconnaissance d'images",
+        "La synthèse vocale",
+        "La traduction automatique"
+      ],
+      "correct_answer": 1,
+      "explanation": "Les CNN sont principalement utilisés pour la reconnaissance d'images, car ils sont capables de traiter les données d'images de manière efficace et de reconnaître les motifs et les formes."
+    },
+    {
+      "id": "q5",
+      "question": "Le deep learning nécessite une grande quantité de données pour fonctionner correctement.",
+      "type": "true_false",
+      "difficulty": "difficile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Oui, le deep learning nécessite généralement une grande quantité de données pour fonctionner correctement, car les réseaux de neurones ont besoin de beaucoup d'exemples pour apprendre et généraliser."
+    }
+  ]
+}

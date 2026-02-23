@@ -1,0 +1,73 @@
+{
+  "topic_id": "statistics",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:36:47Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Quelle est la mesure de tendance centrale qui est la plus résistante aux valeurs aberrantes ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Moyenne",
+        "Médiane",
+        "Mode",
+        "Écart-type"
+      ],
+      "correct_answer": 1,
+      "explanation": "La médiane est la mesure de tendance centrale la plus résistante aux valeurs aberrantes car elle n'est pas affectée par les valeurs extrêmes."
+    },
+    {
+      "id": "q2",
+      "question": "Le théorème de Bayes est utilisé pour mettre à jour les probabilités a priori en fonction de nouvelles données.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le théorème de Bayes est effectivement utilisé pour mettre à jour les probabilités a priori en fonction de nouvelles données, en tenant compte de la probabilité a posteriori."
+    },
+    {
+      "id": "q3",
+      "question": "Quelle est la distribution de probabilité qui décrit la somme de plusieurs variables aléatoires indépendantes ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Distribution normale",
+        "Distribution binomiale",
+        "Distribution de Poisson",
+        "Distribution exponentielle"
+      ],
+      "correct_answer": 0,
+      "explanation": "La distribution normale est la distribution de probabilité qui décrit la somme de plusieurs variables aléatoires indépendantes, en vertu du théorème central limite."
+    },
+    {
+      "id": "q4",
+      "question": "Les tests d'hypothèse sont utilisés pour déterminer si les différences observées entre deux groupes sont significatives.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les tests d'hypothèse sont effectivement utilisés pour déterminer si les différences observées entre deux groupes sont significatives, en évaluant la probabilité de l'apparition de ces différences par hasard."
+    },
+    {
+      "id": "q5",
+      "question": "Quelle est la mesure de corrélation qui évalue la relation linéaire entre deux variables continues ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Coefficient de corrélation de Pearson",
+        "Coefficient de corrélation de Spearman",
+        "Coefficient de détermination",
+        "Écart-type"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le coefficient de corrélation de Pearson est la mesure de corrélation qui évalue la relation linéaire entre deux variables continues, en fournissant une valeur comprise entre -1 et 1."
+    }
+  ]
+}

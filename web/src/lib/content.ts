@@ -11,6 +11,7 @@ import type {
   LearningPath,
   TopicEntry,
   SearchItem,
+  Quiz,
 } from './types';
 
 function findDataDir(): string {
@@ -121,7 +122,14 @@ export async function getTopicFull(slug: string): Promise<TopicFull> {
     resourcesHtml,
     papers: getPapers(slug),
     paperSummaries: getPaperSummarySlugs(slug),
+    quiz: getQuiz(slug),
   };
+}
+
+// ── Quiz ──
+
+export function getQuiz(slug: string): Quiz | null {
+  return readJsonFile<Quiz | null>(path.join(TOPICS_DIR, slug, 'quiz.json'), null);
 }
 
 // ── Papers ──

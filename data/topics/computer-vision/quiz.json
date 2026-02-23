@@ -1,0 +1,137 @@
+{
+  "topic_id": "computer-vision",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:33:55Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Qu'est-ce que la vision par ordinateur?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Un domaine de l'IA qui permet aux machines d'interpréter et comprendre le contenu visuel",
+        "Un domaine de l'IA qui permet aux machines de communiquer avec les humains",
+        "Un domaine de l'IA qui permet aux machines de résoudre des problèmes mathématiques",
+        "Un domaine de l'IA qui permet aux machines de jouer aux jeux vidéo"
+      ],
+      "correct_answer": 0,
+      "explanation": "La vision par ordinateur est un domaine de l'IA qui permet aux machines d'interpréter et comprendre le contenu visuel des images, vidéos et flux de caméras."
+    },
+    {
+      "id": "q2",
+      "question": "La convolution est utilisée pour extraire des caractéristiques locales d'une image.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "La convolution est une opération mathématique qui applique un filtre sur une image pour extraire des caractéristiques locales telles que les contours, les textures et les motifs."
+    },
+    {
+      "id": "q3",
+      "question": "Quelle est la formule de la convolution?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "(f * g)(x, y) = ∑∑ f(i, j) * g(x-i, y-j)",
+        "(f * g)(x, y) = ∑∑ f(i, j) + g(x-i, y-j)",
+        "(f * g)(x, y) = ∑∑ f(i, j) - g(x-i, y-j)",
+        "(f * g)(x, y) = ∑∑ f(i, j) / g(x-i, y-j)"
+      ],
+      "correct_answer": 0,
+      "explanation": "La formule de la convolution est (f * g)(x, y) = ∑∑ f(i, j) * g(x-i, y-j), où f et g sont les fonctions d'entrée et de filtre, respectivement."
+    },
+    {
+      "id": "q4",
+      "question": "Les réseaux de neurones convolutifs (CNN) sont utilisés pour la classification d'images.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les CNN sont largement utilisés pour la classification d'images, en raison de leur capacité à extraire des caractéristiques locales et à les combiner pour former des représentations plus abstraites."
+    },
+    {
+      "id": "q5",
+      "question": "Quelle est la principale différence entre les Vision Transformers (ViT) et les CNN?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Les ViT utilisent des filtres pour extraire des caractéristiques locales, tandis que les CNN utilisent des couches entièrement connectées",
+        "Les ViT utilisent des couches entièrement connectées pour extraire des caractéristiques locales, tandis que les CNN utilisent des filtres",
+        "Les ViT découpent l'image en patches pour traiter les caractéristiques locales, tandis que les CNN utilisent des filtres pour extraire des caractéristiques locales",
+        "Les ViT utilisent des réseaux de neurones récurrents pour traiter les caractéristiques locales, tandis que les CNN utilisent des couches entièrement connectées"
+      ],
+      "correct_answer": 2,
+      "explanation": "Les Vision Transformers (ViT) découpent l'image en patches pour traiter les caractéristiques locales, alors que les CNN utilisent des filtres pour extraire des caractéristiques locales."
+    },
+    {
+      "id": "q6",
+      "question": "La détection d'objets est une tâche de vision par ordinateur qui consiste à localiser et identifier les objets dans une image.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "La détection d'objets est une tâche de vision par ordinateur qui consiste à localiser et identifier les objets dans une image, en utilisant des techniques telles que YOLO ou Faster R-CNN."
+    },
+    {
+      "id": "q7",
+      "question": "Qu'est-ce que la segmentation sémantique?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "La tâche de classifier chaque pixel d'une image dans une classe d'objets",
+        "La tâche de localiser et identifier les objets dans une image",
+        "La tâche de générer des images réalistes",
+        "La tâche de reconstruire des objets 3D à partir d'images 2D"
+      ],
+      "correct_answer": 0,
+      "explanation": "La segmentation sémantique est la tâche de classifier chaque pixel d'une image dans une classe d'objets, en utilisant des techniques telles que les réseaux de neurones convolutifs."
+    },
+    {
+      "id": "q8",
+      "question": "Le Mask R-CNN est un modèle de segmentation d'instances.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le Mask R-CNN est un modèle de segmentation d'instances, qui permet de séparer les objets individuels dans une image en utilisant des masques pour chaque objet."
+    },
+    {
+      "id": "q9",
+      "question": "Qu'est-ce que la génération d'images par IA?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "La tâche de créer des images réalistes à partir denothing",
+        "La tâche de classifier des images en différentes classes",
+        "La tâche de localiser et identifier les objets dans une image",
+        "La tâche de reconstruire des objets 3D à partir d'images 2D"
+      ],
+      "correct_answer": 0,
+      "explanation": "La génération d'images par IA est la tâche de créer des images réalistes à partir de rien, en utilisant des techniques telles que les réseaux de neurones génératifs adverses (GANs) ou les modèles de diffusion."
+    },
+    {
+      "id": "q10",
+      "question": "La réalité augmentée est une application de la vision par ordinateur.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "La réalité augmentée est une application de la vision par ordinateur, qui consiste à superposer des informations virtuelles sur le monde réel en utilisant des techniques de vision par ordinateur."
+    }
+  ]
+}

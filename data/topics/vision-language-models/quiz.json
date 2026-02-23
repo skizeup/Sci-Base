@@ -1,0 +1,203 @@
+{
+  "topic_id": "vision-language-models",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:58:42Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Qu'est-ce qu'un Vision-Language Model (VLM) ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Un modèle de langage pour traiter le texte",
+        "Un modèle de vision pour traiter les images",
+        "Un modèle multimodal pour traiter les images et le texte",
+        "Un modèle de reconnaissance vocale"
+      ],
+      "correct_answer": 2,
+      "explanation": "Un Vision-Language Model (VLM) est un modèle multimodal capable de comprendre et de raisonner conjointement sur des images et du texte."
+    },
+    {
+      "id": "q2",
+      "question": "Les VLMs sont importants car ils permettent aux systèmes IA d'interagir avec le monde visuel via le langage naturel.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les VLMs ouvrent la voie à des systèmes IA capables d'interagir avec le monde visuel via le langage naturel, avec des applications en accessibilité, robotique, analyse de documents, e-commerce et bien plus."
+    },
+    {
+      "id": "q3",
+      "question": "Quel est l'objectif principal de l'apprentissage contrastif (Contrastive Learning) ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Apprendre à reconnaître les objets dans les images",
+        "Apprendre à comprendre le langage naturel",
+        "Aligner les embeddings visuels et textuels dans un espace commun",
+        "Apprendre à générer des images à partir de textes"
+      ],
+      "correct_answer": 2,
+      "explanation": "L'apprentissage contrastif (Contrastive Learning) vise à aligner les embeddings visuels et textuels dans un espace commun via un objectif contrastif."
+    },
+    {
+      "id": "q4",
+      "question": "Les modèles de type Visual Instruction Tuning sont utilisés pour connecter un encodeur visuel à un modèle de langage via un projecteur.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les modèles de type Visual Instruction Tuning connectent un encodeur visuel à un modèle de langage via un projecteur, puis fine-tunent l'ensemble sur des paires instruction-réponse multimodales."
+    },
+    {
+      "id": "q5",
+      "question": "Qu'est-ce que la cross-attention multimodale ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Une méthode pour apprendre à reconnaître les objets dans les images",
+        "Une méthode pour apprendre à comprendre le langage naturel",
+        "Une méthode pour permettre au modèle de langage de 'regarder' les features visuelles à chaque couche",
+        "Une méthode pour générer des images à partir de textes"
+      ],
+      "correct_answer": 2,
+      "explanation": "La cross-attention multimodale est une méthode qui permet au modèle de langage de 'regarder' les features visuelles à chaque couche, en utilisant des couches de cross-attention."
+    },
+    {
+      "id": "q6",
+      "question": "Le zero-shot transfer est la capacité des VLMs à classifier des images dans des catégories jamais vues pendant l'entraînement.",
+      "type": "true_false",
+      "difficulty": "difficile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le zero-shot transfer est la capacité des VLMs à classifier des images dans des catégories jamais vues pendant l'entraînement, simplement à partir de descriptions textuelles."
+    },
+    {
+      "id": "q7",
+      "question": "Quels sont les avantages des VLMs ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Permettent aux systèmes IA d'interagir avec le monde visuel via le langage naturel",
+        "Améliorent la compréhension du langage naturel",
+        "Permettent de générer des images à partir de textes",
+        "Toutes les réponses précédentes"
+      ],
+      "correct_answer": 3,
+      "explanation": "Les VLMs ouvrent la voie à des systèmes IA capables d'interagir avec le monde visuel via le langage naturel, avec des applications en accessibilité, robotique, analyse de documents, e-commerce et bien plus."
+    },
+    {
+      "id": "q8",
+      "question": "Les VLMs sont utilisés pour la description automatique d'images.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les VLMs sont utilisés pour la description automatique d'images, la réponse à des questions visuelles, la recherche d'images par texte, l'analyse et la compréhension de documents, la navigation robotique guidée par le langage, l'accessibilité pour les personnes malvoyantes."
+    },
+    {
+      "id": "q9",
+      "question": "Qu'est-ce que le CLIP ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Un modèle de langage pour traiter le texte",
+        "Un modèle de vision pour traiter les images",
+        "Un modèle qui aligne les embeddings visuels et textuels dans un espace commun",
+        "Un modèle pour générer des images à partir de textes"
+      ],
+      "correct_answer": 2,
+      "explanation": "Le CLIP est un modèle qui aligne les embeddings visuels et textuels dans un espace commun via un objectif contrastif."
+    },
+    {
+      "id": "q10",
+      "question": "Les VLMs peuvent être utilisés pour améliorer l'accessibilité pour les personnes malvoyantes.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les VLMs ouvrent la voie à des systèmes IA capables d'interagir avec le monde visuel via le langage naturel, avec des applications en accessibilité, robotique, analyse de documents, e-commerce et bien plus."
+    },
+    {
+      "id": "q11",
+      "question": "Qu'est-ce que la Visual Instruction Tuning ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Une méthode pour apprendre à reconnaître les objets dans les images",
+        "Une méthode pour apprendre à comprendre le langage naturel",
+        "Une méthode pour connecter un encodeur visuel à un modèle de langage via un projecteur",
+        "Une méthode pour générer des images à partir de textes"
+      ],
+      "correct_answer": 2,
+      "explanation": "La Visual Instruction Tuning est une méthode qui connecte un encodeur visuel à un modèle de langage via un projecteur, puis fine-tune l'ensemble sur des paires instruction-réponse multimodales."
+    },
+    {
+      "id": "q12",
+      "question": "Les VLMs peuvent être utilisés pour la recherche d'images par texte.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les VLMs sont utilisés pour la description automatique d'images, la réponse à des questions visuelles, la recherche d'images par texte, l'analyse et la compréhension de documents, la navigation robotique guidée par le langage, l'accessibilité pour les personnes malvoyantes."
+    },
+    {
+      "id": "q13",
+      "question": "Qu'est-ce que le zero-shot transfer ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "La capacité des VLMs à classifier des images dans des catégories vues pendant l'entraînement",
+        "La capacité des VLMs à classifier des images dans des catégories jamais vues pendant l'entraînement",
+        "La capacité des VLMs à générer des images à partir de textes",
+        "La capacité des VLMs à comprendre le langage naturel"
+      ],
+      "correct_answer": 1,
+      "explanation": "Le zero-shot transfer est la capacité des VLMs à classifier des images dans des catégories jamais vues pendant l'entraînement, simplement à partir de descriptions textuelles."
+    },
+    {
+      "id": "q14",
+      "question": "Les VLMs peuvent être utilisés pour l'analyse et la compréhension de documents.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les VLMs sont utilisés pour la description automatique d'images, la réponse à des questions visuelles, la recherche d'images par texte, l'analyse et la compréhension de documents, la navigation robotique guidée par le langage, l'accessibilité pour les personnes malvoyantes."
+    },
+    {
+      "id": "q15",
+      "question": "Qu'est-ce que la cross-attention multimodale ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Une méthode pour apprendre à reconnaître les objets dans les images",
+        "Une méthode pour apprendre à comprendre le langage naturel",
+        "Une méthode pour permettre au modèle de langage de 'regarder' les features visuelles à chaque couche",
+        "Une méthode pour générer des images à partir de textes"
+      ],
+      "correct_answer": 2,
+      "explanation": "La cross-attention multimodale est une méthode qui permet au modèle de langage de 'regarder' les features visuelles à chaque couche, en utilisant des couches de cross-attention."
+    }
+  ]
+}

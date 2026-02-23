@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Quiz",
+  "description": "Schema pour un quiz interactif SciBase",
+  "type": "object",
+  "required": ["topic_id", "questions"],
+  "properties": {
+    "topic_id": {
+      "type": "string",
+      "description": "Identifiant du topic (slug)"
+    },
+    "generated_by": {
+      "type": "string",
+      "description": "Provider/modele ayant genere le quiz"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date de generation"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "question", "type", "difficulty", "options", "correct_answer", "explanation"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifiant unique de la question (ex: q1, q2...)"
+          },
+          "question": {
+            "type": "string",
+            "maxLength": 1000,
+            "description": "Enonce de la question"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["multiple_choice", "true_false"],
+            "description": "Type de question"
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": ["facile", "moyen", "difficile"],
+            "description": "Niveau de difficulte"
+          },
+          "options": {
+            "type": "array",
+            "items": { "type": "string", "maxLength": 500 },
+            "minItems": 2,
+            "maxItems": 4,
+            "description": "Options de reponse"
+          },
+          "correct_answer": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3,
+            "description": "Index de la bonne reponse dans le tableau options"
+          },
+          "explanation": {
+            "type": "string",
+            "maxLength": 2000,
+            "description": "Explication pedagogique de la bonne reponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 20
+    }
+  },
+  "additionalProperties": false
+}

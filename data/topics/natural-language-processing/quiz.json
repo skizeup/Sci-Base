@@ -1,0 +1,137 @@
+{
+  "topic_id": "natural-language-processing",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:36:09Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Quelle est la principale différence entre les embeddings de mots et les embeddings contextuels ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Les embeddings de mots capturent le sens général, tandis que les embeddings contextuels capturent le sens dans un contexte spécifique",
+        "Les embeddings de mots sont utilisés pour la traduction, tandis que les embeddings contextuels sont utilisés pour la classification de texte",
+        "Les embeddings de mots sont calculés à l'aide de la tokenisation, tandis que les embeddings contextuels sont calculés à l'aide de la pondération",
+        "Les embeddings de mots sont plus rapides à calculer que les embeddings contextuels"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les embeddings de mots, tels que Word2Vec et GloVe, capturent le sens général d'un mot, tandis que les embeddings contextuels, tels que BERT et GPT, capturent le sens d'un mot dans un contexte spécifique."
+    },
+    {
+      "id": "q2",
+      "question": "Le mécanisme d'attention permet aux modèles de se concentrer sur différentes parties de la séquence d'entrée.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le mécanisme d'attention permet effectivement aux modèles de se concentrer sur différentes parties de la séquence d'entrée avec des poids différents, ce qui est essentiel pour les tâches de traitement du langage naturel."
+    },
+    {
+      "id": "q3",
+      "question": "Quel est le but principal de la tokenisation dans le traitement du langage naturel ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Découper le texte en unités de mots ou de caractères pour le traitement",
+        "Calculer les fréquences de mots dans un document",
+        "Réduire la dimensionnalité des données de texte",
+        "Effectuer la traduction automatique"
+      ],
+      "correct_answer": 0,
+      "explanation": "La tokenisation est le processus de découpage du texte en unités de mots ou de caractères pour le traitement, ce qui permet aux machines de comprendre et de traiter le langage humain."
+    },
+    {
+      "id": "q4",
+      "question": "Les modèles de langage basés sur les Transformers sont plus efficaces que les modèles récurrents pour les tâches de traitement du langage naturel.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les modèles de langage basés sur les Transformers, tels que BERT et GPT, ont prouvé leur efficacité dans les tâches de traitement du langage naturel, surpassant souvent les performances des modèles récurrents."
+    },
+    {
+      "id": "q5",
+      "question": "Quelle est la différence principale entre le Bag of Words et le TF-IDF ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Le Bag of Words prend en compte la fréquence des mots, tandis que le TF-IDF prend en compte la fréquence et l'importance des mots",
+        "Le Bag of Words est utilisé pour la classification de texte, tandis que le TF-IDF est utilisé pour la traduction",
+        "Le Bag of Words est plus rapide à calculer que le TF-IDF",
+        "Le Bag of Words est utilisé pour les petits jeux de données, tandis que le TF-IDF est utilisé pour les grands jeux de données"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le Bag of Words et le TF-IDF sont deux méthodes de représentation de texte, mais le TF-IDF prend en compte à la fois la fréquence et l'importance des mots dans un document, ce qui le rend plus précis pour certaines tâches de traitement du langage naturel."
+    },
+    {
+      "id": "q6",
+      "question": "Le traitement automatique du langage naturel est un sous-domaine de l'intelligence artificielle.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le traitement automatique du langage naturel, également connu sous le nom de NLP, est un domaine spécifique de l'intelligence artificielle qui se concentre sur la compréhension, l'interprétation et la génération du langage humain par les machines."
+    },
+    {
+      "id": "q7",
+      "question": "Quel est le but principal des Word Embeddings ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Capturer le sens général des mots dans un espace vectoriel",
+        "Effectuer la traduction automatique",
+        "Réduire la dimensionnalité des données de texte",
+        "Classer les textes en fonction de leur sentiment"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les Word Embeddings, tels que Word2Vec et GloVe, visent à capturer le sens général des mots dans un espace vectoriel, ce qui permet aux machines de comprendre les relations entre les mots et de les utiliser pour diverses tâches de traitement du langage naturel."
+    },
+    {
+      "id": "q8",
+      "question": "Les Transformers sont une architecture de modèle de langage qui traite les séquences de texte en parallèle.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les Transformers, introduits par Vaswani et al., sont une architecture de modèle de langage qui permet de traiter les séquences de texte en parallèle, plutôt que de les traiter séquentiellement comme les réseaux de neurones récurrents, ce qui améliore les performances et la vitesse pour les tâches de traitement du langage naturel."
+    },
+    {
+      "id": "q9",
+      "question": "Quelle est la principale caractéristique des embeddings contextuels par rapport aux embeddings de mots ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Ils capturent le sens des mots dans un espace vectoriel plus grand",
+        "Ils sont calculés en fonction de la fréquence des mots dans un document",
+        "Ils prennent en compte le contexte dans lequel les mots apparaissent",
+        "Ils sont utilisés exclusivement pour la classification de texte"
+      ],
+      "correct_answer": 2,
+      "explanation": "Les embeddings contextuels, tels que BERT et GPT, prennent en compte le contexte dans lequel les mots apparaissent, ce qui leur permet de mieux capturer les nuances du langage et d'améliorer les performances dans les tâches de traitement du langage naturel."
+    },
+    {
+      "id": "q10",
+      "question": "Le mécanisme d'attention est une composante clé des architectures Transformer.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le mécanisme d'attention est effectivement une composante clé des architectures Transformer, car il permet aux modèles de se concentrer sur les parties les plus pertinentes de la séquence d'entrée, améliorant ainsi la précision et l'efficacité du traitement du langage naturel."
+    }
+  ]
+}

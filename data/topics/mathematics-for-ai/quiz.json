@@ -1,0 +1,73 @@
+{
+  "topic_id": "mathematics-for-ai",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:35:48Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Quelle est la principale différence entre l'algèbre linéaire et le calcul différentiel dans le contexte de l'intelligence artificielle ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "L'algèbre linéaire traite des vecteurs et des matrices, tandis que le calcul différentiel traite des dérivées et des intégrales.",
+        "L'algèbre linéaire est utilisée pour l'apprentissage automatique, tandis que le calcul différentiel est utilisé pour la vision par ordinateur.",
+        "L'algèbre linéaire est utilisée pour la robottique, tandis que le calcul différentiel est utilisé pour le traitement du langage naturel.",
+        "L'algèbre linéaire est utilisée pour la reconnaissance d'images, tandis que le calcul différentiel est utilisé pour la prédiction de séries chronologiques."
+      ],
+      "correct_answer": 0,
+      "explanation": "L'algèbre linéaire est utilisée pour représenter les données et les transformations dans les modèles d'IA, tandis que le calcul différentiel est utilisé pour mesurer comment les sorties changent en fonction des entrées."
+    },
+    {
+      "id": "q2",
+      "question": "Le deep learning est un sous-domaine du machine learning.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le deep learning est effectivement un sous-domaine du machine learning, car il utilise des techniques d'apprentissage automatique pour analyser des données complexes et tirer des conclusions."
+    },
+    {
+      "id": "q3",
+      "question": "Quel est l'objectif principal de l'optimisation dans l'intelligence artificielle ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Minimiser la fonction de coût",
+        "Maximiser la fonction de coût",
+        "Trouver la solution optimale",
+        "Améliorer la précision du modèle"
+      ],
+      "correct_answer": 0,
+      "explanation": "L'objectif principal de l'optimisation dans l'IA est de minimiser la fonction de coût, qui mesure la différence entre les prédictions du modèle et les valeurs réelles."
+    },
+    {
+      "id": "q4",
+      "question": "La théorie de l'information est utilisée pour quantifier l'information contenue dans les données.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "La théorie de l'information est effectivement utilisée pour quantifier l'information contenue dans les données, en mesurant la quantité d'incertitude ou de surprise associée à un événement ou à une variable aléatoire."
+    },
+    {
+      "id": "q5",
+      "question": "Quel est le nom de la règle qui permet de calculer la dérivée d'une fonction composée ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Règle de la chaîne",
+        "Règle du produit",
+        "Règle du quotient",
+        "Règle de la somme"
+      ],
+      "correct_answer": 0,
+      "explanation": "La règle de la chaîne est utilisée pour calculer la dérivée d'une fonction composée, en multipliant les dérivées des fonctions individuelles."
+    }
+  ]
+}

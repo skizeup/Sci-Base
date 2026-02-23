@@ -60,12 +60,14 @@ export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) 
     topic: 'Topic',
     paper: 'Paper',
     'paper-summary': 'Résumé',
+    quiz: 'Quiz',
   };
 
   const typeColors: Record<string, string> = {
     topic: 'bg-brand-100 text-brand-800 dark:bg-brand-900/30 dark:text-brand-300',
     paper: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300',
     'paper-summary': 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
+    quiz: 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300',
   };
 
   return (

@@ -86,6 +86,30 @@ export default async function TopicPage({ params }: { params: { slug: string } }
         </section>
       )}
 
+      {/* Quiz CTA */}
+      {topic.quiz && (
+        <section className="mb-12">
+          <Link
+            href={`/topics/${topic.slug}/quiz`}
+            className="block p-6 rounded-xl border-2 border-dashed border-brand-300 dark:border-brand-700 hover:border-brand-500 dark:hover:border-brand-500 bg-brand-50/50 dark:bg-brand-900/10 hover:bg-brand-50 dark:hover:bg-brand-900/20 transition-all group"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-brand-700 dark:text-brand-300 group-hover:text-brand-800 dark:group-hover:text-brand-200">
+                  Testez vos connaissances
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  {topic.quiz.questions.length} questions pour valider votre apprentissage
+                </p>
+              </div>
+              <svg className="w-6 h-6 text-brand-500 dark:text-brand-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </Link>
+        </section>
+      )}
+
       {/* Papers preview */}
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">

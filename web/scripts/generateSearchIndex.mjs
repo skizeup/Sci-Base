@@ -97,6 +97,22 @@ for (const slug of topicDirs) {
     }
   }
 
+  // Quiz
+  const quizPath = path.join(topicDir, 'quiz.json');
+  if (fs.existsSync(quizPath)) {
+    const topicTitle = items.find((i) => i.topicSlug === slug)?.topicTitle || slug;
+    const quiz = JSON.parse(fs.readFileSync(quizPath, 'utf-8'));
+    items.push({
+      type: 'quiz',
+      title: `Quiz — ${topicTitle}`,
+      description: `${quiz.questions.length} questions pour tester vos connaissances sur ${topicTitle}`,
+      url: `/topics/${slug}/quiz`,
+      topicSlug: slug,
+      topicTitle,
+      level: getTopicLevel(slug, lp),
+    });
+  }
+
   // Paper summaries
   const summariesDir = path.join(topicDir, 'paper-summaries');
   if (fs.existsSync(summariesDir)) {

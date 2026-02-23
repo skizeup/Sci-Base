@@ -2,9 +2,11 @@
 
 ## Vision
 Plateforme d'apprentissage scientifique open-source.
-Phase 1 : Repo GitHub curé de ressources scientifiques — FAIT (10 topics, 119 papers).
-Phase 2 : Site web Next.js interactif — FAIT (146 pages statiques, live sur sci-base.vercel.app).
+Phase 1 : Repo GitHub curé de ressources scientifiques — FAIT (13 topics, 148 papers).
+Phase 2 : Site web Next.js interactif — FAIT (180 pages statiques, live sur sci-base.vercel.app).
 Phase 3 Sprint 1 : Dark mode + SEO — FAIT.
+Phase 3 Sprint 2 : Nouveaux topics + Parcours interactif — FAIT.
+Phase 3 Sprint 3 : Quizzes interactifs — FAIT (13 quiz, 193 pages statiques).
 
 ## Stack
 
@@ -21,7 +23,7 @@ Phase 3 Sprint 1 : Dark mode + SEO — FAIT.
 - Diagrammes : Mermaid.js (client-side, dynamic import, thème adapté light/dark)
 - Recherche : Fuse.js (client-side, index JSON pré-généré au build via scripts/generateSearchIndex.mjs)
 - Frontmatter : gray-matter
-- SEO : metadataBase, Open Graph, Twitter cards, robots.txt, sitemap.xml (142 URLs au build)
+- SEO : metadataBase, Open Graph, Twitter cards, robots.txt, sitemap.xml (177 URLs au build)
 - SSG : generateStaticParams sur toutes les routes dynamiques
 
 ## Sources de données
@@ -65,6 +67,7 @@ data/topics/<topic-name>/
   ├── papers.json            — Papers référencés
   ├── resources.md           — Ressources complémentaires
   ├── summary.md             — GÉNÉRÉ : vulgarisation du topic + diagrammes Mermaid
+  ├── quiz.json              — GÉNÉRÉ : quiz interactif (5/10/15 questions selon niveau)
   └── paper-summaries/       — GÉNÉRÉ : résumés individuels
       ├── <slug-du-paper>.md
       └── ...
@@ -86,14 +89,16 @@ components/
   PaperCard.tsx    — Carte paper avec liens et tags
   MarkdownRenderer.tsx — Client component, rendu HTML + init Mermaid (dynamic import, thème adapté)
   SearchBar.tsx    — Recherche Fuse.js (dropdown compact ou full page)
-  LearningPath.tsx — Visualisation parcours par niveau
+  LearningPath.tsx — Parcours interactif : 3 colonnes, flèches SVG au hover, progression localStorage
+  Quiz.tsx         — Quiz interactif : questions, score, explications, localStorage
   Breadcrumb.tsx   — Fil d'Ariane
 
 app/
   page.tsx                              — Homepage (hero + grille topics)
-  topics/[slug]/page.tsx                — Page topic (index + summary + papers + resources)
+  topics/[slug]/page.tsx                — Page topic (index + summary + papers + resources + CTA quiz)
   topics/[slug]/papers/page.tsx         — Liste papers
   topics/[slug]/papers/[paperSlug]/page.tsx — Résumé paper individuel
+  topics/[slug]/quiz/page.tsx           — Quiz interactif par topic
   parcours/page.tsx                     — Parcours d'apprentissage
   recherche/page.tsx                    — Page recherche
 ```
@@ -102,14 +107,15 @@ app/
 
 | Route | Pages | Description |
 |-------|-------|-------------|
-| `/` | 1 | Homepage — grille de 10 topics triés par learning-path |
-| `/topics/[slug]` | 10 | Page topic — vue d'ensemble, résumé IA, Mermaid, KaTeX, papers, ressources |
-| `/topics/[slug]/papers` | 10 | Liste papers par topic |
-| `/topics/[slug]/papers/[slug]` | 119 | Résumé vulgarisé d'un paper |
-| `/parcours` | 1 | Parcours d'apprentissage progressif (3 niveaux) |
-| `/recherche` | 1 | Recherche full-page (248 items indexés) |
+| `/` | 1 | Homepage — grille de 13 topics triés par learning-path |
+| `/topics/[slug]` | 13 | Page topic — vue d'ensemble, résumé IA, Mermaid, KaTeX, papers, ressources |
+| `/topics/[slug]/papers` | 13 | Liste papers par topic |
+| `/topics/[slug]/papers/[slug]` | 148 | Résumé vulgarisé d'un paper |
+| `/topics/[slug]/quiz` | 13 | Quiz interactif par topic |
+| `/parcours` | 1 | Parcours interactif (3 colonnes, flèches SVG, progression localStorage) |
+| `/recherche` | 1 | Recherche full-page (322 items indexés) |
 
-**Total : 146 pages statiques**
+**Total : 193 pages statiques**
 
 ## Plugins Markdown custom
 
@@ -127,6 +133,17 @@ app/
 - **KaTeX** : `.dark .katex { color: inherit }` dans globals.css
 - **Prose** : `dark:prose-invert` (plugin typography built-in)
 
+## Parcours interactif (`/parcours`)
+
+- **Layout** : grille 3 colonnes (desktop `md:grid-cols-3`) / empilé vertical (mobile)
+- **Colonnes** : Débutant (4 topics) | Intermédiaire (6) | Avancé (3)
+- **Flèches SVG** : masquées par défaut, apparaissent au hover d'un topic (courbes bézier entre prérequis et dépendants)
+- **Hover highlight** : cartes connectées restent opaques, les autres passent en `opacity-25`, flèches colorées par niveau
+- **Progression** : checkbox par topic, `localStorage('scibase-progress')`, barre de progression gradient en haut
+- **Responsive** : pas de flèches SVG sur mobile (`hidden md:block`)
+- **Markers SVG** : arrowheads colorés par niveau (emerald/amber/purple), adaptés light/dark via `isDark` state
+- **Dark mode** : MutationObserver sur `<html>` pour détecter les changements de classe
+
 ## SEO
 
 - **metadataBase** : `https://sci-base.vercel.app` dans `layout.tsx` — toutes les URLs OG sont résolues contre cette base
@@ -134,23 +151,38 @@ app/
 - **Twitter cards** : `summary_large_image` défini globalement
 - **generateMetadata** : chaque page dynamique ajoute `openGraph.url` pour l'URL canonique
 - **robots.txt** : fichier statique dans `web/public/`, Allow all + lien vers sitemap
-- **sitemap.xml** : généré au prebuild par `generateSitemap.mjs` (142 URLs, priorités 1.0→0.5)
+- **sitemap.xml** : généré au prebuild par `generateSitemap.mjs` (177 URLs, priorités 1.0→0.5)
 - **poweredByHeader** : désactivé dans `next.config.mjs`
+
+## Quizzes interactifs
+
+- **Stockage** : `quiz.json` par topic dans `data/topics/<slug>/`
+- **Schema** : `data/schemas/quiz.schema.json` (JSON Schema Draft-07)
+- **Génération** : `scripts/quiz_generator.py` via Groq (pattern du summarizer)
+- **Route** : `/topics/[slug]/quiz` — page dédiée par topic
+- **Nb questions** : 5 (débutant), 10 (intermédiaire), 15 (avancé)
+- **Types** : QCM (4 options) + Vrai/Faux
+- **Composant** : `Quiz.tsx` — client component avec state, progression, score
+- **Scores** : `localStorage('scibase-quiz-<slug>')` — meilleur score persisté
+- **Search** : quizzes indexés dans Fuse.js (type `'quiz'`)
+- **CTA** : lien "Testez vos connaissances" sur chaque page topic (si quiz existe)
 
 ## Commandes
 
 ### Web
 - `cd web && npm run dev` — lance le site en local (http://localhost:3000)
-- `cd web && npm run build` — build prod (146 pages statiques, prebuild génère search-index.json + sitemap.xml)
+- `cd web && npm run build` — build prod (180 pages statiques, prebuild génère search-index.json + sitemap.xml)
 - `cd web && npm run lint` — lint TypeScript/ESLint
 
 ### Scripts Python
-- `python scripts/arxiv_fetcher.py --topic "machine learning"` — fetch papers
+- `python scripts/arxiv_fetcher.py --topic "machine learning"` — fetch papers (option `--slug` pour découpler query et slug)
 - `python scripts/summarizer.py --topic "machine learning"` — génère les résumés (ollama par défaut)
 - `python scripts/summarizer.py --topic "machine learning" --provider groq` — résumés via Groq API (gratuit)
 - `python scripts/summarizer.py --topic "machine learning" --provider claude` — résumés via Claude API
 - `python scripts/summarizer.py --topic "machine learning" --mode papers` — résumés individuels uniquement
 - `python scripts/summarizer.py --topic "machine learning" --dry-run` — prévisualisation sans LLM
+- `python scripts/quiz_generator.py --topic "machine-learning" --provider groq` — génère un quiz
+- `python scripts/quiz_generator.py --topic all --provider groq` — génère les quizzes pour tous les topics
 - `python scripts/validate.py` — valide la structure des données
 
 ## LLM Providers (summarizer)
@@ -164,7 +196,7 @@ app/
 - `web/vercel.json` : `framework: null`, `outputDirectory: "out"` (désactive l'intégration Next.js native de Vercel)
 - `output: 'export'` dans next.config.mjs → HTML statique dans `out/`
 - `web/scripts/copyData.mjs` : copie `data/` dans `web/data/` au prebuild (Vercel sandbox le root directory, `../data` n'est pas accessible)
-- `web/scripts/generateSearchIndex.mjs` : génère `public/search-index.json` (248 items)
-- `web/scripts/generateSitemap.mjs` : génère `public/sitemap.xml` (142 URLs avec priorités)
+- `web/scripts/generateSearchIndex.mjs` : génère `public/search-index.json` (322 items)
+- `web/scripts/generateSitemap.mjs` : génère `public/sitemap.xml` (190 URLs avec priorités)
 - Auto-deploy à chaque `git push` sur master
 - **Important** : avec Root Directory = `web/`, les fichiers hors de `web/` ne sont PAS accessibles au build. Le script `copyData.mjs` résout ce problème.

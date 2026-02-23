@@ -1,0 +1,137 @@
+{
+  "topic_id": "reinforcement-learning",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:36:29Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Qu'est-ce que l'apprentissage par renforcement (RL) ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Un paradigme du machine learning où un agent apprend à prendre des décisions en interagissant avec un environnement",
+        "Un type de réseaux de neurones",
+        "Un algorithme de classification",
+        "Un type de clustering"
+      ],
+      "correct_answer": 0,
+      "explanation": "L'apprentissage par renforcement est un paradigme du machine learning qui permet à un agent d'apprendre à prendre des décisions en interagissant avec son environnement."
+    },
+    {
+      "id": "q2",
+      "question": "Le RL est derrière certaines des avancées les plus spectaculaires de l'IA.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le RL est effectivement à l'origine de nombreuses avancées dans le domaine de l'IA, notamment la création d'agents capables de battre des champions du monde dans des jeux complexes."
+    },
+    {
+      "id": "q3",
+      "question": "Qu'est-ce que le cadre MDP (Processus de Décision Markovien) ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Un modèle mathématique qui décrit le comportement d'un agent dans un environnement",
+        "Un algorithme de RL",
+        "Un type de réseau de neurones",
+        "Un outil de visualisation de données"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le cadre MDP est un modèle mathématique qui permet de décrire de manière formelle le comportement d'un agent dans un environnement, en tenant compte des états, des actions, des transitions et des récompenses."
+    },
+    {
+      "id": "q4",
+      "question": "Le facteur d'actualisation (discount factor) est utilisé pour donner plus d'importance aux récompenses immédiates.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 1,
+      "explanation": "Le facteur d'actualisation est utilisé pour donner moins d'importance aux récompenses futures, et plus d'importance aux récompenses immédiates."
+    },
+    {
+      "id": "q5",
+      "question": "Qu'est-ce que la fonction de valeur d'état (V-value) ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "La valeur espérée d'un état",
+        "La valeur espérée d'une action",
+        "La probabilité de transition entre deux états",
+        "La récompense associée à un état"
+      ],
+      "correct_answer": 0,
+      "explanation": "La fonction de valeur d'état est la valeur espérée d'un état, qui représente la somme des récompenses que l'agent peut obtenir en partant de cet état et en suivant une politique donnée."
+    },
+    {
+      "id": "q6",
+      "question": "L'algorithme Q-Learning est un exemple de RL off-policy.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "L'algorithme Q-Learning est effectivement un exemple de RL off-policy, car il permet à l'agent d'apprendre la politique optimale en explorant l'environnement de manière indépendante de la politique actuelle."
+    },
+    {
+      "id": "q7",
+      "question": "Qu'est-ce que la stratégie epsilon-greedy ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Une stratégie qui consiste à choisir la meilleure action avec une probabilité epsilon",
+        "Une stratégie qui consiste à choisir une action aléatoire avec une probabilité epsilon",
+        "Une stratégie qui consiste à explorer l'environnement de manière exhaustive",
+        "Une stratégie qui consiste à exploiter la politique actuelle de manière exclusive"
+      ],
+      "correct_answer": 1,
+      "explanation": "La stratégie epsilon-greedy est une stratégie qui consiste à choisir une action aléatoire avec une probabilité epsilon, et à choisir la meilleure action avec une probabilité (1 - epsilon)."
+    },
+    {
+      "id": "q8",
+      "question": "Le RL est utilisé uniquement pour les problèmes de contrôle continu.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 1,
+      "explanation": "Le RL est utilisé pour une grande variété de problèmes, y compris les problèmes de contrôle discret et continu, ainsi que les problèmes de classification et de régression."
+    },
+    {
+      "id": "q9",
+      "question": "Qu'est-ce que la fonction de valeur d'action (Q-value) ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "La valeur espérée d'une action",
+        "La valeur espérée d'un état",
+        "La probabilité de transition entre deux états",
+        "La récompense associée à une action"
+      ],
+      "correct_answer": 0,
+      "explanation": "La fonction de valeur d'action est la valeur espérée d'une action, qui représente la somme des récompenses que l'agent peut obtenir en prenant cette action et en suivant une politique donnée."
+    },
+    {
+      "id": "q10",
+      "question": "L'apprentissage par renforcement est un sous-domaine de l'apprentissage automatique.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "L'apprentissage par renforcement est effectivement un sous-domaine de l'apprentissage automatique, car il s'agit d'une méthode qui permet à un agent d'apprendre à partir de données et d'améliorer ses performances sur une tâche donnée."
+    }
+  ]
+}

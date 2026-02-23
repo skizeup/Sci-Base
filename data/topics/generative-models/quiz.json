@@ -1,0 +1,137 @@
+{
+  "topic_id": "generative-models",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:34:21Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Quelle est la principale différence entre les modèles génératifs et les modèles discriminatifs ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Les modèles génératifs apprennent la distribution des données, tandis que les modèles discriminatifs apprennent la frontière de décision",
+        "Les modèles génératifs sont utilisés pour la classification, tandis que les modèles discriminatifs sont utilisés pour la régression",
+        "Les modèles génératifs sont plus rapides que les modèles discriminatifs",
+        "Les modèles génératifs nécessitent plus de données que les modèles discriminatifs"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les modèles génératifs visent à apprendre la distribution sous-jacente des données pour en générer de nouvelles, tandis que les modèles discriminatifs cherchent à apprendre la frontière de décision pour classer les données."
+    },
+    {
+      "id": "q2",
+      "question": "Les Generative Adversarial Networks (GANs) utilisent un générateur et un discriminateur pour apprendre la distribution des données.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les GANs utilisent effet un générateur pour créer de nouvelles données et un discriminateur pour évaluer la réalisme de ces données, ce qui permet d'apprendre la distribution des données."
+    },
+    {
+      "id": "q3",
+      "question": "Quel est l'objectif principal des Variational Autoencoders (VAEs) ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Apprendre la distribution des données",
+        "Réduire la dimensionnalité des données",
+        "Améliorer la qualité des données",
+        "Réaliser des prévisions sur les données"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les VAEs visent à apprendre la distribution des données en optimisant une borne inférieure de la vraisemblance, ce qui leur permet de générer de nouvelles données similaires aux données d'entraînement."
+    },
+    {
+      "id": "q4",
+      "question": "Les modèles de diffusion sont utilisés pour inverser un processus de bruitage gaussien progressif.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les modèles de diffusion apprennent à inverser un processus de bruitage gaussien progressif pour reconstruire les données originales à partir de données bruitées."
+    },
+    {
+      "id": "q5",
+      "question": "Quelle est la différence entre les modèles à flux et les autres modèles génératifs ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Les modèles à flux utilisent des transformations inversibles pour calculer exactement la vraisemblance",
+        "Les modèles à flux sont plus rapides que les autres modèles génératifs",
+        "Les modèles à flux nécessitent moins de données que les autres modèles génératifs",
+        "Les modèles à flux sont utilisés uniquement pour la génération d'images"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les modèles à flux utilisent des transformations inversibles pour calculer exactement la vraisemblance, ce qui les distingue des autres modèles génératifs qui utilisent des approximations ou des méthodes de sampling."
+    },
+    {
+      "id": "q6",
+      "question": "Les modèles génératifs sont utilisés uniquement pour la génération d'images et de vidéos.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 1,
+      "explanation": "Les modèles génératifs ont des applications variées, notamment la génération d'images, de vidéos, de musique, de molécules, etc., ainsi que l'augmentation de données et le transfert de style."
+    },
+    {
+      "id": "q7",
+      "question": "Quel est l'avantage principal des modèles génératifs par rapport aux modèles traditionnels ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Ils sont plus rapides que les modèles traditionnels",
+        "Ils nécessitent moins de données que les modèles traditionnels",
+        "Ils peuvent apprendre la distribution sous-jacente des données",
+        "Ils sont plus faciles à interpréter que les modèles traditionnels"
+      ],
+      "correct_answer": 2,
+      "explanation": "Les modèles génératifs ont la capacité d'apprendre la distribution sous-jacente des données, ce qui leur permet de générer de nouvelles données réalistes et de réaliser des tâches telles que l'augmentation de données et le transfert de style."
+    },
+    {
+      "id": "q8",
+      "question": "Les modèles génératifs sont sensibles aux hyperparamètres.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les modèles génératifs, comme de nombreux modèles de deep learning, sont sensibles aux hyperparamètres, tels que le taux d'apprentissage, la taille du batch, etc., qui peuvent affecter significativement leurs performances."
+    },
+    {
+      "id": "q9",
+      "question": "Quelle est la principale application des modèles de diffusion ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Génération d'images",
+        "Génération de musique",
+        "Conception de molécules",
+        "Inversion de processus de bruitage"
+      ],
+      "correct_answer": 3,
+      "explanation": "Les modèles de diffusion sont principalement utilisés pour inverser des processus de bruitage, ce qui les rend utiles pour des tâches telles que la débruitage d'images ou la reconstruction de données manquantes."
+    },
+    {
+      "id": "q10",
+      "question": "Les modèles génératifs sont limités à la génération de données continues.",
+      "type": "true_false",
+      "difficulty": "difficile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 1,
+      "explanation": "Les modèles génératifs peuvent être utilisés pour générer à la fois des données continues (comme des images) et des données discrètes (comme du texte ou des séquences de molécules), en fonction de leur conception et de leur objectif spécifique."
+    }
+  ]
+}

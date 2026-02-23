@@ -1,0 +1,137 @@
+{
+  "topic_id": "transfer-learning",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:37:10Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Qu'est-ce que le transfer learning ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Une technique de deep learning pour créer des modèles from scratch",
+        "Une technique de deep learning pour réutiliser un modèle pré-entraîné sur une tâche source pour l'adapter à une tâche cible différente",
+        "Une technique de machine learning pour améliorer les performances d'un modèle en ajoutant plus de données",
+        "Une technique de deep learning pour réduire la complexité d'un modèle"
+      ],
+      "correct_answer": 1,
+      "explanation": "Le transfer learning est une technique de deep learning qui consiste à réutiliser un modèle pré-entraîné sur une tâche source pour l'adapter à une tâche cible différente, généralement avec moins de données."
+    },
+    {
+      "id": "q2",
+      "question": "Le deep learning est un sous-domaine du machine learning.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le deep learning est effectivement un sous-domaine du machine learning, car il utilise des techniques de machine learning pour analyser et traiter des données."
+    },
+    {
+      "id": "q3",
+      "question": "Quel est l'avantage principal du transfer learning ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Il permet de créer des modèles from scratch avec moins de données",
+        "Il permet de réutiliser un modèle pré-entraîné pour améliorer les performances sur une tâche cible",
+        "Il permet de réduire la complexité d'un modèle en ajoutant plus de données",
+        "Il permet de créer des modèles plus génériques pour toutes les tâches"
+      ],
+      "correct_answer": 1,
+      "explanation": "L'avantage principal du transfer learning est qu'il permet de réutiliser un modèle pré-entraîné pour améliorer les performances sur une tâche cible, généralement avec moins de données."
+    },
+    {
+      "id": "q4",
+      "question": "Le fine-tuning est une technique de transfer learning qui consiste à ajuster les poids d'un modèle pré-entraîné pour adapter à une tâche cible.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le fine-tuning est effectivement une technique de transfer learning qui consiste à ajuster les poids d'un modèle pré-entraîné pour adapter à une tâche cible, en utilisant un learning rate réduit."
+    },
+    {
+      "id": "q5",
+      "question": "Qu'est-ce que la feature extraction dans le contexte du transfer learning ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Une technique de deep learning pour créer des modèles from scratch",
+        "Une technique de transfer learning qui consiste à geler les couches d'un modèle pré-entraîné et à entraîner un nouveau classifieur",
+        "Une technique de machine learning pour améliorer les performances d'un modèle en ajoutant plus de données",
+        "Une technique de deep learning pour réduire la complexité d'un modèle"
+      ],
+      "correct_answer": 1,
+      "explanation": "La feature extraction est une technique de transfer learning qui consiste à geler les couches d'un modèle pré-entraîné et à entraîner un nouveau classifieur pour adapter à une tâche cible."
+    },
+    {
+      "id": "q6",
+      "question": "Le transfer learning est uniquement utilisé pour les tâches de classification.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 1,
+      "explanation": "Le transfer learning n'est pas uniquement utilisé pour les tâches de classification, il peut également être utilisé pour d'autres types de tâches, telles que la régression ou la détection d'objets."
+    },
+    {
+      "id": "q7",
+      "question": "Qu'est-ce que le domain adaptation dans le contexte du transfer learning ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Une technique de transfer learning qui consiste à ajuster les poids d'un modèle pré-entraîné pour adapter à une tâche cible",
+        "Une technique de machine learning pour améliorer les performances d'un modèle en ajoutant plus de données",
+        "Une technique de transfer learning qui consiste à aligner les représentations d'un modèle pré-entraîné avec celles d'une tâche cible",
+        "Une technique de deep learning pour réduire la complexité d'un modèle"
+      ],
+      "correct_answer": 2,
+      "explanation": "Le domain adaptation est une technique de transfer learning qui consiste à aligner les représentations d'un modèle pré-entraîné avec celles d'une tâche cible, lorsque la distribution de la tâche source diffère de celle de la tâche cible."
+    },
+    {
+      "id": "q8",
+      "question": "Le transfer learning peut être utilisé pour améliorer les performances d'un modèle en ajoutant plus de données.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 1,
+      "explanation": "Le transfer learning ne vise pas à améliorer les performances d'un modèle en ajoutant plus de données, mais plutôt à réutiliser les connaissances acquises par un modèle pré-entraîné pour améliorer les performances sur une tâche cible avec moins de données."
+    },
+    {
+      "id": "q9",
+      "question": "Qu'est-ce que le few-shot learning dans le contexte du transfer learning ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Une technique de transfer learning qui consiste à ajuster les poids d'un modèle pré-entraîné pour adapter à une tâche cible",
+        "Une technique de machine learning pour améliorer les performances d'un modèle en ajoutant plus de données",
+        "Une technique de transfer learning qui consiste à adapter un modèle avec très peu d'exemples (1 à 10 par classe)",
+        "Une technique de deep learning pour réduire la complexité d'un modèle"
+      ],
+      "correct_answer": 2,
+      "explanation": "Le few-shot learning est une technique de transfer learning qui consiste à adapter un modèle avec très peu d'exemples (1 à 10 par classe), ce qui permet de réutiliser les connaissances acquises par un modèle pré-entraîné pour améliorer les performances sur une tâche cible avec très peu de données."
+    },
+    {
+      "id": "q10",
+      "question": "Le transfer learning est une technique de deep learning qui permet de créer des modèles from scratch avec moins de données.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 1,
+      "explanation": "Le transfer learning n'est pas une technique de deep learning pour créer des modèles from scratch avec moins de données, mais plutôt une technique pour réutiliser les connaissances acquises par un modèle pré-entraîné pour améliorer les performances sur une tâche cible avec moins de données."
+    }
+  ]
+}

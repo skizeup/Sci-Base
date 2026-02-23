@@ -1,0 +1,203 @@
+{
+  "topic_id": "graph-neural-networks",
+  "generated_by": "groq/llama-3.3-70b-versatile",
+  "generated_at": "2026-02-23T12:34:41Z",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Quelle est la principale différence entre les réseaux de neurones traditionnels et les Graph Neural Networks (GNNs) ?",
+      "type": "multiple_choice",
+      "difficulty": "facile",
+      "options": [
+        "Les GNNs sont spécifiquement conçus pour les données structurées en graphes",
+        "Les GNNs sont plus rapides que les réseaux de neurones traditionnels",
+        "Les GNNs ne peuvent traiter que des données numériques",
+        "Les GNNs utilisent exclusivement des algorithmes d'apprentissage supervisé"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les GNNs sont conçus pour opérer directement sur des données structurées en graphes, ce qui les différencie des réseaux de neurones traditionnels qui sont conçus pour des données régulières telles que des images ou du texte."
+    },
+    {
+      "id": "q2",
+      "question": "Les Graph Neural Networks (GNNs) sont utiles pour la prédiction de propriétés moléculaires.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les GNNs peuvent apprendre des représentations de molécules en fonction de leur structure et de leurs propriétés, ce qui les rend utiles pour la prédiction de propriétés moléculaires."
+    },
+    {
+      "id": "q3",
+      "question": "Quel est le paradigme fondamental des Graph Neural Networks (GNNs) qui permet aux nœuds de mettre à jour leur représentation en fonction de leurs voisins ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Message passing",
+        "Propagation spectrale",
+        "Apprentissage automatique",
+        "Régression linéaire"
+      ],
+      "correct_answer": 0,
+      "explanation": "Le message passing est le paradigme fondamental des GNNs qui permet aux nœuds de mettre à jour leur représentation en agrégeant les informations de leurs voisins."
+    },
+    {
+      "id": "q4",
+      "question": "Les Graph Attention Networks (GAT) utilisent un mécanisme d'attention pour pondérer les contributions de chaque voisin.",
+      "type": "true_false",
+      "difficulty": "moyen",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les GAT utilisent un mécanisme d'attention pour pondérer les contributions de chaque voisin, permettant au modèle d'apprendre quelles connexions sont les plus importantes."
+    },
+    {
+      "id": "q5",
+      "question": "Quelle est la principale différence entre les Graph Convolutional Networks (GCN) et les Graph Attention Networks (GAT) ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Les GCN utilisent une convolution pour agréger les informations, tandis que les GAT utilisent un mécanisme d'attention",
+        "Les GCN sont plus rapides que les GAT",
+        "Les GCN ne peuvent traiter que des graphes non orientés",
+        "Les GAT ne peuvent traiter que des graphes orientés"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les GCN utilisent une convolution pour agréger les informations, tandis que les GAT utilisent un mécanisme d'attention pour pondérer les contributions de chaque voisin."
+    },
+    {
+      "id": "q6",
+      "question": "Les Graph Neural Networks (GNNs) peuvent être utilisés pour la classification de nœuds dans les réseaux sociaux.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les GNNs peuvent apprendre des représentations de nœuds en fonction de leurs caractéristiques et de leurs relations avec d'autres nœuds, ce qui les rend utiles pour la classification de nœuds dans les réseaux sociaux."
+    },
+    {
+      "id": "q7",
+      "question": "Quel est le but de la propagation spectrale dans les Graph Convolutional Networks (GCN) ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Agréger les informations de voisinage",
+        "Mettre à jour la représentation des nœuds",
+        "Réduire la dimensionnalité des données",
+        "Améliorer la précision de la prédiction"
+      ],
+      "correct_answer": 0,
+      "explanation": "La propagation spectrale est utilisée dans les GCN pour agréger les informations de voisinage et mettre à jour la représentation des nœuds."
+    },
+    {
+      "id": "q8",
+      "question": "Les Graph Neural Networks (GNNs) peuvent être utilisés pour la prédiction de trafic et l'optimisation de réseaux.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les GNNs peuvent apprendre des représentations de réseaux de transport et prédire les flux de trafic, ce qui les rend utiles pour la prédiction de trafic et l'optimisation de réseaux."
+    },
+    {
+      "id": "q9",
+      "question": "Quel est le principal avantage des Graph Attention Networks (GAT) par rapport aux autres modèles de GNN ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Les GAT peuvent traiter des graphes non orientés",
+        "Les GAT peuvent traiter des graphes orientés",
+        "Les GAT utilisent un mécanisme d'attention pour pondérer les contributions de chaque voisin",
+        "Les GAT sont plus rapides que les autres modèles de GNN"
+      ],
+      "correct_answer": 2,
+      "explanation": "Les GAT utilisent un mécanisme d'attention pour pondérer les contributions de chaque voisin, ce qui permet au modèle d'apprendre quelles connexions sont les plus importantes."
+    },
+    {
+      "id": "q10",
+      "question": "Les Graph Neural Networks (GNNs) peuvent être utilisés pour la recommandation de produits.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les GNNs peuvent apprendre des représentations de produits et d'utilisateurs en fonction de leurs interactions, ce qui les rend utiles pour la recommandation de produits."
+    },
+    {
+      "id": "q11",
+      "question": "Quel est le but de la mise à jour de la représentation des nœuds dans les Graph Neural Networks (GNNs) ?",
+      "type": "multiple_choice",
+      "difficulty": "moyen",
+      "options": [
+        "Agréger les informations de voisinage",
+        "Mettre à jour la représentation des arêtes",
+        "Réduire la dimensionnalité des données",
+        "Améliorer la précision de la prédiction"
+      ],
+      "correct_answer": 0,
+      "explanation": "La mise à jour de la représentation des nœuds est utilisée dans les GNNs pour agréger les informations de voisinage et mettre à jour la représentation des nœuds."
+    },
+    {
+      "id": "q12",
+      "question": "Les Graph Neural Networks (GNNs) peuvent être utilisés pour la prédiction de propriétés moléculaires.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les GNNs peuvent apprendre des représentations de molécules en fonction de leur structure et de leurs propriétés, ce qui les rend utiles pour la prédiction de propriétés moléculaires."
+    },
+    {
+      "id": "q13",
+      "question": "Quel est le principal avantage des Graph Convolutional Networks (GCN) par rapport aux autres modèles de GNN ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Les GCN peuvent traiter des graphes non orientés",
+        "Les GCN peuvent traiter des graphes orientés",
+        "Les GCN utilisent une convolution pour agréger les informations",
+        "Les GCN sont plus rapides que les autres modèles de GNN"
+      ],
+      "correct_answer": 2,
+      "explanation": "Les GCN utilisent une convolution pour agréger les informations, ce qui permet au modèle d'apprendre des représentations de nœuds en fonction de leurs caractéristiques et de leurs relations avec d'autres nœuds."
+    },
+    {
+      "id": "q14",
+      "question": "Les Graph Neural Networks (GNNs) peuvent être utilisés pour la classification de nœuds dans les réseaux sociaux.",
+      "type": "true_false",
+      "difficulty": "facile",
+      "options": [
+        "Vrai",
+        "Faux"
+      ],
+      "correct_answer": 0,
+      "explanation": "Les GNNs peuvent apprendre des représentations de nœuds en fonction de leurs caractéristiques et de leurs relations avec d'autres nœuds, ce qui les rend utiles pour la classification de nœuds dans les réseaux sociaux."
+    },
+    {
+      "id": "q15",
+      "question": "Quel est le principal avantage des Graph Neural Networks (GNNs) par rapport aux autres modèles de machine learning ?",
+      "type": "multiple_choice",
+      "difficulty": "difficile",
+      "options": [
+        "Les GNNs peuvent traiter des données non structurées",
+        "Les GNNs peuvent traiter des données structurées en graphes",
+        "Les GNNs sont plus rapides que les autres modèles de machine learning",
+        "Les GNNs sont plus précis que les autres modèles de machine learning"
+      ],
+      "correct_answer": 1,
+      "explanation": "Les GNNs peuvent traiter des données structurées en graphes, ce qui les rend utiles pour une variété de tâches telles que la classification de nœuds, la prédiction de propriétés moléculaires et la recommandation de produits."
+    }
+  ]
+}
