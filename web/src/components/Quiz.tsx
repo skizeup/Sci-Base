@@ -3,26 +3,17 @@
 import { useState } from 'react';
 import type { Quiz, Question, Difficulty } from '@/lib/types';
 import { useQuizScore } from '@/hooks/useQuizScore';
+import { useTranslation } from '@/contexts/LocaleContext';
 
-const difficultyConfig: Record<Difficulty, { label: string; className: string }> = {
-  facile: {
-    label: 'Facile',
-    className: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300',
-  },
-  moyen: {
-    label: 'Moyen',
-    className: 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300',
-  },
-  difficile: {
-    label: 'Difficile',
-    className: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
-  },
+const difficultyStyles: Record<Difficulty, string> = {
+  facile: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300',
+  moyen: 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300',
+  difficile: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
 };
 
-function DifficultyBadge({ difficulty }: { difficulty: Difficulty }) {
-  const { label, className } = difficultyConfig[difficulty];
+function DifficultyBadge({ difficulty, label }: { difficulty: Difficulty; label: string }) {
   return (
-    <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${className}`}>
+    <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${difficultyStyles[difficulty]}`}>
       {label}
     </span>
   );
@@ -34,6 +25,7 @@ interface QuizProps {
 }
 
 export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
+  const { t } = useTranslation();
   const questions = quiz.questions;
   const total = questions.length;
 
@@ -66,7 +58,6 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
       setSelectedAnswer(null);
       setIsRevealed(false);
     } else {
-      // Fin du quiz — calculate final score including current question
       const finalScore = selectedAnswer === currentQuestion.correct_answer ? score + 1 : score;
       setFinished(true);
       saveScore(finalScore, total);
@@ -82,9 +73,7 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
     setFinished(false);
   }
 
-  // Écran de fin
   if (finished) {
-    // Recalculate final score from answers
     let finalScore = 0;
     for (const q of questions) {
       const userAnswer = answers.get(q.id);
@@ -101,31 +90,29 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
 
     return (
       <div className="max-w-2xl mx-auto">
-        {/* Score principal */}
         <div className="text-center mb-8 p-8 rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-900/20 dark:to-brand-800/20 border border-brand-200 dark:border-brand-800">
           <div className="text-6xl font-bold text-brand-600 dark:text-brand-400 mb-2">
             {finalScore}/{total}
           </div>
           <div className="text-lg text-gray-600 dark:text-gray-300 mb-1">
-            {percentage >= 80 ? 'Excellent !' : percentage >= 60 ? 'Bien joue !' : percentage >= 40 ? 'Pas mal !' : 'Continue tes efforts !'}
+            {percentage >= 80 ? t('quiz.excellent') : percentage >= 60 ? t('quiz.wellDone') : percentage >= 40 ? t('quiz.notBad') : t('quiz.keepGoing')}
           </div>
           <div className="text-sm text-gray-500 dark:text-gray-400">
-            {percentage}% de bonnes reponses
+            {t('quiz.percentage', { pct: percentage })}
           </div>
           {bestScore !== null && bestScore > finalScore && (
             <div className="mt-2 text-xs text-gray-400 dark:text-gray-500">
-              Meilleur score : {bestScore}/{total}
+              {t('quiz.bestScore', { score: bestScore, total })}
             </div>
           )}
         </div>
 
-        {/* Breakdown par difficulté */}
         <div className="grid grid-cols-3 gap-4 mb-8">
           {(Object.entries(byDifficulty) as [Difficulty, { correct: number; total: number }][]).map(
             ([diff, data]) =>
               data.total > 0 && (
                 <div key={diff} className="text-center p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-                  <DifficultyBadge difficulty={diff} />
+                  <DifficultyBadge difficulty={diff} label={t(`quiz.difficulty.${diff}`)} />
                   <div className="mt-2 text-xl font-semibold text-gray-900 dark:text-gray-100">
                     {data.correct}/{data.total}
                   </div>
@@ -134,9 +121,8 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
           )}
         </div>
 
-        {/* Review des réponses */}
         <div className="space-y-4 mb-8">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Revue des reponses</h3>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{t('quiz.reviewTitle')}</h3>
           {questions.map((q, i) => {
             const userAnswer = answers.get(q.id);
             const isCorrect = userAnswer === q.correct_answer;
@@ -161,7 +147,7 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
                     </p>
                     {!isCorrect && (
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                        Bonne reponse : {q.options[q.correct_answer]}
+                        {t('quiz.correctAnswer', { answer: q.options[q.correct_answer] })}
                       </p>
                     )}
                   </div>
@@ -171,27 +157,24 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
           })}
         </div>
 
-        {/* Bouton recommencer */}
         <div className="text-center">
           <button
             onClick={handleRestart}
             className="px-6 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-medium"
           >
-            Recommencer le quiz
+            {t('quiz.restart')}
           </button>
         </div>
       </div>
     );
   }
 
-  // Écran de question
   return (
     <div className="max-w-2xl mx-auto">
-      {/* Barre de progression */}
       <div className="mb-6">
         <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-2">
-          <span>Question {currentIndex + 1} sur {total}</span>
-          <span>{score} bonne{score > 1 ? 's' : ''} reponse{score > 1 ? 's' : ''}</span>
+          <span>{t('quiz.question', { current: currentIndex + 1, total })}</span>
+          <span>{t('quiz.correctAnswers', { count: score, plural: score > 1 ? 's' : '' })}</span>
         </div>
         <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
           <div
@@ -201,12 +184,11 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
         </div>
       </div>
 
-      {/* Question */}
       <div className="mb-6">
         <div className="flex items-center gap-2 mb-3">
-          <DifficultyBadge difficulty={currentQuestion.difficulty} />
+          <DifficultyBadge difficulty={currentQuestion.difficulty} label={t(`quiz.difficulty.${currentQuestion.difficulty}`)} />
           <span className="text-xs text-gray-400 dark:text-gray-500">
-            {currentQuestion.type === 'true_false' ? 'Vrai ou Faux' : 'QCM'}
+            {currentQuestion.type === 'true_false' ? t('quiz.trueOrFalse') : t('quiz.mcq')}
           </span>
         </div>
         <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
@@ -214,7 +196,6 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
         </h2>
       </div>
 
-      {/* Options */}
       <div className="space-y-3 mb-6">
         {currentQuestion.options.map((option, i) => {
           let optionClass = 'border-gray-200 dark:border-gray-700 hover:border-brand-300 dark:hover:border-brand-600';
@@ -261,7 +242,6 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
         })}
       </div>
 
-      {/* Explication */}
       {isRevealed && (
         <div className={`p-4 rounded-lg mb-6 ${
           selectedAnswer === currentQuestion.correct_answer
@@ -273,7 +253,7 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
               ? 'text-emerald-800 dark:text-emerald-300'
               : 'text-red-800 dark:text-red-300'
           }`}>
-            {selectedAnswer === currentQuestion.correct_answer ? 'Correct !' : 'Incorrect'}
+            {selectedAnswer === currentQuestion.correct_answer ? t('quiz.correct') : t('quiz.incorrect')}
           </p>
           <p className="text-sm text-gray-700 dark:text-gray-300">
             {currentQuestion.explanation}
@@ -281,7 +261,6 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
         </div>
       )}
 
-      {/* Boutons */}
       <div className="flex justify-end gap-3">
         {!isRevealed ? (
           <button
@@ -293,14 +272,14 @@ export default function QuizComponent({ quiz, topicSlug }: QuizProps) {
                 : 'bg-brand-600 text-white hover:bg-brand-700'
             }`}
           >
-            Valider
+            {t('quiz.validate')}
           </button>
         ) : (
           <button
             onClick={handleNext}
             className="px-6 py-2.5 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-medium"
           >
-            {currentIndex < total - 1 ? 'Suivante' : 'Voir les resultats'}
+            {currentIndex < total - 1 ? t('quiz.next') : t('quiz.viewResults')}
           </button>
         )}
       </div>

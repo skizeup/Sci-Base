@@ -1,18 +1,24 @@
 import Link from 'next/link';
 import type { TopicMeta } from '@/lib/types';
+import type { Locale } from '@/lib/i18n/config';
+import { getDictionary } from '@/lib/i18n/dictionaries';
+import { translate } from '@/lib/i18n/translate';
 import LevelBadge from './LevelBadge';
 
-export default function TopicCard({ topic }: { topic: TopicMeta }) {
+export default function TopicCard({ topic, locale = 'fr' }: { topic: TopicMeta; locale?: Locale }) {
+  const dict = getDictionary(locale);
+  const t = (key: string, p?: Record<string, string | number>) => translate(dict, key, p);
+
   return (
     <Link
-      href={`/topics/${topic.slug}`}
+      href={`/${locale}/topics/${topic.slug}`}
       className="group block rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 shadow-sm transition hover:shadow-md hover:border-brand-300 dark:hover:border-brand-600"
     >
       <div className="flex items-start justify-between gap-2 mb-3">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
           {topic.title}
         </h3>
-        <LevelBadge level={topic.level} />
+        <LevelBadge level={topic.level} locale={locale} />
       </div>
       <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 mb-4">
         {topic.description}
@@ -22,14 +28,14 @@ export default function TopicCard({ topic }: { topic: TopicMeta }) {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
-          {topic.paperCount} papers
+          {topic.paperCount} {t('common.papers')}
         </span>
         {topic.prerequisites.length > 0 && (
           <span className="flex items-center gap-1">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-            {topic.prerequisites.length} prérequis
+            {topic.prerequisites.length} {t('common.prerequisites')}
           </span>
         )}
       </div>

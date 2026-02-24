@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
+import { useTranslation } from '@/contexts/LocaleContext';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -10,6 +11,7 @@ interface AuthModalProps {
 
 export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const { signInWithEmail, signUpWithEmail, signInWithProvider } = useAuth();
+  const { t } = useTranslation();
   const [tab, setTab] = useState<'login' | 'signup'>('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,7 +39,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       if (result.error) {
         setError(result.error);
       } else {
-        setSuccess('Compte cree ! Verifiez votre email pour confirmer votre inscription.');
+        setSuccess(t('auth.signupSuccess'));
       }
     }
 
@@ -54,11 +56,10 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       onClick={handleBackdropClick}
     >
       <div className="relative w-full max-w-md mx-4 bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-        {/* Close button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-          aria-label="Fermer"
+          aria-label={t('auth.close')}
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -66,17 +67,13 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         </button>
 
         <div className="p-6">
-          {/* Header */}
           <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">
-            {tab === 'login' ? 'Connexion' : 'Inscription'}
+            {tab === 'login' ? t('auth.loginTitle') : t('auth.signupTitle')}
           </h2>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-            {tab === 'login'
-              ? 'Connectez-vous pour synchroniser votre progression.'
-              : 'Creez un compte pour sauvegarder votre progression.'}
+            {tab === 'login' ? t('auth.loginSubtitle') : t('auth.signupSubtitle')}
           </p>
 
-          {/* OAuth */}
           <div className="flex gap-3 mb-6">
             <button
               onClick={() => signInWithProvider('google')}
@@ -101,18 +98,16 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
             </button>
           </div>
 
-          {/* Divider */}
           <div className="flex items-center gap-3 mb-6">
             <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
-            <span className="text-xs text-gray-400 dark:text-gray-500">ou</span>
+            <span className="text-xs text-gray-400 dark:text-gray-500">{t('auth.or')}</span>
             <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="auth-email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Email
+                {t('auth.email')}
               </label>
               <input
                 id="auth-email"
@@ -121,12 +116,12 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                placeholder="vous@exemple.com"
+                placeholder={t('auth.emailPlaceholder')}
               />
             </div>
             <div>
               <label htmlFor="auth-password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Mot de passe
+                {t('auth.password')}
               </label>
               <input
                 id="auth-password"
@@ -136,46 +131,41 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                placeholder="6 caracteres minimum"
+                placeholder={t('auth.passwordPlaceholder')}
               />
             </div>
 
-            {error && (
-              <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
-            )}
-            {success && (
-              <p className="text-sm text-emerald-600 dark:text-emerald-400">{success}</p>
-            )}
+            {error && <p className="text-sm text-red-600 dark:text-red-400">{error}</p>}
+            {success && <p className="text-sm text-emerald-600 dark:text-emerald-400">{success}</p>}
 
             <button
               type="submit"
               disabled={loading}
               className="w-full py-2.5 px-4 bg-brand-600 text-white rounded-lg font-medium hover:bg-brand-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? 'Chargement...' : tab === 'login' ? 'Se connecter' : "S'inscrire"}
+              {loading ? t('auth.loading') : tab === 'login' ? t('auth.submit') : t('auth.submitSignup')}
             </button>
           </form>
 
-          {/* Toggle tab */}
           <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
             {tab === 'login' ? (
               <>
-                Pas encore de compte ?{' '}
+                {t('auth.noAccount')}{' '}
                 <button
                   onClick={() => { setTab('signup'); setError(null); setSuccess(null); }}
                   className="text-brand-600 dark:text-brand-400 hover:underline font-medium"
                 >
-                  S&apos;inscrire
+                  {t('auth.signupLink')}
                 </button>
               </>
             ) : (
               <>
-                Deja un compte ?{' '}
+                {t('auth.hasAccount')}{' '}
                 <button
                   onClick={() => { setTab('login'); setError(null); setSuccess(null); }}
                   className="text-brand-600 dark:text-brand-400 hover:underline font-medium"
                 >
-                  Se connecter
+                  {t('auth.loginLink')}
                 </button>
               </>
             )}

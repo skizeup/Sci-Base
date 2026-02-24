@@ -1,8 +1,14 @@
+'use client';
+
+import { useTranslation } from '@/contexts/LocaleContext';
+
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 mt-16">
       <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-400">
-        <p>SciBase — Plateforme d&apos;apprentissage scientifique open-source</p>
+        <p>{t('footer.tagline')}</p>
         <div className="flex items-center gap-4">
           <a
             href="https://github.com/skizeup/Sci-Base"

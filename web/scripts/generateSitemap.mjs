@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUTPUT = path.join(__dirname, '..', 'public', 'sitemap.xml');
 const BASE_URL = 'https://sci-base.vercel.app';
+const LOCALES = ['fr', 'en'];
 
 function findTopicsDir() {
   const candidates = [
@@ -21,16 +22,17 @@ function findTopicsDir() {
 const TOPICS_DIR = findTopicsDir();
 const today = new Date().toISOString().split('T')[0];
 
-const urls = [];
+// Collect base paths (without locale prefix)
+const basePaths = [];
 
-function addUrl(loc, priority, changefreq = 'monthly') {
-  urls.push({ loc: `${BASE_URL}${loc}`, priority, changefreq, lastmod: today });
+function addPath(pathStr, priority, changefreq = 'monthly') {
+  basePaths.push({ path: pathStr, priority, changefreq });
 }
 
 // Static pages
-addUrl('/', 1.0, 'weekly');
-addUrl('/parcours', 0.8, 'monthly');
-addUrl('/recherche', 0.5, 'monthly');
+addPath('/', 1.0, 'weekly');
+addPath('/parcours', 0.8, 'monthly');
+addPath('/recherche', 0.5, 'monthly');
 
 // Dynamic pages from topics
 const topicDirs = fs.readdirSync(TOPICS_DIR).filter((name) => {
@@ -38,42 +40,53 @@ const topicDirs = fs.readdirSync(TOPICS_DIR).filter((name) => {
 });
 
 for (const slug of topicDirs) {
-  addUrl(`/topics/${slug}`, 0.9, 'monthly');
-  addUrl(`/topics/${slug}/papers`, 0.7, 'monthly');
+  addPath(`/topics/${slug}`, 0.9, 'monthly');
+  addPath(`/topics/${slug}/papers`, 0.7, 'monthly');
 
-  // Quiz
   const quizPath = path.join(TOPICS_DIR, slug, 'quiz.json');
   if (fs.existsSync(quizPath)) {
-    addUrl(`/topics/${slug}/quiz`, 0.6, 'monthly');
+    addPath(`/topics/${slug}/quiz`, 0.6, 'monthly');
   }
 
-  // Paper summaries
   const summariesDir = path.join(TOPICS_DIR, slug, 'paper-summaries');
   if (fs.existsSync(summariesDir)) {
     const files = fs.readdirSync(summariesDir).filter((f) => f.endsWith('.md'));
     for (const file of files) {
       const paperSlug = file.replace(/\.md$/, '');
-      addUrl(`/topics/${slug}/papers/${paperSlug}`, 0.6, 'monthly');
+      addPath(`/topics/${slug}/papers/${paperSlug}`, 0.6, 'monthly');
     }
   }
 }
 
-// Generate XML
+// Generate XML with hreflang alternates
+const urlEntries = [];
+
+for (const { path: basePath, priority, changefreq } of basePaths) {
+  for (const locale of LOCALES) {
+    const loc = `${BASE_URL}/${locale}${basePath === '/' ? '' : basePath}`;
+    const alternates = LOCALES.map(
+      (l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE_URL}/${l}${basePath === '/' ? '' : basePath}" />`
+    ).join('\n');
+    const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/fr${basePath === '/' ? '' : basePath}" />`;
+
+    urlEntries.push(`  <url>
+    <loc>${loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority.toFixed(1)}</priority>
+${alternates}
+${xDefault}
+  </url>`);
+  }
+}
+
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    (u) => `  <url>
-    <loc>${u.loc}</loc>
-    <lastmod>${u.lastmod}</lastmod>
-    <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority.toFixed(1)}</priority>
-  </url>`
-  )
-  .join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urlEntries.join('\n')}
 </urlset>
 `;
 
 fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
 fs.writeFileSync(OUTPUT, xml);
-console.log(`Sitemap generated: ${urls.length} URLs -> ${OUTPUT}`);
+console.log(`Sitemap generated: ${urlEntries.length} URLs (${basePaths.length} pages x ${LOCALES.length} locales) -> ${OUTPUT}`);

@@ -4,28 +4,31 @@ import { fileURLToPath } from 'url';
 import matter from 'gray-matter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUTPUT = path.join(__dirname, '..', 'public', 'search-index.json');
+const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 
-function findTopicsDir() {
+function findDataDir() {
   const candidates = [
-    path.join(__dirname, '..', '..', 'data', 'topics'),
-    path.join(process.cwd(), '..', 'data', 'topics'),
-    path.join(process.cwd(), 'data', 'topics'),
+    path.join(__dirname, '..', '..', 'data'),
+    path.join(process.cwd(), '..', 'data'),
+    path.join(process.cwd(), 'data'),
   ];
   for (const dir of candidates) {
     if (fs.existsSync(dir)) return dir;
   }
-  throw new Error(`Cannot find data/topics. cwd=${process.cwd()}, __dirname=${__dirname}`);
+  throw new Error(`Cannot find data/. cwd=${process.cwd()}, __dirname=${__dirname}`);
 }
 
-const TOPICS_DIR = findTopicsDir();
+const DATA_DIR = findDataDir();
+const TOPICS_DIR = path.join(DATA_DIR, 'topics');
 
-function extractTitle(markdown) {
+const LOCALES = ['fr', 'en'];
+
+function extractTitle(markdown, locale = 'fr') {
   const match = markdown.match(/^#\s+(.+)$/m);
   if (match) return match[1].replace(/\*\*/g, '').trim();
   const match2 = markdown.match(/^##\s*(.+)$/m);
   if (match2) return match2[1].replace(/\*\*/g, '').trim();
-  return 'Sans titre';
+  return locale === 'en' ? 'Untitled' : 'Sans titre';
 }
 
 function extractFirstParagraph(markdown) {
@@ -52,88 +55,110 @@ function getTopicLevel(slug, learningPath) {
   return 'debutant';
 }
 
-const items = [];
-const lp = readLearningPath();
+/**
+ * Read a file with locale fallback: try EN path first, fallback to FR.
+ */
+function readLocalizedFile(topicSlug, filename, locale) {
+  if (locale !== 'fr') {
+    const enPath = path.join(DATA_DIR, 'en', 'topics', topicSlug, filename);
+    if (fs.existsSync(enPath)) {
+      return fs.readFileSync(enPath, 'utf-8');
+    }
+  }
+  const frPath = path.join(TOPICS_DIR, topicSlug, filename);
+  if (fs.existsSync(frPath)) return fs.readFileSync(frPath, 'utf-8');
+  return null;
+}
 
+const lp = readLearningPath();
 const topicDirs = fs.readdirSync(TOPICS_DIR).filter((name) => {
   return fs.statSync(path.join(TOPICS_DIR, name)).isDirectory();
 });
 
-for (const slug of topicDirs) {
-  const topicDir = path.join(TOPICS_DIR, slug);
+for (const locale of LOCALES) {
+  const items = [];
+  const prefix = `/${locale}`;
+  const summaryLabel = locale === 'en' ? 'Simplified summary' : 'Résumé vulgarisé';
+  const quizDesc = locale === 'en'
+    ? (count, title) => `${count} questions to test your knowledge on ${title}`
+    : (count, title) => `${count} questions pour tester vos connaissances sur ${title}`;
 
-  // Topic
-  const indexPath = path.join(topicDir, '_index.md');
-  if (fs.existsSync(indexPath)) {
-    const raw = fs.readFileSync(indexPath, 'utf-8');
-    const { content } = matter(raw);
-    const title = extractTitle(content);
-    items.push({
-      type: 'topic',
-      title,
-      description: extractFirstParagraph(content),
-      url: `/topics/${slug}`,
-      topicSlug: slug,
-      topicTitle: title,
-      level: getTopicLevel(slug, lp),
-    });
-  }
-
-  // Papers
-  const papersPath = path.join(topicDir, 'papers.json');
-  if (fs.existsSync(papersPath)) {
-    const papers = JSON.parse(fs.readFileSync(papersPath, 'utf-8'));
-    const topicTitle = items.find((i) => i.topicSlug === slug)?.topicTitle || slug;
-    for (const paper of papers) {
+  for (const slug of topicDirs) {
+    // Topic
+    const indexRaw = readLocalizedFile(slug, '_index.md', locale);
+    if (indexRaw) {
+      const { content } = matter(indexRaw);
+      const title = extractTitle(content, locale);
       items.push({
-        type: 'paper',
-        title: paper.title,
-        description: paper.abstract?.slice(0, 200) || '',
-        url: `/topics/${slug}/papers`,
+        type: 'topic',
+        title,
+        description: extractFirstParagraph(content),
+        url: `${prefix}/topics/${slug}`,
+        topicSlug: slug,
+        topicTitle: title,
+        level: getTopicLevel(slug, lp),
+      });
+    }
+
+    // Papers (always from FR — content already in English)
+    const papersPath = path.join(TOPICS_DIR, slug, 'papers.json');
+    if (fs.existsSync(papersPath)) {
+      const papers = JSON.parse(fs.readFileSync(papersPath, 'utf-8'));
+      const topicTitle = items.find((i) => i.topicSlug === slug)?.topicTitle || slug;
+      for (const paper of papers) {
+        items.push({
+          type: 'paper',
+          title: paper.title,
+          description: paper.abstract?.slice(0, 200) || '',
+          url: `${prefix}/topics/${slug}/papers`,
+          topicSlug: slug,
+          topicTitle,
+          tags: paper.tags || [],
+        });
+      }
+    }
+
+    // Quiz
+    const quizRaw = readLocalizedFile(slug, 'quiz.json', locale);
+    if (quizRaw) {
+      const topicTitle = items.find((i) => i.topicSlug === slug)?.topicTitle || slug;
+      const quiz = JSON.parse(quizRaw);
+      items.push({
+        type: 'quiz',
+        title: `Quiz — ${topicTitle}`,
+        description: quizDesc(quiz.questions.length, topicTitle),
+        url: `${prefix}/topics/${slug}/quiz`,
         topicSlug: slug,
         topicTitle,
-        tags: paper.tags || [],
+        level: getTopicLevel(slug, lp),
       });
+    }
+
+    // Paper summaries
+    const summariesDir = path.join(TOPICS_DIR, slug, 'paper-summaries');
+    if (fs.existsSync(summariesDir)) {
+      const topicTitle = items.find((i) => i.topicSlug === slug)?.topicTitle || slug;
+      const files = fs.readdirSync(summariesDir).filter((f) => f.endsWith('.md'));
+      for (const file of files) {
+        const paperSlug = file.replace(/\.md$/, '');
+        // Try localized version for the title
+        const raw = readLocalizedFile(slug, `paper-summaries/${file}`, locale) ||
+                    fs.readFileSync(path.join(summariesDir, file), 'utf-8');
+        const { content } = matter(raw);
+        items.push({
+          type: 'paper-summary',
+          title: extractTitle(content, locale),
+          description: `${summaryLabel} — ${topicTitle}`,
+          url: `${prefix}/topics/${slug}/papers/${paperSlug}`,
+          topicSlug: slug,
+          topicTitle,
+        });
+      }
     }
   }
 
-  // Quiz
-  const quizPath = path.join(topicDir, 'quiz.json');
-  if (fs.existsSync(quizPath)) {
-    const topicTitle = items.find((i) => i.topicSlug === slug)?.topicTitle || slug;
-    const quiz = JSON.parse(fs.readFileSync(quizPath, 'utf-8'));
-    items.push({
-      type: 'quiz',
-      title: `Quiz — ${topicTitle}`,
-      description: `${quiz.questions.length} questions pour tester vos connaissances sur ${topicTitle}`,
-      url: `/topics/${slug}/quiz`,
-      topicSlug: slug,
-      topicTitle,
-      level: getTopicLevel(slug, lp),
-    });
-  }
-
-  // Paper summaries
-  const summariesDir = path.join(topicDir, 'paper-summaries');
-  if (fs.existsSync(summariesDir)) {
-    const topicTitle = items.find((i) => i.topicSlug === slug)?.topicTitle || slug;
-    const files = fs.readdirSync(summariesDir).filter((f) => f.endsWith('.md'));
-    for (const file of files) {
-      const paperSlug = file.replace(/\.md$/, '');
-      const raw = fs.readFileSync(path.join(summariesDir, file), 'utf-8');
-      const { content } = matter(raw);
-      items.push({
-        type: 'paper-summary',
-        title: extractTitle(content),
-        description: `Résumé vulgarisé — ${topicTitle}`,
-        url: `/topics/${slug}/papers/${paperSlug}`,
-        topicSlug: slug,
-        topicTitle,
-      });
-    }
-  }
+  const output = path.join(PUBLIC_DIR, `search-index-${locale}.json`);
+  fs.mkdirSync(path.dirname(output), { recursive: true });
+  fs.writeFileSync(output, JSON.stringify(items, null, 0));
+  console.log(`Search index [${locale}]: ${items.length} items -> ${output}`);
 }
-
-fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
-fs.writeFileSync(OUTPUT, JSON.stringify(items, null, 0));
-console.log(`Search index generated: ${items.length} items -> ${OUTPUT}`);

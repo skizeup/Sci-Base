@@ -3,12 +3,13 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import type { TopicMeta, Level } from '@/lib/types';
+import type { Locale } from '@/lib/i18n/config';
 import { useProgress } from '@/hooks/useProgress';
+import { useTranslation } from '@/contexts/LocaleContext';
 
 const LEVELS: Level[] = ['debutant', 'intermediaire', 'avance'];
 
 const LEVEL_CONFIG: Record<Level, {
-  label: string;
   icon: string;
   headerBorder: string;
   headerText: string;
@@ -19,8 +20,7 @@ const LEVEL_CONFIG: Record<Level, {
   markerId: string;
 }> = {
   debutant: {
-    label: 'Débutant',
-    icon: '🟢',
+    icon: '\uD83D\uDFE2',
     headerBorder: 'border-emerald-300 dark:border-emerald-700',
     headerText: 'text-emerald-700 dark:text-emerald-400',
     cardBorder: 'border-emerald-200 dark:border-emerald-800',
@@ -30,8 +30,7 @@ const LEVEL_CONFIG: Record<Level, {
     markerId: 'emerald',
   },
   intermediaire: {
-    label: 'Intermédiaire',
-    icon: '🟡',
+    icon: '\uD83D\uDFE1',
     headerBorder: 'border-amber-300 dark:border-amber-700',
     headerText: 'text-amber-700 dark:text-amber-400',
     cardBorder: 'border-amber-200 dark:border-amber-800',
@@ -41,8 +40,7 @@ const LEVEL_CONFIG: Record<Level, {
     markerId: 'amber',
   },
   avance: {
-    label: 'Avancé',
-    icon: '🟣',
+    icon: '\uD83D\uDFE3',
     headerBorder: 'border-purple-300 dark:border-purple-700',
     headerText: 'text-purple-700 dark:text-purple-400',
     cardBorder: 'border-purple-200 dark:border-purple-800',
@@ -59,7 +57,7 @@ interface ArrowData {
   path: string;
 }
 
-export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
+export default function LearningPath({ topics, locale = 'fr' }: { topics: TopicMeta[]; locale?: Locale }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef(new Map<string, HTMLDivElement>());
 
@@ -68,28 +66,26 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
   const [isDark, setIsDark] = useState(false);
 
   const { completed, toggleCompleted } = useProgress();
+  const { t } = useTranslation();
 
-  // Group topics by level
   const topicsByLevel = useMemo(() => {
     const map = new Map<Level, TopicMeta[]>();
     LEVELS.forEach(l => map.set(l, []));
-    topics.forEach(t => map.get(t.level)?.push(t));
+    topics.forEach(tp => map.get(tp.level)?.push(tp));
     return map;
   }, [topics]);
 
-  // Build dependents lookup (topic → topics that list it as prereq)
   const dependentsOf = useMemo(() => {
     const map = new Map<string, string[]>();
-    topics.forEach(t => {
-      t.prerequisites.forEach(prereq => {
+    topics.forEach(tp => {
+      tp.prerequisites.forEach(prereq => {
         if (!map.has(prereq)) map.set(prereq, []);
-        map.get(prereq)!.push(t.slug);
+        map.get(prereq)!.push(tp.slug);
       });
     });
     return map;
   }, [topics]);
 
-  // Track dark mode via MutationObserver
   useEffect(() => {
     const update = () => setIsDark(document.documentElement.classList.contains('dark'));
     update();
@@ -98,7 +94,6 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
     return () => obs.disconnect();
   }, []);
 
-  // Compute SVG arrow paths from element positions
   const computeArrows = useCallback(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -114,7 +109,7 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
         const fr = fromEl.getBoundingClientRect();
         const tr = toEl.getBoundingClientRect();
 
-        const fromLevel = topics.find(t => t.slug === prereqSlug)?.level;
+        const fromLevel = topics.find(tp => tp.slug === prereqSlug)?.level;
         const sameColumn = fromLevel === topic.level;
 
         let path: string;
@@ -142,7 +137,6 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
     setArrows(result);
   }, [topics]);
 
-  // Recalculate arrows on mount and resize
   useEffect(() => {
     const timer = setTimeout(computeArrows, 50);
     const container = containerRef.current;
@@ -154,32 +148,28 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
     };
   }, [computeArrows]);
 
-  // Handle checkbox click
   const handleToggle = useCallback((slug: string, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     toggleCompleted(slug);
   }, [toggleCompleted]);
 
-  // Connected topics for hover highlight
   const connectedSlugs = useMemo(() => {
     if (!hoveredTopic) return null;
     const set = new Set<string>();
     set.add(hoveredTopic);
-    const topic = topics.find(t => t.slug === hoveredTopic);
+    const topic = topics.find(tp => tp.slug === hoveredTopic);
     topic?.prerequisites.forEach(p => set.add(p));
     dependentsOf.get(hoveredTopic)?.forEach(d => set.add(d));
     return set;
   }, [hoveredTopic, topics, dependentsOf]);
 
-  // Progress stats
   const completedCount = completed.size;
   const totalCount = topics.length;
   const progressPct = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
-  // Arrow colors for hover
   const hoveredLevel = hoveredTopic
-    ? topics.find(t => t.slug === hoveredTopic)?.level ?? null
+    ? topics.find(tp => tp.slug === hoveredTopic)?.level ?? null
     : null;
   const defaultArrowColor = isDark ? '#374151' : '#d1d5db';
   const highlightArrowColor = hoveredLevel
@@ -189,14 +179,13 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
 
   return (
     <div className="space-y-6">
-      {/* Progress bar */}
       <div>
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-            Progression
+            {t('parcours.progression')}
           </span>
           <span className="text-sm text-gray-500 dark:text-gray-400">
-            {completedCount} / {totalCount} topics complétés
+            {t('parcours.topicsCompleted', { count: completedCount, total: totalCount })}
           </span>
         </div>
         <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
@@ -207,7 +196,6 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
         </div>
       </div>
 
-      {/* Grid + SVG arrows */}
       <div ref={containerRef} className="relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {LEVELS.map(level => {
@@ -216,16 +204,14 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
 
             return (
               <div key={level} className="space-y-3">
-                {/* Column header */}
                 <div className={`flex items-center gap-2 pb-2 border-b-2 ${cfg.headerBorder}`}>
                   <span>{cfg.icon}</span>
-                  <h3 className={`font-semibold ${cfg.headerText}`}>{cfg.label}</h3>
+                  <h3 className={`font-semibold ${cfg.headerText}`}>{t(`levels.${level}`)}</h3>
                   <span className="text-xs text-gray-400 dark:text-gray-500 ml-auto">
-                    {items.length} topics
+                    {t('parcours.topicsCount', { count: items.length })}
                   </span>
                 </div>
 
-                {/* Topic cards */}
                 {items.map(topic => {
                   const isHovered = hoveredTopic === topic.slug;
                   const isFaded = connectedSlugs !== null && !connectedSlugs.has(topic.slug);
@@ -240,7 +226,7 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
                       className={`transition-opacity duration-200 ${isFaded ? 'opacity-25' : 'opacity-100'}`}
                     >
                       <Link
-                        href={`/topics/${topic.slug}`}
+                        href={`/${locale}/topics/${topic.slug}`}
                         className={[
                           'block p-3 rounded-lg border-2 transition-all duration-200 group',
                           isDone
@@ -262,7 +248,6 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
                             </span>
                           </div>
 
-                          {/* Progress checkbox */}
                           <button
                             onClick={e => handleToggle(topic.slug, e)}
                             className={[
@@ -271,7 +256,7 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
                                 ? 'bg-emerald-500 border-emerald-500 text-white'
                                 : 'border-gray-300 dark:border-gray-600 hover:border-emerald-400 dark:hover:border-emerald-500',
                             ].join(' ')}
-                            title={isDone ? 'Marquer comme non terminé' : 'Marquer comme terminé'}
+                            title={isDone ? t('parcours.markUndone') : t('parcours.markDone')}
                           >
                             {isDone && (
                               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -289,7 +274,6 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
           })}
         </div>
 
-        {/* SVG arrow overlay (desktop only) */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
           style={{ overflow: 'visible' }}
@@ -329,18 +313,17 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
         </svg>
       </div>
 
-      {/* Legend */}
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-gray-500 dark:text-gray-400 pt-4 border-t border-gray-200 dark:border-gray-700">
-        <span>🟢 Débutant</span>
-        <span>🟡 Intermédiaire</span>
-        <span>🟣 Avancé</span>
+        <span>{LEVEL_CONFIG.debutant.icon} {t('levels.debutant')}</span>
+        <span>{LEVEL_CONFIG.intermediaire.icon} {t('levels.intermediaire')}</span>
+        <span>{LEVEL_CONFIG.avance.icon} {t('levels.avance')}</span>
         <span className="hidden md:inline text-gray-300 dark:text-gray-600">|</span>
         <span className="hidden md:flex items-center gap-1.5">
           <svg className="w-5 h-1" viewBox="0 0 20 4">
             <path d="M0 2 L20 2" stroke="currentColor" strokeWidth="1.5" />
             <path d="M16 0 L20 2 L16 4Z" fill="currentColor" />
           </svg>
-          Prérequis
+          {t('parcours.legendPrerequisites')}
         </span>
         <span className="text-gray-300 dark:text-gray-600">|</span>
         <span className="flex items-center gap-1.5">
@@ -349,7 +332,7 @@ export default function LearningPath({ topics }: { topics: TopicMeta[] }) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </span>
-          Terminé
+          {t('parcours.legendDone')}
         </span>
       </div>
     </div>

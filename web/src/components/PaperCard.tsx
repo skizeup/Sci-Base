@@ -1,13 +1,20 @@
 import type { Paper } from '@/lib/types';
+import type { Locale } from '@/lib/i18n/config';
+import { getDictionary } from '@/lib/i18n/dictionaries';
+import { translate } from '@/lib/i18n/translate';
 import Link from 'next/link';
 
 interface Props {
   paper: Paper;
   topicSlug: string;
   summarySlug?: string;
+  locale?: Locale;
 }
 
-export default function PaperCard({ paper, topicSlug, summarySlug }: Props) {
+export default function PaperCard({ paper, topicSlug, summarySlug, locale = 'fr' }: Props) {
+  const dict = getDictionary(locale);
+  const t = (key: string, p?: Record<string, string | number>) => translate(dict, key, p);
+
   return (
     <div className="p-4 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition">
       <div className="flex items-start justify-between gap-4">
@@ -36,10 +43,10 @@ export default function PaperCard({ paper, topicSlug, summarySlug }: Props) {
       <div className="flex items-center gap-3 mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
         {summarySlug && (
           <Link
-            href={`/topics/${topicSlug}/papers/${summarySlug}`}
+            href={`/${locale}/topics/${topicSlug}/papers/${summarySlug}`}
             className="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300"
           >
-            Lire le résumé
+            {t('papers.readSummary')}
           </Link>
         )}
         {paper.url && (
@@ -49,7 +56,7 @@ export default function PaperCard({ paper, topicSlug, summarySlug }: Props) {
             rel="noopener noreferrer"
             className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
           >
-            Source
+            {t('papers.source')}
           </a>
         )}
         {paper.pdf_url && (
@@ -59,7 +66,7 @@ export default function PaperCard({ paper, topicSlug, summarySlug }: Props) {
             rel="noopener noreferrer"
             className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
           >
-            PDF
+            {t('papers.pdf')}
           </a>
         )}
       </div>

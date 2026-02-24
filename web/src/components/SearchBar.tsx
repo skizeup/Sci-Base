@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Fuse from 'fuse.js';
 import type { SearchItem } from '@/lib/types';
+import { useTranslation, useLocale } from '@/contexts/LocaleContext';
 
 export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) {
   const [query, setQuery] = useState('');
@@ -12,9 +13,11 @@ export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) 
   const [showDropdown, setShowDropdown] = useState(false);
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
+  const locale = useLocale();
 
   useEffect(() => {
-    fetch('/search-index.json')
+    fetch(`/search-index-${locale}.json`)
       .then((res) => res.json())
       .then((data: SearchItem[]) => {
         setFuse(
@@ -30,7 +33,7 @@ export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) 
           })
         );
       });
-  }, []);
+  }, [locale]);
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -56,12 +59,12 @@ export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) 
     [fuse, fullPage]
   );
 
-  const typeLabels: Record<string, string> = {
-    topic: 'Topic',
-    paper: 'Paper',
-    'paper-summary': 'Résumé',
-    quiz: 'Quiz',
-  };
+  const typeLabels = t('search.typeLabels.topic') ? {
+    topic: t('search.typeLabels.topic'),
+    paper: t('search.typeLabels.paper'),
+    'paper-summary': t('search.typeLabels.paper-summary'),
+    quiz: t('search.typeLabels.quiz'),
+  } : { topic: 'Topic', paper: 'Paper', 'paper-summary': 'Summary', quiz: 'Quiz' };
 
   const typeColors: Record<string, string> = {
     topic: 'bg-brand-100 text-brand-800 dark:bg-brand-900/30 dark:text-brand-300',
@@ -83,13 +86,13 @@ export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) 
         </svg>
         <input
           type="text"
-          placeholder="Rechercher un topic, paper..."
+          placeholder={t('search.placeholder')}
           value={query}
           onChange={(e) => search(e.target.value)}
           onFocus={() => results.length > 0 && !fullPage && setShowDropdown(true)}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && !fullPage) {
-              router.push(`/recherche?q=${encodeURIComponent(query)}`);
+              router.push(`/${locale}/recherche?q=${encodeURIComponent(query)}`);
               setShowDropdown(false);
             }
           }}
@@ -99,7 +102,6 @@ export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) 
         />
       </div>
 
-      {/* Dropdown (compact mode) */}
       {!fullPage && showDropdown && results.length > 0 && (
         <div className="absolute top-full mt-1 w-full bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-lg z-50 overflow-hidden">
           {results.map((item, i) => (
@@ -113,7 +115,7 @@ export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) 
             >
               <div className="flex items-center gap-2">
                 <span className={`px-1.5 py-0.5 text-[10px] font-medium rounded ${typeColors[item.type]}`}>
-                  {typeLabels[item.type]}
+                  {typeLabels[item.type as keyof typeof typeLabels]}
                 </span>
                 <span className="text-sm font-medium text-gray-900 dark:text-gray-100 truncate">{item.title}</span>
               </div>
@@ -122,17 +124,16 @@ export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) 
           ))}
           <button
             onClick={() => {
-              router.push(`/recherche?q=${encodeURIComponent(query)}`);
+              router.push(`/${locale}/recherche?q=${encodeURIComponent(query)}`);
               setShowDropdown(false);
             }}
             className="w-full px-4 py-2 text-xs text-brand-600 dark:text-brand-400 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium"
           >
-            Voir tous les résultats →
+            {t('search.viewAll')}
           </button>
         </div>
       )}
 
-      {/* Full page results */}
       {fullPage && results.length > 0 && (
         <div className="mt-6 space-y-3">
           {results.map((item, i) => (
@@ -143,7 +144,7 @@ export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) 
             >
               <div className="flex items-center gap-2 mb-1">
                 <span className={`px-2 py-0.5 text-xs font-medium rounded ${typeColors[item.type]}`}>
-                  {typeLabels[item.type]}
+                  {typeLabels[item.type as keyof typeof typeLabels]}
                 </span>
                 <span className="text-sm font-medium text-gray-900 dark:text-gray-100">{item.title}</span>
               </div>
@@ -156,7 +157,7 @@ export default function SearchBar({ fullPage = false }: { fullPage?: boolean }) 
 
       {fullPage && query.length >= 2 && results.length === 0 && (
         <p className="mt-6 text-sm text-gray-500 dark:text-gray-400 text-center">
-          Aucun résultat pour &quot;{query}&quot;
+          {t('search.noResults', { query })}
         </p>
       )}
     </div>

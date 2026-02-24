@@ -2,6 +2,7 @@
 
 import { useAuth } from '@/contexts/AuthContext';
 import { useBookmarks } from '@/hooks/useBookmarks';
+import { useTranslation } from '@/contexts/LocaleContext';
 
 interface BookmarkButtonProps {
   topicSlug: string;
@@ -12,8 +13,8 @@ interface BookmarkButtonProps {
 export default function BookmarkButton({ topicSlug, paperSlug, className = '' }: BookmarkButtonProps) {
   const { user } = useAuth();
   const { isBookmarked, toggleBookmark } = useBookmarks();
+  const { t } = useTranslation();
 
-  // Don't show if not logged in
   if (!user) return null;
 
   const active = isBookmarked(topicSlug, paperSlug);
@@ -26,7 +27,7 @@ export default function BookmarkButton({ topicSlug, paperSlug, className = '' }:
           ? 'text-red-500 dark:text-red-400'
           : 'text-gray-400 dark:text-gray-500 hover:text-red-500 dark:hover:text-red-400'
       } ${className}`}
-      title={active ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+      title={active ? t('bookmark.removeTitle') : t('bookmark.addTitle')}
     >
       <svg
         className="w-5 h-5"
@@ -41,7 +42,7 @@ export default function BookmarkButton({ topicSlug, paperSlug, className = '' }:
           d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
         />
       </svg>
-      {active ? 'Favori' : 'Favoris'}
+      {active ? t('bookmark.remove') : t('bookmark.add')}
     </button>
   );
 }

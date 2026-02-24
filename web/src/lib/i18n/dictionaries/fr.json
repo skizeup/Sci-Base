@@ -1,0 +1,171 @@
+{
+  "common": {
+    "topics": "Topics",
+    "learningPath": "Parcours",
+    "search": "Recherche",
+    "github": "GitHub",
+    "login": "Connexion",
+    "papers": "papers",
+    "prerequisites": "pr\u00e9requis",
+    "home": "Accueil",
+    "back": "Retour",
+    "noTitle": "Sans titre"
+  },
+  "levels": {
+    "debutant": "D\u00e9butant",
+    "intermediaire": "Interm\u00e9diaire",
+    "avance": "Avanc\u00e9"
+  },
+  "home": {
+    "title": "Apprendre l'IA et le Machine Learning",
+    "subtitle": "Des ressources scientifiques vulgaris\u00e9es, structur\u00e9es par niveau. Papers de recherche expliqu\u00e9s simplement, parcours d'apprentissage progressif.",
+    "structuredPath": "Parcours structur\u00e9",
+    "viewPath": "Voir le parcours",
+    "searchAction": "Rechercher",
+    "allTopics": "Tous les topics"
+  },
+  "topic": {
+    "overview": "Vue d'ensemble",
+    "summary": "R\u00e9sum\u00e9 vulgaris\u00e9",
+    "testKnowledge": "Testez vos connaissances",
+    "questionsToValidate": "{count} questions pour valider votre apprentissage",
+    "papers": "Papers ({count})",
+    "resources": "Ressources",
+    "link": "Lien",
+    "viewAllPapers": "Voir les {count} papers",
+    "summariesAvailable": "{count} r\u00e9sum\u00e9s disponibles",
+    "prerequisitesLabel": "Pr\u00e9requis :"
+  },
+  "papers": {
+    "title": "Papers \u2014 {title}",
+    "count": "{papers} papers \u00b7 {summaries} r\u00e9sum\u00e9s vulgaris\u00e9s disponibles",
+    "readSummary": "Lire le r\u00e9sum\u00e9",
+    "source": "Source",
+    "pdf": "PDF",
+    "generatedBy": "G\u00e9n\u00e9r\u00e9 par {provider}",
+    "generatedOn": " le {date}",
+    "backToPapers": "\u2190 Retour aux papers de {title}"
+  },
+  "parcours": {
+    "title": "Parcours d'apprentissage",
+    "description": "Suivez ce parcours progressif pour ma\u00eetriser les fondamentaux de l'IA et du Machine Learning. Survolez un topic pour voir ses d\u00e9pendances, et cochez ceux que vous avez termin\u00e9s.",
+    "progression": "Progression",
+    "topicsCompleted": "{count} / {total} topics compl\u00e9t\u00e9s",
+    "topicsCount": "{count} topics",
+    "markDone": "Marquer comme termin\u00e9",
+    "markUndone": "Marquer comme non termin\u00e9",
+    "legendPrerequisites": "Pr\u00e9requis",
+    "legendDone": "Termin\u00e9"
+  },
+  "search": {
+    "placeholder": "Rechercher un topic, paper...",
+    "title": "Recherche",
+    "noResults": "Aucun r\u00e9sultat pour \"{query}\"",
+    "viewAll": "Voir tous les r\u00e9sultats \u2192",
+    "typeLabels": {
+      "topic": "Topic",
+      "paper": "Paper",
+      "paper-summary": "R\u00e9sum\u00e9",
+      "quiz": "Quiz"
+    }
+  },
+  "quiz": {
+    "title": "Quiz \u2014 {title}",
+    "questionsCount": "{count} questions pour tester vos connaissances",
+    "question": "Question {current} sur {total}",
+    "correctAnswers": "{count} bonne{plural} r\u00e9ponse{plural}",
+    "validate": "Valider",
+    "next": "Suivante",
+    "viewResults": "Voir les r\u00e9sultats",
+    "correct": "Correct !",
+    "incorrect": "Incorrect",
+    "correctAnswer": "Bonne r\u00e9ponse : {answer}",
+    "excellent": "Excellent !",
+    "wellDone": "Bien jou\u00e9 !",
+    "notBad": "Pas mal !",
+    "keepGoing": "Continue tes efforts !",
+    "percentage": "{pct}% de bonnes r\u00e9ponses",
+    "bestScore": "Meilleur score : {score}/{total}",
+    "reviewTitle": "Revue des r\u00e9ponses",
+    "restart": "Recommencer le quiz",
+    "backToTopic": "\u2190 Retour \u00e0 {title}",
+    "trueOrFalse": "Vrai ou Faux",
+    "mcq": "QCM",
+    "difficulty": {
+      "facile": "Facile",
+      "moyen": "Moyen",
+      "difficile": "Difficile"
+    }
+  },
+  "auth": {
+    "loginTitle": "Connexion",
+    "signupTitle": "Inscription",
+    "loginSubtitle": "Connectez-vous pour synchroniser votre progression.",
+    "signupSubtitle": "Cr\u00e9ez un compte pour sauvegarder votre progression.",
+    "or": "ou",
+    "email": "Email",
+    "emailPlaceholder": "vous@exemple.com",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "6 caract\u00e8res minimum",
+    "submit": "Se connecter",
+    "submitSignup": "S'inscrire",
+    "loading": "Chargement...",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "D\u00e9j\u00e0 un compte ?",
+    "signupLink": "S'inscrire",
+    "loginLink": "Se connecter",
+    "signupSuccess": "Compte cr\u00e9\u00e9 ! V\u00e9rifiez votre email pour confirmer votre inscription.",
+    "close": "Fermer"
+  },
+  "userMenu": {
+    "profile": "Mon profil",
+    "signOut": "Se d\u00e9connecter",
+    "menuLabel": "Menu utilisateur"
+  },
+  "bookmark": {
+    "add": "Favoris",
+    "remove": "Favori",
+    "addTitle": "Ajouter aux favoris",
+    "removeTitle": "Retirer des favoris"
+  },
+  "theme": {
+    "auto": "Auto ({resolved})",
+    "autoNight": "20h-7h",
+    "autoDay": "7h-20h",
+    "light": "Clair",
+    "dark": "Sombre",
+    "label": "Th\u00e8me : {mode}"
+  },
+  "footer": {
+    "tagline": "SciBase \u2014 Plateforme d'apprentissage scientifique open-source"
+  },
+  "profil": {
+    "loginRequired": "Connectez-vous",
+    "loginDescription": "Connectez-vous pour voir votre profil, votre progression et vos favoris.",
+    "backHome": "Retour \u00e0 l'accueil",
+    "memberSince": "Membre depuis le {date}",
+    "topicsCompleted": "Topics compl\u00e9t\u00e9s",
+    "quizPassed": "Quiz pass\u00e9s",
+    "favorites": "Favoris",
+    "bestScores": "Meilleurs scores",
+    "favoriteTopics": "Topics favoris",
+    "favoritePapers": "Papers favoris",
+    "emptyState": "Vous n'avez pas encore d'activit\u00e9. Commencez par explorer les topics !",
+    "exploreTopics": "Explorer les topics"
+  },
+  "meta": {
+    "siteTitle": "SciBase \u2014 Apprendre l'IA et le Machine Learning",
+    "siteDescription": "Plateforme d'apprentissage scientifique open-source. Explorez 13 topics, 148 papers vulgaris\u00e9s et un parcours structur\u00e9.",
+    "parcoursTitle": "Parcours d'apprentissage",
+    "parcoursDescription": "Parcours progressif pour apprendre l'IA et le Machine Learning, du d\u00e9butant \u00e0 l'avanc\u00e9.",
+    "searchTitle": "Recherche",
+    "searchDescription": "Rechercher parmi les topics, papers et r\u00e9sum\u00e9s de SciBase",
+    "quizDescription": "Testez vos connaissances sur {title} avec ce quiz interactif.",
+    "paperSummaryDescription": "R\u00e9sum\u00e9 vulgaris\u00e9 de {title}"
+  },
+  "language": {
+    "fr": "Fran\u00e7ais",
+    "en": "English",
+    "switchLabel": "Langue"
+  }
+}

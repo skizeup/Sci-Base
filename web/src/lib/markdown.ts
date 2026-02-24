@@ -8,6 +8,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import type { Root, Element } from 'hast';
 import { visit } from 'unist-util-visit';
+import type { Locale } from './i18n/config';
 
 function rehypeMermaid() {
   return (tree: Root) => {
@@ -29,14 +30,14 @@ function rehypeMermaid() {
   };
 }
 
-function rehypeRewriteLinks() {
+function rehypeRewriteLinks(locale: Locale = 'fr') {
   return (tree: Root) => {
     visit(tree, 'element', (node: Element) => {
       if (node.tagName === 'a' && typeof node.properties?.href === 'string') {
         const href = node.properties.href;
         const match = href.match(/^\.\.\/([a-z0-9-]+)\/$/);
         if (match) {
-          node.properties.href = `/topics/${match[1]}`;
+          node.properties.href = `/${locale}/topics/${match[1]}`;
         }
       }
     });
@@ -55,28 +56,31 @@ function getTextContent(node: Element): string {
   return text;
 }
 
-const processor = unified()
-  .use(remarkParse)
-  .use(remarkGfm)
-  .use(remarkMath)
-  .use(remarkRehype, { allowDangerousHtml: true })
-  .use(rehypeKatex)
-  .use(rehypeSlug)
-  .use(rehypeMermaid)
-  .use(rehypeRewriteLinks)
-  .use(rehypeStringify, { allowDangerousHtml: true });
+function createProcessor(locale: Locale = 'fr') {
+  return unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkMath)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeKatex)
+    .use(rehypeSlug)
+    .use(rehypeMermaid)
+    .use(() => rehypeRewriteLinks(locale))
+    .use(rehypeStringify, { allowDangerousHtml: true });
+}
 
-export async function markdownToHtml(markdown: string): Promise<string> {
+export async function markdownToHtml(markdown: string, locale: Locale = 'fr'): Promise<string> {
+  const processor = createProcessor(locale);
   const result = await processor.process(markdown);
   return String(result);
 }
 
-export function extractTitle(markdown: string): string {
+export function extractTitle(markdown: string, locale: Locale = 'fr'): string {
   const match = markdown.match(/^#\s+(.+)$/m);
   if (match) return match[1].replace(/\*\*/g, '').trim();
   const match2 = markdown.match(/^##\s*(.+)$/m);
   if (match2) return match2[1].replace(/\*\*/g, '').trim();
-  return 'Sans titre';
+  return locale === 'en' ? 'Untitled' : 'Sans titre';
 }
 
 export function extractFirstParagraph(markdown: string): string {

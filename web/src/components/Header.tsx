@@ -3,33 +3,37 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
+import LanguageSwitcher from './LanguageSwitcher';
 import UserMenu from './UserMenu';
 import AuthModal from './AuthModal';
 import { useAuth } from '@/contexts/AuthContext';
+import { useTranslation, useLocale } from '@/contexts/LocaleContext';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const { user, loading } = useAuth();
+  const { t } = useTranslation();
+  const locale = useLocale();
 
   return (
     <>
       <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
         <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl text-gray-900 dark:text-gray-100">
+          <Link href={`/${locale}`} className="flex items-center gap-2 font-bold text-xl text-gray-900 dark:text-gray-100">
             <span className="text-brand-600 dark:text-brand-400">Sci</span>Base
           </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
-            <Link href="/" className="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-              Topics
+            <Link href={`/${locale}`} className="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+              {t('common.topics')}
             </Link>
-            <Link href="/parcours" className="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-              Parcours
+            <Link href={`/${locale}/parcours`} className="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+              {t('common.learningPath')}
             </Link>
-            <Link href="/recherche" className="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-              Recherche
+            <Link href={`/${locale}/recherche`} className="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+              {t('common.search')}
             </Link>
             <a
               href="https://github.com/skizeup/Sci-Base"
@@ -39,8 +43,8 @@ export default function Header() {
             >
               GitHub
             </a>
+            <LanguageSwitcher />
             <ThemeToggle />
-            {/* Auth: skeleton pendant loading, UserMenu si connecté, bouton sinon */}
             {loading ? (
               <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse" />
             ) : user ? (
@@ -50,13 +54,14 @@ export default function Header() {
                 onClick={() => setAuthModalOpen(true)}
                 className="text-sm font-medium px-4 py-1.5 rounded-lg bg-brand-600 text-white hover:bg-brand-700 transition-colors"
               >
-                Connexion
+                {t('common.login')}
               </button>
             )}
           </div>
 
-          {/* Mobile: theme toggle + auth + burger */}
+          {/* Mobile: lang + theme + auth + burger */}
           <div className="flex md:hidden items-center gap-1">
+            <LanguageSwitcher />
             <ThemeToggle />
             {!loading && (
               user ? (
@@ -65,7 +70,7 @@ export default function Header() {
                 <button
                   onClick={() => setAuthModalOpen(true)}
                   className="p-2 text-brand-600 dark:text-brand-400"
-                  aria-label="Connexion"
+                  aria-label={t('common.login')}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -89,18 +94,17 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Mobile menu */}
         {menuOpen && (
           <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
             <div className="px-4 py-3 space-y-3">
-              <Link href="/" className="block text-sm text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400" onClick={() => setMenuOpen(false)}>
-                Topics
+              <Link href={`/${locale}`} className="block text-sm text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400" onClick={() => setMenuOpen(false)}>
+                {t('common.topics')}
               </Link>
-              <Link href="/parcours" className="block text-sm text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400" onClick={() => setMenuOpen(false)}>
-                Parcours
+              <Link href={`/${locale}/parcours`} className="block text-sm text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400" onClick={() => setMenuOpen(false)}>
+                {t('common.learningPath')}
               </Link>
-              <Link href="/recherche" className="block text-sm text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400" onClick={() => setMenuOpen(false)}>
-                Recherche
+              <Link href={`/${locale}/recherche`} className="block text-sm text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400" onClick={() => setMenuOpen(false)}>
+                {t('common.search')}
               </Link>
               <a
                 href="https://github.com/skizeup/Sci-Base"
